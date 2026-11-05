@@ -7,7 +7,7 @@ export const CLUB = {
   fullName: "Fehérvár Kiskút Tenisz Klub",
   motto: "Több mint tenisz!",
   city: "Székesfehérvár",
-  address: "8000 Székesfehérvár, Kiskút útja 3.",
+  address: "8000 Székesfehérvár, Kiskút\u00a0útja\u00a03.",
   street: "Kiskút útja 3.",
   postal: "8000 Székesfehérvár",
   phone: "+36 30 503 8223",

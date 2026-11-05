@@ -1081,6 +1081,7 @@ html.menu-open {
 
 /* ——— visit (final) ——— */
 .final {
+  padding-top: clamp(72px, 9vw, 120px);
   padding-bottom: clamp(96px, 10vw, 140px);
 }
 .final__head {
@@ -1144,6 +1145,7 @@ html.menu-open {
 .contact__line strong {
   color: var(--ink);
   font-weight: 600;
+  white-space: nowrap;
 }
 .visit__parking {
   margin-top: 22px;
@@ -1512,7 +1514,11 @@ html.js-reveal .reveal--img.is-in img {
     gap: 28px;
   }
   .mini-court {
-    max-width: 320px;
+    max-width: 220px;
+    margin-bottom: 12px;
+  }
+  .ladder__stages {
+    gap: 22px;
   }
   .visit {
     grid-template-areas:

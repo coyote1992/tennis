@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CLUB, HOURS, NAV } from "@/lib/site";
-import { IconPhone } from "./icons";
+import { IconCalendar, IconPhone } from "./icons";
 
 export function Header() {
   const [solid, setSolid] = useState(false);
@@ -61,7 +61,7 @@ export function Header() {
               {CLUB.phone}
             </a>
             <Link href="/#foglalas" className="btn btn--accent btn--sm">
-              <IconPhone /> Pályafoglalás
+              <IconCalendar /> Pályafoglalás
             </Link>
           </div>
 

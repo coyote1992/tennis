@@ -16,7 +16,7 @@ export function homeSteps(font: string): SpaceStep[] {
       done: 0.5,
       shape: { word: "2017", font },
       wide: at(0.73, 0.5, 0.2, 0.3),
-      narrow: at(0.5, 0.42, 0.34, 0.2),
+      narrow: at(0.5, 0.2, 0.34, 0.2), // phones: above the heading, in the gap between sections
     },
     // large, centred, faint, slowly spinning, behind the coaching programme
     { anchor: "#edzes", shape: "ball", wide: at(0.5, 0.5, 0.24, 0.42), narrow: at(0.5, 0.45, 0.42, 0.3), alpha: 0.85 },

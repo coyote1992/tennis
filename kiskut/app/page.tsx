@@ -138,7 +138,7 @@ export default function Home() {
               fill
               priority
               sizes="(max-width: 900px) 100vw, 46vw"
-              style={{ objectFit: "cover", objectPosition: "58% 60%" }}
+              style={{ objectFit: "cover", objectPosition: "50% 45%" }}
             />
             <figcaption className="hero__caption">Télen fedett csarnokban játszunk</figcaption>
           </figure>
@@ -159,7 +159,7 @@ export default function Home() {
                   Pályát foglalnék <IconArrow />
                 </span>
                 <span className="path__text">Online, két hétre előre. Az első alkalommal a recepción regisztrálunk.</span>
-                <span className="path__meta">{CLUB.phone}</span>
+                <span className="path__meta">A foglalás menete és az árak</span>
               </Link>
               <Link href="#edzes" className="path">
                 <span className="path__title">
