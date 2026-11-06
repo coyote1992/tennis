@@ -229,6 +229,9 @@ button {
     transform 0.25s var(--ease),
     border-color 0.25s var(--ease);
 }
+.btn svg {
+  flex: none;
+}
 .btn:hover {
   transform: translateY(-1px);
 }
