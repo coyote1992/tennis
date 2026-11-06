@@ -56,45 +56,48 @@ export function Weather({ className = "" }: { className?: string }) {
     return () => ctrl.abort();
   }, []);
 
+  // The same rows in every state (loading, data, unavailable), so the card keeps its height and
+  // nothing below it moves when the data arrives (a jump to a section further down stays put).
+  const state = now ? "ok" : failed ? "off" : "loading";
   return (
-    <div className={`wx ${className}`} aria-live="polite">
+    <div className={`wx wx--${state} ${className}`} aria-live="polite" aria-busy={state === "loading"}>
       <p className="wx__title">
         <span className="wx__dot" aria-hidden="true" />
         Időjárás a pályán most
       </p>
-      {now ? (
-        <>
-          <p className="wx__temp">
-            {Math.round(now.temp)}
-            <span>°C</span>
-          </p>
-          <p className="wx__sky">{label(now.code)}</p>
-          <dl className="wx__list">
-            <div>
-              <dt>Szél</dt>
-              <dd>
-                {Math.round(now.wind)} km/h {dirName(now.dir)}
-                {now.gust > now.wind + 8 ? `, lökésekben ${Math.round(now.gust)}` : ""}
-              </dd>
-            </div>
-            <div>
-              <dt>Csapadék</dt>
-              <dd>{now.rain > 0 ? `${now.rain.toLocaleString("hu-HU")} mm` : "nincs"}</dd>
-            </div>
-          </dl>
-          {(WET.includes(now.code) || now.rain > 0) && (
-            <p className="wx__warn">
-              Esik: indulás előtt hívj minket, játszhatók-e a pályák. <a href={CLUB.phoneHref}>{CLUB.phone}</a>
-            </p>
-          )}
-          <p className="wx__src">Open-Meteo · {now.time.slice(11, 16)}</p>
-        </>
-      ) : failed ? (
-        <p className="wx__sky">
-          Az időjárás most nem tölthető be. A pályák állapotáról telefonon kapsz választ: <a href={CLUB.phoneHref}>{CLUB.phone}</a>
+      <p className="wx__temp">
+        {now ? Math.round(now.temp) : "–"}
+        <span>°C</span>
+      </p>
+      <p className={`wx__sky${state === "loading" ? " wx__loading" : ""}`}>
+        {now ? label(now.code) : failed ? "Most nem tölthető be" : "Betöltés…"}
+      </p>
+      <dl className="wx__list">
+        <div>
+          <dt>Szél</dt>
+          <dd>
+            {now ? `${Math.round(now.wind)} km/h ${dirName(now.dir)}${now.gust > now.wind + 8 ? `, lökésekben ${Math.round(now.gust)}` : ""}` : "–"}
+          </dd>
+        </div>
+        <div>
+          <dt>Csapadék</dt>
+          <dd>{now ? (now.rain > 0 ? `${now.rain.toLocaleString("hu-HU")} mm` : "nincs") : "–"}</dd>
+        </div>
+      </dl>
+      {now && (WET.includes(now.code) || now.rain > 0) ? (
+        <p className="wx__warn">
+          Esik: indulás előtt hívj minket, játszhatók-e a pályák. <a href={CLUB.phoneHref}>{CLUB.phone}</a>
         </p>
       ) : (
-        <p className="wx__sky wx__loading">Betöltés…</p>
+        <p className="wx__src">
+          {now ? (
+            `Open-Meteo · ${now.time.slice(11, 16)}`
+          ) : (
+            <>
+              Pályaállapot telefonon: <a href={CLUB.phoneHref}>{CLUB.phone}</a>
+            </>
+          )}
+        </p>
       )}
     </div>
   );

@@ -568,6 +568,18 @@ html.menu-open .actionbar {
   font-size: 0.74rem;
   color: var(--ink-3);
 }
+.wx__src a {
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.wx:not(.wx--ok) .wx__dot {
+  background: var(--ink-3);
+  animation: none;
+}
+.wx:not(.wx--ok) .wx__temp {
+  color: var(--ink-3);
+}
 
 /* ——— facts ——— */
 .facts {
