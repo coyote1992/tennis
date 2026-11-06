@@ -1,0 +1,59 @@
+/* The shared 404 (app/global-not-found.tsx), styled like version A. Kept separate from A's
+   stylesheet: every route includes the global 404, and importing a.css here made /b preload
+   version A's fonts. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  background: #123f27;
+}
+.nf {
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+  padding: 48px 24px 64px;
+  background: radial-gradient(70% 55% at 50% 0%, rgba(236, 194, 74, 0.12), transparent 70%), #123f27;
+  color: #f6f2e4;
+  text-align: center;
+  font-family: var(--font-sans), "Work Sans", "Helvetica Neue", Arial, sans-serif;
+}
+.nf img {
+  margin: 0 auto 24px;
+}
+.nf__code {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  color: #ecc24a;
+}
+.nf h1 {
+  margin: 16px 0 0;
+  font-family: var(--font-serif), "Spectral", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1;
+}
+.nf h1 em {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.42em;
+  color: #ecc24a;
+}
+.nf a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  margin-top: 34px;
+  padding: 0 28px;
+  background: #ecc24a;
+  color: #17241c;
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
