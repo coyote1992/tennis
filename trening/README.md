@@ -10,8 +10,10 @@ between them and keeps your place: both pages use the same section ids.
   charcoal, the logo's red, Fraunces + Public Sans, Roman-numeral chapters, matted photos, a 12-month
   season ribbon (outdoor clay May–September, heated tent October 15 – April 15), a price card, the 2022
   county champions' roster and an events scoreboard. Code: `app/(a)`, `components/a`.
-- **B — Modern** (`/b`): the dot-space style of the other club sites (kit in `kits/dot-space`). Code:
-  `app/(b)`, `components/b`; choreography in `components/b/space/trening-config.ts`.
+- **B — Modern** (`/b`): the dot-space style of the other club sites (kit in `kits/dot-space`), Sora +
+  Inter, warm charcoal night with the logo's red. Code: `app/(b)`, `components/b`. Choreography in
+  `components/b/space/trening-config.ts`: court → racket → the logo's tennis player in dots
+  (`public/img/figura-pontok.png`) beside the coaching section → a red ball → black hole.
 
 The versions have separate root layouts (route groups); `app/global-not-found.tsx` is the shared 404
 (needs `experimental.globalNotFound`) with its own small stylesheet (`app/not-found.css`), so the routes
