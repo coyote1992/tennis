@@ -1,24 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Instrument_Serif } from "next/font/google";
-import { ActionBar } from "@/components/ActionBar";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { Reveal } from "@/components/Reveal";
-import { SpaceBackground } from "@/components/space/SpaceBackground";
-import "@/kits/dot-space/theme/space.css";
-import "./globals.css";
+import { Albert_Sans, Newsreader } from "next/font/google";
+import { ActionBar, Footer, Header } from "@/components/a/Chrome";
+import { Reveal } from "@/components/shared/Reveal";
+import { VSWITCH_CSS, VersionSwitch } from "@/components/shared/VersionSwitch";
+import "./a.css";
 
-const sans = Bricolage_Grotesque({
+const serif = Newsreader({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-sans",
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  variable: "--font-serif",
   display: "swap",
 });
 
-const serif = Instrument_Serif({
+const sans = Albert_Sans({
   subsets: ["latin", "latin-ext"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-serif",
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -40,22 +37,22 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a1530",
-  colorScheme: "dark",
+  themeColor: "#142b5c",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function ALayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="hu" className={`space ${sans.variable} ${serif.variable}`} suppressHydrationWarning>
-      <body>
-        <SpaceBackground serifFamily={serif.style.fontFamily} />
+    <html lang="hu" className={`${serif.variable} ${sans.variable}`}>
+      <body id="top">
         <a href="#main" className="skip">
-          Ugrás a tartalomra
+          Ugrás a tartalomhoz
         </a>
         <Header />
         <main id="main">{children}</main>
         <Footer />
         <ActionBar />
+        <VersionSwitch current="a" />
+        <style dangerouslySetInnerHTML={{ __html: VSWITCH_CSS }} />
         <Reveal />
       </body>
     </html>

@@ -40,7 +40,7 @@ export function Header() {
       </div>
       <header className={`header${solid ? " header--solid" : ""}${open ? " header--open" : ""}`}>
         <div className="container header__inner">
-          <Link href="/" className="brand" onClick={close} aria-label="Kiskút Tenisz Klub – főoldal">
+          <Link href="/b" className="brand" onClick={close} aria-label="Kiskút Tenisz Klub – főoldal">
             <Image src="/img/logo.png" alt="" width={44} height={44} className="brand__logo" priority />
             <span className="brand__text">
               <span className="brand__name">Kiskút</span>
@@ -60,7 +60,7 @@ export function Header() {
             <a href={CLUB.phoneHref} className="header__phone">
               {CLUB.phone}
             </a>
-            <Link href="/#foglalas" className="btn btn--accent btn--sm">
+            <Link href="/b#foglalas" className="btn btn--accent btn--sm">
               <IconCalendar /> Pályafoglalás
             </Link>
           </div>
@@ -85,7 +85,7 @@ export function Header() {
                 {n.label}
               </Link>
             ))}
-            <Link href="/hazirend" className="mobile-menu__link mobile-menu__link--small" onClick={close}>
+            <Link href="/b/hazirend" className="mobile-menu__link mobile-menu__link--small" onClick={close}>
               Házirend
             </Link>
           </nav>

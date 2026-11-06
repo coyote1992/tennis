@@ -1574,3 +1574,17 @@ html.js-reveal .reveal--img.is-in img {
     padding: 22px 20px;
   }
 }
+
+/* ——— A/B switch (components/shared/VersionSwitch.tsx) ——— */
+:root {
+  --vs-accent: var(--yellow);
+  --vs-accent-ink: var(--navy-deep);
+}
+html.menu-open .vswitch {
+  display: none;
+}
+@media (max-width: 900px) {
+  :root {
+    --vs-lift: 72px;
+  }
+}

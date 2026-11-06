@@ -9,7 +9,7 @@ export function ActionBar() {
       <a href={CLUB.phoneHref} className="btn btn--ghost">
         <IconPhone /> Hívás
       </a>
-      <Link href="/#foglalas" className="btn btn--accent">
+      <Link href="/b#foglalas" className="btn btn--accent">
         <IconCalendar /> Pályafoglalás
       </Link>
     </div>

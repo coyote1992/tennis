@@ -12,22 +12,32 @@ club's email reply in 100web (current phone: +36 30 503 8223; restaurant, rooms 
 longer offered, so they are left out), and the ITF / Wikipedia records of the Kiskút Open.
 `lib/site.ts` holds the shared contact data.
 
-## Pages
+## Two versions
 
-- `/` — hero, courts, booking (HELLA flow, last published prices, practical rules), Kiskút Open
-  timeline, coaching (Play & Stay, programmes), visit / contact
-- `/hazirend` — the house rules, rewritten for scanning
+The site has two designs side by side, with a labelled switch fixed at the bottom centre of every page
+("Dizájn · A Klasszikus / B Modern"). Switching opens the same page in the other version, at the
+section you were reading (both versions use the same section ids).
 
-Dot-space choreography (`components/space/kiskut-config.ts`): court → racket → "2017" (first
-Kiskút Open) beside its heading → spinning ball behind the coaching section → black hole at the
-contact section. Subpages get the quiet starfield.
+- **A — Klasszikus** (`/`, `/hazirend`): a traditional club look in the logo's colours: cream paper,
+  the lettering's royal blue, the ball's gold; Newsreader + Albert Sans, the club crest, Roman-numeral
+  chapters, printed price cards, an honours board for the Kiskút Open, the Play & Stay courts drawn to
+  scale. Code: `app/(a)`, `components/a`.
+- **B — Modern** (`/b`, `/b/hazirend`): the original dot-space site. Code: `app/(b)`, `components/b`.
+  Dot-space choreography (`components/b/space/kiskut-config.ts`): court → racket → "2017" (first Kiskút
+  Open) beside its heading → spinning ball behind the coaching section → black hole at the contact
+  section. The house rules page gets the quiet starfield.
+
+Both read the same facts: `lib/site.ts` (contact, hours, prices, Kiskút Open, programmes) and
+`lib/hazirend.tsx` (house rules). Shared: `components/shared/VersionSwitch.tsx`, `Reveal.tsx`. The two
+versions have separate root layouts (route groups); `app/global-not-found.tsx` is the shared 404, with
+its own small stylesheet so the routes don't preload each other's fonts.
 
 ## Local
 
 ```bash
 npm ci
 npm run build && npm start
-node kits/dot-space/check/stages.mjs http://localhost:3000/   # shape/text overlap check
+node kits/dot-space/check/stages.mjs http://localhost:3000/b   # shape/text overlap check (version B)
 ```
 
 ## Deploy

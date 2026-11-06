@@ -46,7 +46,7 @@ export function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/hazirend">Házirend</Link>
+              <Link href="/b/hazirend">Házirend</Link>
             </li>
           </ul>
         </div>
