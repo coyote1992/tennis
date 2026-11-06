@@ -9,11 +9,14 @@ section ids.
 - **A — Klasszikus** (`/`): a tournament-club look from the club's own colours: cream paper, the logo's
   navy, terre-battue clay as the accent, Bodoni Moda + Jost, Roman-numeral chapters, a printed price card,
   an honours board of the 2026 champions and the partner logos. Code: `app/(a)`, `components/a`.
-- **B — Modern** (`/b`): the dot-space style of the other club sites (kit in `kits/dot-space`). Code:
-  `app/(b)`, `components/b`; choreography in `components/b/space/otv-config.ts`.
+- **B — Modern** (`/b`): the dot-space style of the other club sites (kit in `kits/dot-space`), Sora +
+  Inter, navy night sky with the green of the club's OPEN wordmark. Code: `app/(b)`, `components/b`.
+  Choreography in `components/b/space/otv-config.ts`: court → racket → the club's ball logo in dots
+  (`public/img/otv-labda-pontok.png`) beside the coaching section → ball → black hole.
 
 The versions have separate root layouts (route groups); `app/global-not-found.tsx` is the shared 404
-(needs `experimental.globalNotFound`). Shared pieces: `lib/site.ts` (all facts),
+(needs `experimental.globalNotFound`). It has its own small stylesheet (`app/not-found.css`): every route
+includes the global 404, and importing A's stylesheet there made `/b` preload A's fonts. Shared pieces: `lib/site.ts` (all facts),
 `components/shared/VersionSwitch.tsx`, `JoinPicker.tsx` ("Mire jelentkeznél?": each option leads to the
 club's own channel — their Google Forms for ovi-tenisz and the free kids' trial, a phone call for adult
 coaching and room hire, an e-mail for the summer camp and the membership notice), `Icon.tsx`, `Reveal.tsx`.

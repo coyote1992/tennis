@@ -84,14 +84,14 @@ export default function BHome() {
 
           <figure className="hero__media reveal reveal--img">
             <Image
-              src="/img/hero-paros.jpg"
-              alt="Páros mérkőzés felülről: négy játékos a szabadtéri salakpályán"
+              src="/img/csuszas.jpg"
+              alt="Teniszező csúszva éri el a labdát a háló előtt, salakpályán"
               fill
               priority
               sizes="(max-width: 1260px) 100vw, 1200px"
-              style={{ objectFit: "cover", objectPosition: "50% 60%" }}
+              style={{ objectFit: "cover", objectPosition: "50% 12%" }}
             />
-            <figcaption className="hero__caption">Páros a szabadtéri salakpályán</figcaption>
+            <figcaption className="hero__caption">Csúszás a labdáért a salakon</figcaption>
           </figure>
 
           <ul className="facts reveal" aria-label="Röviden">
@@ -374,7 +374,7 @@ export default function BHome() {
 
           <div className="camp glass reveal">
             <figure className="camp__photo">
-              <Image src="/img/gyerekek.jpg" alt="Táborozó gyerekek és edzőjük a salakpályán" fill sizes="(max-width: 900px) 100vw, 280px" style={{ objectFit: "cover", objectPosition: "50% 35%" }} />
+              <Image src="/img/gyerekek.jpg" alt="Táborozó gyerekek a salakpályán" fill sizes="(max-width: 900px) 100vw, 280px" style={{ objectFit: "cover", objectPosition: "50% 35%" }} />
             </figure>
             <div className="camp__body">
               <p className="label">{CAMP.title}</p>
