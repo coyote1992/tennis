@@ -4,7 +4,7 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import Link from "next/link";
 import { Mark } from "@/components/a/Brand";
 import { SITE } from "@/lib/site";
-import "./(a)/a.css";
+import "./not-found.css";
 
 const serif = Cormorant_Garamond({ subsets: ["latin", "latin-ext"], weight: ["400", "500"], style: ["normal", "italic"], variable: "--font-serif", preload: false });
 const sans = Jost({ subsets: ["latin", "latin-ext"], weight: ["400", "500"], variable: "--font-sans", preload: false });
