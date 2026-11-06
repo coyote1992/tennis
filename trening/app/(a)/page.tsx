@@ -55,7 +55,9 @@ export default function Home() {
       {/* ——— hero ——— */}
       <section className="hero dark" aria-labelledby="hero-title">
         <div className="container">
-          <p className="hero__est">Békéscsaba · Sport- és Szabadidőközpont</p>
+          <p className="hero__est">
+            Békéscsaba<span className="hero__est-more"> · Sport- és Szabadidőközpont</span>
+          </p>
           <h1 id="hero-title">
             Tréning Center
             <em>Tenisz, foci és közösség, több mint 20 éve.</em>

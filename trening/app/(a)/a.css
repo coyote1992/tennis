@@ -1820,6 +1820,9 @@ html.js-reveal .reveal.is-in {
   .topbar__label {
     display: none;
   }
+  .hero__est-more {
+    display: none;
+  }
   .scoreboard {
     grid-template-columns: minmax(0, 1fr);
   }
