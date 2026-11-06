@@ -16,7 +16,7 @@ export default function BHome() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="container">
           <div className="hero__top">
-            <p className="eyebrow reveal">Győr · tenisz, padel, squash, bowling</p>
+            <p className="eyebrow reveal">Tenisz · padel · squash · bowling</p>
             <h1 id="hero-title" className="h1 reveal">
               Ha ütős sport, <em>akkor Teniszcentrum.</em>
             </h1>
@@ -328,7 +328,7 @@ export default function BHome() {
           <div className="final__head">
             <p className="eyebrow reveal">Kapcsolat</p>
             <h2 id="kapcsolat-title" className="h2 h2--xl reveal">
-              Gulyás István utca 3. <em>Várunk a pályán.</em>
+              Gulyás István <span className="nobr">utca 3.</span> <em>Várunk a pályán.</em>
             </h2>
           </div>
 

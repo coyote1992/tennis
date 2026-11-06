@@ -1,35 +1,35 @@
 /* ==========================================================================
-   Pécs 2000 Tenisz Club — version B (dot-space)
-   Dark "space" theme in the club's own colours: a deep forest-ink night sky, the gold of the
-   crest (crossed rackets in a laurel wreath) as the accent and clay orange as the second colour.
+   Marcal Teniszcentrum — version B (dot-space)
+   Dark "space" theme in the centre's own colours: a deep claret night sky (the wine red of the
+   logo), the lime of the tennis ball as the accent and a lifted claret as the second colour.
    Sora for headings, Inter for text.
    ========================================================================== */
 
 :root {
-  --vs-accent: #f2cf6e;
-  --vs-accent-ink: #1a1405;
+  --vs-accent: #dfe24e;
+  --vs-accent-ink: #17170a;
 
-  /* sky behind the dots: forest ink */
-  --space-sky-top: #13241d;
-  --space-sky-mid: #0b1612;
-  --space-sky-bottom: #050a08;
+  /* sky behind the dots: claret ink */
+  --space-sky-top: #2a1418;
+  --space-sky-mid: #140a0d;
+  --space-sky-bottom: #080506;
 
-  --deep: #050a08;
-  --deep-2: #0b1612;
-  --sun: #f2cf6e; /* accent: the crest's gold */
-  --sun-hi: #f6dc8f;
-  --sun-soft: #f9e7b4;
-  --sky: #ee8a55; /* secondary: the clay courts' orange, lifted */
-  --clay: #e0703c;
-  --paper: #f4f1ea;
+  --deep: #080506;
+  --deep-2: #140a0d;
+  --sun: #dfe24e; /* accent: tennis-ball lime */
+  --sun-hi: #e8ea78;
+  --sun-soft: #eef0a6;
+  --sky: #ef857b; /* secondary: the logo's claret, lifted */
+  --clay: #d0453f;
+  --paper: #f5f2ea;
 
-  --ink: #f4f1ea;
-  --ink-2: rgba(244, 241, 234, 0.8);
-  --ink-3: rgba(244, 241, 234, 0.58);
-  --line: rgba(244, 241, 234, 0.13);
-  --line-strong: rgba(244, 241, 234, 0.28);
-  --glass: rgba(14, 30, 23, 0.7);
-  --glass-hi: rgba(244, 241, 234, 0.06);
+  --ink: #f5f2ea;
+  --ink-2: rgba(245, 242, 234, 0.8);
+  --ink-3: rgba(245, 242, 234, 0.58);
+  --line: rgba(245, 242, 234, 0.13);
+  --line-strong: rgba(245, 242, 234, 0.28);
+  --glass: rgba(34, 15, 19, 0.7);
+  --glass-hi: rgba(245, 242, 234, 0.06);
 
   --font-display: var(--font-display-face), "Helvetica Neue", Arial, sans-serif;
   --font-body: var(--font-body-face), "Helvetica Neue", Arial, sans-serif;
@@ -185,11 +185,14 @@ button {
 }
 .eyebrow::before {
   content: "";
+  flex: none;
+  align-self: flex-start;
+  margin-top: calc(0.8em - 5px);
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: currentColor;
-  box-shadow: 14px 0 0 -3px rgba(242, 207, 110, 0.55);
+  box-shadow: 14px 0 0 -3px rgba(223, 226, 78, 0.55);
   margin-right: 10px;
 }
 .lead {
@@ -200,10 +203,6 @@ button {
   max-width: 34em;
   text-wrap: pretty;
 }
-.split .lead {
-  margin-top: 0;
-}
-
 
 /* ——— buttons ——— */
 .btn {
@@ -229,6 +228,9 @@ button {
     transform 0.25s var(--ease),
     border-color 0.25s var(--ease);
 }
+.btn svg {
+  flex: none;
+}
 .btn:hover {
   transform: translateY(-1px);
 }
@@ -237,7 +239,7 @@ button {
 }
 .btn--accent {
   --btn-bg: var(--sun);
-  --btn-fg: #1a1405;
+  --btn-fg: var(--vs-accent-ink);
 }
 .btn--accent:hover {
   --btn-bg: var(--sun-hi);
@@ -248,7 +250,7 @@ button {
   border-color: var(--line-strong);
 }
 .btn--ghost:hover {
-  --btn-bg: rgba(244, 241, 234, 0.08);
+  --btn-bg: rgba(245, 242, 234, 0.08);
 }
 .btn--sm {
   min-height: 42px;
@@ -274,7 +276,7 @@ button {
   z-index: 41;
   font-size: 0.82rem;
   color: var(--ink-3);
-  border-bottom: 1px solid rgba(244, 241, 234, 0.07);
+  border-bottom: 1px solid rgba(245, 242, 234, 0.07);
 }
 .announce__inner {
   display: flex;
@@ -311,8 +313,8 @@ button {
     box-shadow 0.35s var(--ease);
 }
 .header--solid:not(.header--open) {
-  background: rgba(5, 10, 8, 0.78);
-  box-shadow: 0 1px 0 rgba(244, 241, 234, 0.08);
+  background: rgba(8, 5, 6, 0.78);
+  box-shadow: 0 1px 0 rgba(245, 242, 234, 0.08);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -332,7 +334,7 @@ button {
 .brand__badge {
   width: 46px;
   height: 46px;
-  box-shadow: none;
+  border-radius: 50%;
 }
 .brand__name {
   display: grid;
@@ -487,11 +489,19 @@ html.menu-open .announce {
   position: relative;
   padding: clamp(96px, 12vw, 168px) 0;
 }
-.split {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: clamp(28px, 5vw, 72px);
-  align-items: end;
+.rules__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sky);
+}
+.rules__title svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* ——— hero ——— */
@@ -504,46 +514,35 @@ html.menu-open .announce {
 }
 .hero__row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 470px);
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: clamp(24px, 4vw, 64px);
-  align-items: start;
-  margin-top: 8px;
+  align-items: end;
 }
 .hero__ctas {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
-.team {
-  padding: 22px 24px 24px;
-}
-.team__faces {
-  display: flex;
-  margin-bottom: 14px;
-}
-.team__faces li {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+.hero__media {
+  position: relative;
+  margin-top: clamp(36px, 4.5vw, 60px);
+  aspect-ratio: 2200 / 814;
+  border-radius: var(--radius);
   overflow: hidden;
-  border: 2px solid var(--deep-2);
-  box-shadow: 0 0 0 1px var(--line-strong);
-  background: #1a2c24;
+  background: #2a1418;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
 }
-.team__faces li + li {
-  margin-left: -12px;
-}
-.team__faces img {
-  width: 100%;
-  height: 100%;
-}
-.team__text {
-  margin-bottom: 18px;
+.hero__caption {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(8, 5, 6, 0.62);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 0.8rem;
   color: var(--ink-2);
-}
-.team__text strong {
-  color: var(--ink);
-  font-weight: 600;
 }
 .facts {
   display: grid;
@@ -575,223 +574,417 @@ html.menu-open .announce {
   font-size: 0.94rem;
 }
 
-
-/* ——— courses ——— */
-.groups {
-  display: grid;
-  gap: clamp(28px, 3vw, 40px);
-  margin-top: clamp(32px, 4vw, 48px);
-}
-.group__title {
-  margin-bottom: 12px;
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--sky);
-}
-.group__list {
+/* ——— sports ——— */
+.sportlist {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
+  margin-top: clamp(32px, 4vw, 48px);
 }
-.course {
-  padding: 20px 22px 22px;
+.sport {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 26px;
 }
-.course__head {
+.sport__head {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
   gap: 6px 14px;
-  margin-bottom: 8px;
 }
-.course__age {
-  padding: 4px 10px;
+.sport__head .h3 {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+}
+.sport__courts {
+  padding: 4px 11px;
   border-radius: 999px;
-  background: rgba(242, 207, 110, 0.14);
+  background: rgba(223, 226, 78, 0.14);
   color: var(--sun-soft);
   font-size: 0.8rem;
   font-weight: 600;
   white-space: nowrap;
 }
-.course p {
+.sport__tagline {
+  margin-top: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--sky);
+}
+.sport__text {
+  margin: 10px 0 18px;
   font-size: 0.95rem;
   color: var(--ink-2);
 }
-
-/* ——— family tennis ——— */
-.family {
-  padding-top: clamp(40px, 5vw, 72px);
-}
-.family__card {
+.sport__features {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
-  gap: clamp(24px, 4vw, 56px);
-  align-items: end;
-  padding: clamp(26px, 4vw, 48px);
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--ink-2);
 }
-.family__card .eyebrow {
-  margin-bottom: 18px;
-}
-.family__cta {
+.sport__features li,
+.checks li {
   display: grid;
+  grid-template-columns: 16px 1fr;
   gap: 10px;
 }
-.family__note {
-  font-size: 0.92rem;
+.sport__features svg,
+.checks svg {
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+  color: var(--sun);
+}
+.extras {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 20px;
+  margin-top: 28px;
+}
+.extras li {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.extras strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.extras span {
+  font-size: 0.88rem;
   color: var(--ink-3);
 }
 
-/* ——— coaches ——— */
+/* ——— booking ——— */
+.booking__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.booking__card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 26px;
+}
+.booking__card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+.checks {
+  display: grid;
+  gap: 10px;
+  color: var(--ink-2);
+}
+.hours li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+}
+.hours strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.booking__season {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+.booking__season svg {
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+  color: var(--sun);
+}
+.booking__note {
+  margin-top: auto;
+  font-size: 0.86rem;
+  color: var(--ink-3);
+}
+.rules {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  margin-top: 30px;
+}
+.rule {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.rule__title {
+  margin-bottom: 4px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+.rule p {
+  font-size: 0.93rem;
+  color: var(--ink-2);
+}
+
+/* ——— coaching ——— */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 28px;
+  margin-top: clamp(28px, 3.5vw, 44px);
+}
+.steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.steps__num {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--sun);
+}
+.steps p {
+  color: var(--ink-2);
+  font-size: 0.96rem;
+}
+.steps strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.kids {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 32px);
+  align-items: center;
+  margin-top: clamp(28px, 3.5vw, 44px);
+  padding: 14px;
+}
+.kids__photo {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #2a1418;
+}
+.kids > div {
+  padding: 8px 12px 8px 0;
+}
+.kids__text {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--ink-2);
+}
+.team__title {
+  margin-top: clamp(48px, 6vw, 72px);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  letter-spacing: -0.02em;
+}
 .coaches {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: clamp(32px, 4vw, 48px);
+  gap: 24px 16px;
+  margin-top: 20px;
 }
 .coachcard__photo {
   position: relative;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius);
   overflow: hidden;
-  background: #1a2c24;
+  background: #2a1418;
+}
+.coachcard__mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(223, 226, 78, 0.16), transparent 55%),
+    linear-gradient(160deg, #4a1d24, #1c0c10);
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  letter-spacing: -0.02em;
+  color: var(--sun-soft);
 }
 .coachcard__name {
-  margin-top: 14px;
+  margin-top: 12px;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.3rem;
-  letter-spacing: -0.02em;
+  font-size: 1.12rem;
+  letter-spacing: -0.015em;
 }
 .coachcard__role {
   margin-top: 2px;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--sun);
 }
-.coachcard__bio {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: var(--ink-2);
-}
-.coachcard__results {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid var(--line);
-  font-size: 0.86rem;
+.coaches__note {
+  margin-top: 24px;
+  max-width: 40em;
+  font-size: 0.92rem;
   color: var(--ink-3);
 }
-.coachcard__results strong {
-  display: block;
-  margin-bottom: 2px;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--sky);
-}
 
-/* ——— history ——— */
-.timeline {
-  margin-top: clamp(32px, 4vw, 48px);
-  max-width: 680px;
-  border-left: 1px solid var(--line-strong);
-}
-.timeline__item {
-  position: relative;
+/* ——— events ——— */
+.eventlist {
   display: grid;
-  grid-template-columns: 76px 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-  padding: 0 0 22px 24px;
+  margin: clamp(32px, 4vw, 48px) 0 24px;
 }
-.timeline__item::before {
-  content: "";
-  position: absolute;
-  left: -5px;
-  top: 9px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
+.event {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 24px;
+}
+.event--next {
+  border-color: rgba(223, 226, 78, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(223, 226, 78, 0.18);
+}
+.event__tag {
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: rgba(239, 133, 123, 0.15);
+  color: #f7b9b2;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.event--next .event__tag {
   background: var(--sun);
-  box-shadow: 0 0 0 4px rgba(242, 207, 110, 0.18);
+  color: var(--vs-accent-ink);
 }
-.timeline__year {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
-  color: var(--sun);
-}
-.timeline__item p {
-  color: var(--ink-2);
-  font-size: 0.96rem;
-}
-.wins {
-  display: grid;
+.event__when {
+  display: inline-flex;
+  align-items: center;
   gap: 8px;
-  margin-top: 18px;
-  max-width: 680px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--sun-soft);
 }
-.wins li {
-  position: relative;
-  padding: 12px 16px 12px 40px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--glass-hi);
-  color: var(--ink);
-  font-weight: 500;
+.event__when svg {
+  width: 16px;
+  height: 16px;
 }
-.wins li::before {
-  content: "★";
-  position: absolute;
-  left: 16px;
-  top: 11px;
-  color: var(--sun);
+.event__text {
+  font-size: 0.94rem;
+  color: var(--ink-2);
 }
 
-/* ——— racket service (the spinning ball sits behind it) ——— */
-.service {
+/* ——— celebrations (the spinning ball sits behind it) ——— */
+.venue {
   min-height: 135vh;
   display: flex;
   align-items: center;
 }
-.service > .container {
+.venue > .container {
   width: 100%;
 }
-.services {
+.venue__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
   margin-top: clamp(32px, 4vw, 48px);
 }
-.service-card {
-  padding: 22px 22px 24px;
+.venue__card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px;
 }
-.service-card__num {
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--sun);
-}
-.service-card .h3 {
-  margin-top: 8px;
-}
-.service-card p {
-  margin-top: 6px;
-  font-size: 0.94rem;
+.venue__card p:last-child {
+  font-size: 0.96rem;
   color: var(--ink-2);
 }
-.service__note {
-  margin-top: 18px;
-  color: var(--ink-3);
+.venue__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
 }
-.inline-link {
-  color: var(--sun-soft);
-  font-weight: 600;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+.venue__photos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: clamp(170px, 17vw, 240px);
+  gap: 12px;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.venue__photo {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #2a1418;
+}
+.venue__photo--tall {
+  grid-row: span 2;
+}
+.venue__photo--wide {
+  grid-column: span 2;
+}
+.venue__photo figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(8, 5, 6, 0.66);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 0.8rem;
+  color: var(--ink-2);
+}
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px 24px;
+}
+.review p {
+  font-size: 1rem;
+  color: var(--ink);
+}
+.review span {
+  margin-top: auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
 }
 
 /* ——— enquiry ——— */
@@ -827,6 +1020,37 @@ html.menu-open .announce {
 .enquiry {
   display: grid;
   gap: 16px;
+}
+.enquiry__modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: rgba(8, 5, 6, 0.45);
+}
+.enquiry__mode {
+  min-height: 42px;
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-2);
+  font-weight: 600;
+  font-size: 0.93rem;
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.enquiry__mode:hover {
+  color: var(--ink);
+}
+.enquiry__mode[aria-selected="true"] {
+  background: var(--sun);
+  color: var(--vs-accent-ink);
 }
 .enquiry__set {
   margin: 0;
@@ -903,7 +1127,7 @@ html.menu-open .announce {
   padding: 12px 14px;
   border: 1px solid var(--line-strong);
   border-radius: 10px;
-  background: rgba(5, 10, 8, 0.5);
+  background: rgba(8, 5, 6, 0.5);
   color: var(--ink);
   font: inherit;
   font-size: 1rem;
@@ -917,7 +1141,7 @@ html.menu-open .announce {
 .input:focus {
   outline: none;
   border-color: var(--sun);
-  box-shadow: 0 0 0 3px rgba(242, 207, 110, 0.18);
+  box-shadow: 0 0 0 3px rgba(223, 226, 78, 0.18);
 }
 .input--area {
   min-height: 110px;
@@ -926,8 +1150,8 @@ html.menu-open .announce {
 .enquiry__error {
   padding: 10px 14px;
   border-radius: 10px;
-  background: rgba(224, 112, 60, 0.14);
-  border: 1px solid rgba(224, 112, 60, 0.45);
+  background: rgba(208, 69, 63, 0.14);
+  border: 1px solid rgba(208, 69, 63, 0.45);
   color: #ffd6c2;
   font-size: 0.93rem;
 }
@@ -960,6 +1184,9 @@ html.menu-open .announce {
 }
 .final__head {
   margin-bottom: clamp(40px, 5vw, 64px);
+}
+.final__head .h2 em {
+  display: block;
 }
 .visit {
   display: grid;
@@ -1010,17 +1237,6 @@ html.menu-open .announce {
   font-weight: 600;
   white-space: nowrap;
 }
-.bank {
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-  font-size: 0.94rem;
-  color: var(--ink-2);
-  font-variant-numeric: tabular-nums;
-}
-.bank__iban {
-  color: var(--ink-3);
-}
 .visit__actions {
   display: flex;
   gap: 12px;
@@ -1028,7 +1244,7 @@ html.menu-open .announce {
   padding-top: 24px;
 }
 .visit__actions .btn {
-  flex: 1;
+  flex: 1 1 auto;
 }
 .visit__map {
   min-height: 440px;
@@ -1042,16 +1258,11 @@ html.menu-open .announce {
   filter: invert(0.9) hue-rotate(150deg) saturate(0.5) brightness(0.92) contrast(0.95);
 }
 
-/* ——— subpages (404) ——— */
-.page-head {
-  padding: clamp(56px, 8vw, 112px) 0 clamp(80px, 10vw, 140px);
-}
-
 /* ——— footer ——— */
 .footer {
   /* room at the bottom so the fixed A/B switch never covers the last line */
   padding: 64px 0 calc(110px + env(safe-area-inset-bottom));
-  border-top: 1px solid rgba(244, 241, 234, 0.1);
+  border-top: 1px solid rgba(245, 242, 234, 0.1);
   font-size: 0.94rem;
 }
 .footer__grid {
@@ -1103,11 +1314,6 @@ html.menu-open .announce {
   color: var(--ink-3);
   font-size: 0.84rem;
 }
-/* ——— phone action bar ——— */
-.actionbar {
-  display: none;
-}
-
 /* ——— reveal ——— */
 html.js-reveal .reveal {
   opacity: 0;
@@ -1138,40 +1344,84 @@ html.js-reveal .reveal--img.is-in img {
 }
 
 
-.footer__brand img {
-  width: 96px;
-  height: 96px;
+/* ——— phone action bar ——— */
+.actionbar {
+  display: none;
 }
 
-.groups .group:nth-child(2),
-.coaches .coachcard:nth-child(2),
-.services .service-card:nth-child(2),
-.services .service-card:nth-child(5) {
+.footer__logo {
+  display: inline-block;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--paper);
+}
+.footer__logo img {
+  width: 168px;
+  height: auto;
+}
+.social {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+.social a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-2);
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+.social a:hover {
+  background: var(--sun);
+  border-color: var(--sun);
+  color: var(--vs-accent-ink);
+}
+.social svg {
+  width: 18px;
+  height: 18px;
+}
+.contact__second {
+  display: block;
+  margin-top: 2px;
+}
+
+.sportlist .sport:nth-child(even),
+.booking__grid .booking__card:nth-child(2),
+.rules .rule:nth-child(even),
+.coaches .coachcard:nth-child(3n + 2),
+.eventlist .event:nth-child(even),
+.venue__grid .venue__card:nth-child(2),
+.reviews .review:nth-child(2) {
   transition-delay: 80ms;
 }
-.groups .group:nth-child(3),
-.coaches .coachcard:nth-child(3),
-.services .service-card:nth-child(3),
-.services .service-card:nth-child(6) {
+.coaches .coachcard:nth-child(3n),
+.reviews .review:nth-child(3) {
   transition-delay: 160ms;
 }
 
 /* ——— shapes need room: move the text, not the dots (desktop) ——— */
 @media (min-width: 901px) {
-  /* the dot court stands on the right while the courses scroll past */
-  #tanfolyamok > .container {
+  /* the dot court stands on the right while the sports scroll past */
+  #sportagak > .container {
     max-width: none;
     padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2));
     padding-right: 30vw;
   }
-  /* the racket stands on the left of the coaches */
-  #edzok > .container {
+  /* the racket stands on the left of the booking */
+  #foglalas > .container {
     max-width: none;
     padding-left: 30vw;
     padding-right: max(var(--gutter), calc((100vw - var(--max)) / 2));
   }
-  /* the crest forms on the right beside the club history */
-  #tortenet > .container {
+  /* the ball (made of the logo's dots) forms on the right beside coaching, and stays for the events */
+  #oktatas > .container,
+  #esemenyek > .container {
     max-width: none;
     padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2));
     padding-right: 40vw;
@@ -1189,25 +1439,23 @@ html.js-reveal .reveal--img.is-in img {
   .footer__grid {
     grid-template-columns: 1fr 1fr;
   }
-  .services {
+  .extras {
     grid-template-columns: 1fr 1fr;
+    gap: 18px 20px;
   }
 }
 @media (max-width: 1200px) and (min-width: 901px) {
-  .group__list,
-  .coaches {
+  .sportlist,
+  .booking__grid,
+  .eventlist,
+  .steps {
     grid-template-columns: 1fr;
   }
-  .coachcard {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 0 20px;
+  .coaches {
+    grid-template-columns: 1fr 1fr;
   }
-  .coachcard__photo {
-    grid-row: span 5;
-  }
-  .coachcard__name {
-    margin-top: 0;
+  .kids {
+    grid-template-columns: 160px minmax(0, 1fr);
   }
 }
 
@@ -1243,14 +1491,18 @@ html.js-reveal .reveal--img.is-in img {
     font-size: 1.15rem;
   }
   .hero__row,
-  .split,
   .visit,
-  .family__card,
-  .signup__grid {
+  .signup__grid,
+  .booking__grid,
+  .venue__grid,
+  .reviews {
     grid-template-columns: 1fr;
   }
   .hero__row {
     gap: 28px;
+  }
+  .hero__media {
+    aspect-ratio: 16 / 10;
   }
   .facts {
     grid-template-columns: 1fr 1fr;
@@ -1261,8 +1513,23 @@ html.js-reveal .reveal--img.is-in img {
     border-left: 0;
   }
   .coaches {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 14px;
+  }
+  .venue {
+    min-height: 0;
+    display: block;
+  }
+  .venue__photos {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 150px;
+  }
+  .venue__photo--tall {
+    grid-row: span 2;
+  }
+  .venue__photo--wide {
+    grid-column: 1 / -1;
+    grid-row: span 1;
   }
   .visit__map {
     min-height: 0;
@@ -1282,8 +1549,8 @@ html.js-reveal .reveal--img.is-in img {
     grid-template-columns: 1fr 1.5fr;
     gap: 10px;
     padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
-    background: rgba(5, 10, 8, 0.92);
-    border-top: 1px solid rgba(244, 241, 234, 0.1);
+    background: rgba(12, 6, 8, 0.92);
+    border-top: 1px solid rgba(245, 242, 234, 0.1);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
@@ -1298,23 +1565,40 @@ html.js-reveal .reveal--img.is-in img {
 }
 
 @media (max-width: 640px) {
-  .group__list,
-  .services,
+  .sportlist,
+  .rules,
+  .steps,
+  .eventlist,
   .enquiry__row {
     grid-template-columns: 1fr;
   }
-  .timeline__item {
+  .kids {
     grid-template-columns: 1fr;
-    gap: 2px;
+  }
+  .kids__photo {
+    aspect-ratio: 16 / 10;
+  }
+  .kids > div {
+    padding: 0 8px 10px;
   }
 }
 
 @media (max-width: 520px) {
-  .course,
-  .service-card,
-  .visit__info,
-  .team {
+  .enquiry__modes {
+    border-radius: 16px;
+  }
+  .enquiry__mode {
+    border-radius: 12px;
+  }
+  .sport,
+  .booking__card,
+  .event,
+  .venue__card,
+  .visit__info {
     padding: 20px 18px;
+  }
+  .extras {
+    grid-template-columns: 1fr;
   }
   .visit__actions {
     flex-wrap: wrap;
