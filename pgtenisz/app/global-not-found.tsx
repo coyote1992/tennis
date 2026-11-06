@@ -4,7 +4,7 @@ import { Spectral, Work_Sans } from "next/font/google";
 import "./not-found.css";
 
 // same options as version A's layout (only preload differs), so the routes don't pick up extra preloads
-const serif = Spectral({ subsets: ["latin", "latin-ext"], weight: ["400", "500"], style: ["normal", "italic"], variable: "--font-serif", display: "swap", preload: false });
+const serif = Spectral({ subsets: ["latin", "latin-ext"], weight: ["400"], style: ["normal", "italic"], variable: "--font-serif", display: "swap", preload: false });
 const sans = Work_Sans({ subsets: ["latin", "latin-ext"], variable: "--font-sans", display: "swap", preload: false });
 
 export const metadata: Metadata = {

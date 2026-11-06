@@ -55,7 +55,7 @@ export default function BHome() {
           <figure className="hero__media reveal reveal--img">
             <Image
               src="/img/csaladi-nap.jpg"
-              alt="A PG Tenisz játékosai, edzői és családjai közös fotón a salakpályán"
+              alt="Csoportkép a PG Tenisz játékosaival a salakpályán"
               fill
               priority
               sizes="(max-width: 1260px) 100vw, 1200px"

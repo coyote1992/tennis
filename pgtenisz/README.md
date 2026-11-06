@@ -9,8 +9,10 @@ A Klasszikus / B Modern") flips between them and keeps your place: both pages us
   gold, Spectral + Work Sans, Roman-numeral chapters, arched coach portraits, a league table of the
   teams by season, an honours board of the 2026 results, a club diary, the 1% tax support and the
   supporters. Code: `app/(a)`, `components/a`.
-- **B — Modern** (`/b`): the dot-space style of the other club sites (kit in `kits/dot-space`). Code:
-  `app/(b)`, `components/b`; choreography in `components/b/space/pgtenisz-config.ts`.
+- **B — Modern** (`/b`): the dot-space style of the other club sites (kit in `kits/dot-space`), Sora +
+  Inter, deep green night with the logo's yellow. Code: `app/(b)`, `components/b`. Choreography in
+  `components/b/space/pgtenisz-config.ts`: court → racket → the PG mark in dots
+  (`public/img/pg-jel-pontok.png`) beside the results → ball → black hole.
 
 The versions have separate root layouts (route groups); `app/global-not-found.tsx` is the shared 404
 (needs `experimental.globalNotFound`) with its own small stylesheet (`app/not-found.css`), so the routes

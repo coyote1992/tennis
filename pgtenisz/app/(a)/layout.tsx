@@ -7,7 +7,7 @@ import "./a.css";
 
 const serif = Spectral({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
+  weight: ["400"],
   style: ["normal", "italic"],
   variable: "--font-serif",
   display: "swap",
