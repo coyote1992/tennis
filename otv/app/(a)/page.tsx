@@ -61,7 +61,7 @@ export default function Home() {
             <a href="#foglalas" className="btn btn--accent">
               Foglalj pályát <Arrow />
             </a>
-            <a href="#oktatas" className="btn btn--ghost">
+            <a href="#jelentkezes" className="btn btn--ghost">
               Ingyenes gyerek-próbaedzés
             </a>
           </div>
