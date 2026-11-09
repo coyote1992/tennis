@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { CLUB } from "@/lib/site";
-import { IconExternal, IconPhone } from "./icons";
+import { CLUB, HOURS } from "@/lib/site";
+import { IconPhone } from "./icons";
 import { NAV_B } from "./nav";
 
 export function Header() {
@@ -31,10 +31,10 @@ export function Header() {
     <>
       <div className="announce">
         <div className="container announce__inner">
-          <span className="announce__place">
-            {CLUB.town} · {CLUB.region}
+          <span className="announce__place">Hűvösvölgy · Szép Juhászné út</span>
+          <span className="announce__hours">
+            H–P {HOURS[0].time} · Szo–V {HOURS[1].time}
           </span>
-          <span className="announce__hours">{CLUB.hours}</span>
           <span className="announce__tel">
             <a href={CLUB.phoneHref} className="announce__phone">
               {CLUB.phone}
@@ -44,11 +44,11 @@ export function Header() {
       </div>
       <header className={`header${solid ? " header--solid" : ""}${open ? " header--open" : ""}`}>
         <div className="container header__inner">
-          <a href="/b" className="brand" onClick={close} aria-label="Tennis Club Szigliget – kezdőlap">
-            <Image src="/img/logo.png" alt="" width={608} height={532} className="brand__logo" priority />
+          <a href="/b" className="brand" onClick={close} aria-label="Szép Juhászné Teniszklub – kezdőlap">
+            <Image src="/img/logo-vilagos.png" alt="" width={512} height={512} className="brand__logo" priority />
             <span className="brand__name">
-              Tennis Club
-              <small>Szigliget</small>
+              Szép Juhászné
+              <small>Teniszklub</small>
             </span>
           </a>
 
@@ -61,11 +61,8 @@ export function Header() {
           </nav>
 
           <div className="header__cta">
-            <a href={CLUB.phoneHref} className="btn btn--ghost btn--sm header__phone">
+            <a href={CLUB.phoneHref} className="btn btn--accent btn--sm">
               <IconPhone /> {CLUB.phone}
-            </a>
-            <a href={CLUB.booking} target="_blank" rel="noopener noreferrer" className="btn btn--accent btn--sm">
-              Pályafoglalás <IconExternal />
             </a>
           </div>
 
@@ -91,17 +88,15 @@ export function Header() {
             ))}
           </nav>
           <div className="container mobile-menu__foot">
-            <a href={CLUB.booking} target="_blank" rel="noopener noreferrer" className="btn btn--accent btn--block" onClick={close}>
-              Online pályafoglalás <IconExternal />
-            </a>
-            <a href={CLUB.phoneHref} className="btn btn--ghost btn--block">
-              <IconPhone /> {CLUB.phone}
+            <a href={CLUB.phoneHref} className="btn btn--accent btn--block">
+              <IconPhone /> Pályafoglalás: {CLUB.phone}
             </a>
             <p className="mobile-menu__hours">
-              <span>{CLUB.hours}</span>
-              <span>
-                {CLUB.town} · {CLUB.region}
-              </span>
+              {HOURS.map((h) => (
+                <span key={h.days}>
+                  {h.days}: {h.time}
+                </span>
+              ))}
             </p>
           </div>
         </div>

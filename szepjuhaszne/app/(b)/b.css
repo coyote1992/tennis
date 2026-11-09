@@ -1,41 +1,41 @@
 /* ==========================================================================
-   Tennis Club Szigliget — version B (dot-space)
-   Dark "space" theme in the club roundel's colours: an indigo Balaton night from the lake band, the
-   roundel's gold as the accent (buttons with dark ink, highlights), a warm cream from its white for
-   text, the lake indigo paled for labels, and court clay only in small marks. Sora for headings,
-   Inter for text.
+   Szép Juhászné Teniszklub — version B (dot-space)
+   Dark "space" theme from the club's logo green: a deep forest night (Hűvösvölgy at dusk), the
+   logo green lifted for labels and dots, a warm brass from the clubhouse vitrines as the accent
+   (buttons with dark ink, highlights), cream text, and court clay only in small marks. Sora for
+   headings, Inter for text.
    ========================================================================== */
 
 :root {
-  --vs-accent: #e8b63e;
-  --vs-accent-ink: #1a1204;
+  --vs-accent: #e2bb68;
+  --vs-accent-ink: #15110a;
 
-  /* sky behind the dots: the roundel's indigo (the lake band), deepened to a Balaton night */
-  --space-sky-top: #2a2170;
-  --space-sky-mid: #150d42;
-  --space-sky-bottom: #08051f;
+  /* sky behind the dots: the logo green, deepened to a forest night */
+  --space-sky-top: #12402d;
+  --space-sky-mid: #0a2419;
+  --space-sky-bottom: #04110b;
 
-  --deep: #07041a;
-  --deep-2: #150e40;
-  --sun: #f2c95c; /* accent for text on dark: the roundel's gold, lifted */
-  --sun-hi: #ffd877;
-  --sun-soft: #f7dc9a;
-  --acc: #e8b63e; /* button gold, with dark ink */
-  --acc-hi: #f4c650;
-  --acc-ink: #1a1204;
-  --sky: #b4b8f7; /* labels and eyebrows: the lake indigo, paled */
-  --blue: #8b93f0;
+  --deep: #03100a;
+  --deep-2: #0b2319;
+  --sun: #e9c77b; /* accent for text on dark: vitrine brass */
+  --sun-hi: #f5d892;
+  --sun-soft: #f0dcae;
+  --acc: #e2bb68; /* button brass, with dark ink */
+  --acc-hi: #efc977;
+  --acc-ink: #15110a;
+  --sky: #7fe0aa; /* labels and eyebrows: the logo green, lifted */
+  --green: #3fd18a;
   --clay: #d9703f; /* court clay, sparingly */
   --clay-deep: #b9572a;
-  --paper: #f3efe2;
+  --paper: #f2eddd;
 
-  --ink: #f3efe2;
-  --ink-2: rgba(243, 239, 226, 0.8);
-  --ink-3: rgba(243, 239, 226, 0.6);
-  --line: rgba(243, 239, 226, 0.13);
-  --line-strong: rgba(243, 239, 226, 0.34);
-  --glass: rgba(16, 10, 48, 0.74);
-  --glass-hi: rgba(243, 239, 226, 0.06);
+  --ink: #f2eddd;
+  --ink-2: rgba(242, 237, 221, 0.8);
+  --ink-3: rgba(242, 237, 221, 0.6);
+  --line: rgba(242, 237, 221, 0.13);
+  --line-strong: rgba(242, 237, 221, 0.34);
+  --glass: rgba(6, 24, 16, 0.74);
+  --glass-hi: rgba(242, 237, 221, 0.06);
 
   --font-display: var(--font-display-face), "Helvetica Neue", Arial, sans-serif;
   --font-body: var(--font-body-face), "Helvetica Neue", Arial, sans-serif;
@@ -198,7 +198,7 @@ button {
   height: 10px;
   border-radius: 50%;
   background: currentColor;
-  box-shadow: 14px 0 0 -3px rgba(232, 182, 62, 0.6);
+  box-shadow: 14px 0 0 -3px rgba(226, 187, 104, 0.6);
   margin-right: 10px;
 }
 .lead {
@@ -256,7 +256,7 @@ button {
   border-color: var(--line-strong);
 }
 .btn--ghost:hover {
-  --btn-bg: rgba(243, 239, 226, 0.08);
+  --btn-bg: rgba(242, 237, 221, 0.08);
 }
 .btn--sm {
   min-height: 42px;
@@ -282,7 +282,7 @@ button {
   z-index: 41;
   font-size: 0.82rem;
   color: var(--ink-3);
-  border-bottom: 1px solid rgba(243, 239, 226, 0.07);
+  border-bottom: 1px solid rgba(242, 237, 221, 0.07);
 }
 .announce__inner {
   display: flex;
@@ -319,8 +319,8 @@ button {
     box-shadow 0.35s var(--ease);
 }
 .header--solid:not(.header--open) {
-  background: rgba(10, 6, 34, 0.8);
-  box-shadow: 0 1px 0 rgba(243, 239, 226, 0.08);
+  background: rgba(4, 17, 11, 0.8);
+  box-shadow: 0 1px 0 rgba(242, 237, 221, 0.08);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -534,7 +534,7 @@ html.menu-open .announce {
   aspect-ratio: 2200 / 814;
   border-radius: var(--radius);
   overflow: hidden;
-  background: #1a1248;
+  background: #0d2a1e;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
 }
 .hero__caption {
@@ -543,7 +543,7 @@ html.menu-open .announce {
   bottom: 16px;
   padding: 7px 14px;
   border-radius: 999px;
-  background: rgba(10, 6, 34, 0.62);
+  background: rgba(4, 17, 11, 0.62);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-size: 0.8rem;
@@ -604,15 +604,15 @@ html.menu-open .announce {
   align-self: flex-start;
   padding: 4px 11px;
   border-radius: 999px;
-  background: rgba(139, 147, 240, 0.18);
-  color: #d9dcfb;
+  background: rgba(127, 224, 170, 0.18);
+  color: #d4f3e1;
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 .tag--accent {
-  background: rgba(232, 182, 62, 0.16);
+  background: rgba(226, 187, 104, 0.16);
   color: var(--sun-soft);
 }
 .chips {
@@ -673,7 +673,7 @@ html.menu-open .announce {
   aspect-ratio: 16 / 9;
   border-radius: var(--radius);
   overflow: hidden;
-  background: #1a1248;
+  background: #0d2a1e;
 }
 .snap figcaption {
   position: absolute;
@@ -684,57 +684,14 @@ html.menu-open .announce {
   max-width: calc(100% - 24px);
   padding: 6px 12px;
   border-radius: 14px;
-  background: rgba(10, 6, 34, 0.72);
+  background: rgba(4, 17, 11, 0.72);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-size: 0.8rem;
   line-height: 1.35;
   color: var(--ink-2);
 }
-.signup__photo {
-  margin-top: 28px;
-  aspect-ratio: 3 / 2;
-}
 
-/* ——— offer request ——— */
-.signup__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(28px, 5vw, 72px);
-  align-items: start;
-}
-.signup__points {
-  display: grid;
-  gap: 10px;
-  margin-top: 26px;
-}
-.signup__points li {
-  position: relative;
-  padding-left: 22px;
-  color: var(--ink-2);
-}
-.signup__points li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--sun);
-}
-.signup__points a {
-  color: var(--ink);
-  font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.signup__points a:hover {
-  color: var(--sun-soft);
-}
-.signup__form {
-  padding: clamp(22px, 3vw, 34px);
-}
 .enquiry {
   display: grid;
   gap: 16px;
@@ -749,7 +706,7 @@ html.menu-open .announce {
   padding: 4px;
   border-radius: 999px;
   border: 1px solid var(--line-strong);
-  background: rgba(10, 6, 34, 0.45);
+  background: rgba(4, 17, 11, 0.45);
 }
 .enquiry__mode {
   min-height: 42px;
@@ -848,7 +805,7 @@ html.menu-open .announce {
   padding: 12px 14px;
   border: 1px solid var(--line-strong);
   border-radius: 10px;
-  background: rgba(10, 6, 34, 0.5);
+  background: rgba(4, 17, 11, 0.5);
   color: var(--ink);
   font: inherit;
   font-size: 1rem;
@@ -862,7 +819,7 @@ html.menu-open .announce {
 .input:focus {
   outline: none;
   border-color: var(--sun);
-  box-shadow: 0 0 0 3px rgba(232, 182, 62, 0.26);
+  box-shadow: 0 0 0 3px rgba(226, 187, 104, 0.26);
 }
 .input[type="date"] {
   color-scheme: dark;
@@ -900,8 +857,8 @@ html.menu-open .announce {
 .enquiry__done {
   padding: 12px 14px;
   border-radius: 10px;
-  background: rgba(139, 147, 240, 0.12);
-  border: 1px solid rgba(139, 147, 240, 0.42);
+  background: rgba(127, 224, 170, 0.12);
+  border: 1px solid rgba(127, 224, 170, 0.42);
   color: var(--ink-2);
   font-size: 0.93rem;
 }
@@ -1017,7 +974,7 @@ html.menu-open .announce {
 .footer {
   /* room at the bottom so the fixed A/B switch never covers the last line */
   padding: 64px 0 calc(110px + env(safe-area-inset-bottom));
-  border-top: 1px solid rgba(243, 239, 226, 0.1);
+  border-top: 1px solid rgba(242, 237, 221, 0.1);
   font-size: 0.94rem;
 }
 .footer__grid {
@@ -1143,8 +1100,8 @@ html.space {
   gap: 10px;
 }
 .tag--clay {
-  background: rgba(232, 182, 62, 0.16);
-  color: #f7dc9a;
+  background: rgba(226, 187, 104, 0.16);
+  color: #f0dcae;
 }
 
 
@@ -1197,480 +1154,442 @@ html.space {
   white-space: nowrap;
 }
 
-/* ——— booking (the racket stands on the right) ——— */
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: clamp(32px, 4vw, 48px);
+/* ——— hero headline: two sentences, so a little smaller than the kit's default ——— */
+.h1 {
+  font-size: clamp(2.5rem, 5.4vw, 4.9rem);
 }
-.step {
-  display: grid;
-  gap: 10px;
-  align-content: start;
-  padding: 24px 22px 26px;
-  color: var(--ink-2);
-  font-size: 0.96rem;
+.hero__top {
+  max-width: 1120px;
 }
-.step .h3 {
-  color: var(--ink);
-}
-.step__num {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: 2.4rem;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--sun);
-}
-.rate {
-  display: grid;
+.checks--grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 14px;
+  gap: 10px 24px;
+  margin-top: 26px;
+  max-width: 36em;
+}
+
+/* ——— courts: booking by phone, hours ——— */
+.book {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  margin-top: clamp(32px, 4vw, 48px);
   overflow: hidden;
 }
-.rate__col {
+.book__main {
   display: grid;
-  gap: 8px;
-  align-content: start;
-  padding: 26px 26px 28px;
+  justify-items: start;
+  gap: 10px;
+  padding: 28px 28px 30px;
+  background: linear-gradient(160deg, rgba(226, 187, 104, 0.16), rgba(6, 24, 16, 0) 70%);
 }
-.rate__col--member {
-  border-left: 1px solid var(--line);
-  background: linear-gradient(160deg, rgba(232, 182, 62, 0.14), rgba(16, 10, 48, 0) 70%);
+.book__lead {
+  color: var(--ink-2);
 }
-.rate__price {
+.book__phone {
+  margin: 2px 0 8px;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
-  color: var(--ink);
-}
-.rate__col--member .rate__price {
   color: var(--sun);
-}
-.rate__price small {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  color: var(--ink-3);
-}
-.rate__note {
-  color: var(--ink-2);
-  font-size: 0.95rem;
-}
-.rate__note a {
-  color: var(--sun-soft);
-  font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
 }
-.rate__note a:hover {
-  color: var(--sun);
+.book__phone:hover {
+  color: var(--sun-hi);
 }
-.rules {
-  margin-top: 14px;
-  padding: 22px 26px 24px;
-}
-.rules__list {
+.book__hours {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px 28px;
-  margin-top: 16px;
-}
-.rules__list li {
-  display: grid;
-  grid-template-columns: 18px minmax(0, 1fr);
-  gap: 12px;
-  color: var(--ink-2);
-  font-size: 0.95rem;
-}
-.rules__list svg {
-  margin-top: 3px;
-  color: var(--sun);
-}
-.booking__foot {
-  display: grid;
-  gap: 18px;
-  margin-top: 26px;
-}
-.booking-ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.langs {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 14px;
-  color: var(--ink-3);
-  font-size: 0.92rem;
-}
-.langs svg {
-  color: var(--sky);
-}
-.langs a {
-  color: var(--ink);
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(232, 182, 62, 0.6);
-}
-.langs a:hover {
-  color: var(--sun-soft);
+  align-content: start;
+  gap: 8px;
+  padding: 28px 28px 30px;
+  border-left: 1px solid var(--line);
 }
 
-/* ——— membership (the court stands on the left) ——— */
-.member-cards {
+/* ——— winter prices: a table on desktop, one card per time band on phones ——— */
+.prices {
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.prices__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 20px;
+  margin-bottom: 16px;
+}
+.prices__season {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  letter-spacing: -0.015em;
+}
+.prices__season span {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  color: var(--ink-3);
+}
+.price-table {
+  overflow: hidden;
+}
+.price-table__row {
   display: grid;
+  grid-template-columns: minmax(0, 1.25fr) repeat(3, minmax(0, 1fr));
+  align-items: center;
+  border-top: 1px solid var(--line);
+}
+.price-table__row > span {
+  padding: 16px 20px;
+}
+.price-table__row--head {
+  border-top: 0;
+  background: rgba(127, 224, 170, 0.08);
+}
+.price-table__row--head > span {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sky);
+}
+.price-table__period {
+  font-weight: 600;
+  color: var(--ink);
+}
+.price-table__cell {
+  display: grid;
+  gap: 2px;
+}
+.price-table__cell strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.price-table__cell small {
+  font-size: 0.86rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.price-table__cell--single strong {
+  color: var(--sun);
+}
+.price-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-}
-.member-cards--family {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: clamp(32px, 4vw, 48px);
-}
-.member-cards--single {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 14px;
 }
-.member-card {
+.price-note {
   display: grid;
   gap: 8px;
   align-content: start;
-  padding: 24px 22px 24px;
-}
-.member-card__who {
+  padding: 22px 24px 24px;
   color: var(--ink-2);
-  font-size: 0.98rem;
 }
-.member-card__price {
-  margin-top: 6px;
+.price-note--accent {
+  border-color: rgba(226, 187, 104, 0.5);
+  background: linear-gradient(160deg, rgba(226, 187, 104, 0.16), rgba(6, 24, 16, 0.82) 62%);
+}
+.price-note__price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--sun);
+}
+
+/* ——— tennis school + camp ——— */
+.school__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 14px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.school__photo {
+  aspect-ratio: auto;
+  min-height: 300px;
+}
+.school__card {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 20px;
+  padding: 26px 26px 28px;
+}
+.person {
+  display: grid;
+  gap: 2px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  width: 100%;
+}
+.person .label {
+  margin-bottom: 6px;
+}
+.person__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+.person__line {
+  color: var(--ink-2);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.person__line:hover {
+  color: var(--sun-soft);
+}
+.camp {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  margin-top: 14px;
+  overflow: hidden;
+}
+.camp__text {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  padding: 26px 26px 28px;
+}
+.camp__text .h3 {
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+}
+.camp__side {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 26px 26px 28px;
+  border-left: 1px solid var(--line);
+  background: linear-gradient(200deg, rgba(226, 187, 104, 0.12), rgba(6, 24, 16, 0) 70%);
+}
+.camp__price {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+}
+.camp__price strong {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(2rem, 3vw, 2.6rem);
   line-height: 1;
   letter-spacing: -0.03em;
-  color: var(--ink);
-  white-space: nowrap;
-}
-.member-card__price small {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  color: var(--ink-3);
-}
-.member-card--main {
-  border-color: rgba(232, 182, 62, 0.6);
-  background: linear-gradient(160deg, rgba(232, 182, 62, 0.18), rgba(16, 10, 48, 0.82) 62%);
-}
-.member-card--main .member-card__price {
   color: var(--sun);
 }
-.member-card--small {
-  padding: 20px 20px 22px;
-}
-.member-card--small .member-card__price {
-  font-size: clamp(1.6rem, 2.2vw, 2rem);
-}
-/* the price in court hours, one dot per hour */
-.hours-eq {
-  display: grid;
-  gap: 10px;
-  margin-top: 12px;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-}
-.hour-dots {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  max-width: 220px;
-}
-.hour-dots i {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--sun);
-  box-shadow: 0 0 6px rgba(242, 201, 92, 0.55);
-  opacity: 0.85;
-}
-.member-card--small .hour-dots i {
-  width: 6px;
-  height: 6px;
-  background: var(--paper);
-  box-shadow: 0 0 5px rgba(243, 239, 226, 0.35);
-  opacity: 0.7;
-}
-html.js-reveal .member-card .hour-dots i {
-  opacity: 0;
-  transform: scale(0.4);
-  transition:
-    opacity 0.5s var(--ease),
-    transform 0.5s var(--ease);
-}
-html.js-reveal .member-card.is-in .hour-dots i {
-  opacity: 0.85;
-  transform: none;
-}
-html.js-reveal .member-card--small.is-in .hour-dots i {
-  opacity: 0.7;
-}
-.hours-eq__text {
-  font-size: 0.88rem;
+.camp__price span:not(.tag) {
+  font-size: 0.9rem;
   color: var(--ink-3);
 }
-.hours-eq__text strong {
-  color: var(--ink);
-  font-weight: 600;
+.camp__ask {
+  color: var(--ink-2);
 }
-.member-notes {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 18px 32px;
-  align-items: center;
-  margin-top: 14px;
-  padding: 24px 26px;
-}
-.member-notes__ctas {
+.camp__ctas {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-/* ——— courts and clubhouse (the club's mark forms on the right) ——— */
-.checks--grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 24px;
-  margin-top: 26px;
-  max-width: 34em;
-}
-.courts__grid {
+/* ——— the collection (the club's mark forms on the right) ——— */
+.permanent {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 22px minmax(0, 1fr);
   gap: 14px;
-  margin-top: clamp(36px, 4.5vw, 56px);
-  height: clamp(380px, 38vw, 520px);
+  margin-top: 28px;
+  padding: 20px 22px;
+  color: var(--ink-2);
+  border-color: rgba(226, 187, 104, 0.45);
 }
-.courts__grid .snap {
-  aspect-ratio: auto;
+.permanent svg {
+  margin-top: 3px;
+  color: var(--sun);
 }
-.courts__big {
-  grid-row: 1 / span 2;
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 0;
+  margin-top: clamp(32px, 4vw, 44px);
 }
-.visitors {
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 39px;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: linear-gradient(var(--sun), rgba(226, 187, 104, 0.1));
+}
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 18px;
+  padding: 14px 0;
+}
+.timeline__year {
+  position: relative;
+  z-index: 1;
+  justify-self: center;
+  align-self: start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(226, 187, 104, 0.6);
+  background: var(--deep-2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  color: var(--sun);
+}
+.timeline__item .h3 {
+  margin-top: 2px;
+}
+.timeline__item p {
+  margin-top: 4px;
+  color: var(--ink-2);
+  font-size: 0.96rem;
+}
+.objects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: clamp(32px, 4vw, 44px);
+}
+.object {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+.object__img {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+}
+.object__label {
+  display: grid;
+  gap: 2px;
+  padding-left: 12px;
+  border-left: 2px solid var(--sun);
+  font-size: 0.9rem;
+  color: var(--ink-3);
+}
+.object__label strong {
+  font-size: 0.98rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+.press {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  margin-top: clamp(28px, 3.5vw, 40px);
+}
+
+/* ——— programmes (the ball spins behind) ——— */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.program {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+}
+.program__img {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0d2a1e;
+}
+.program__body {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: 22px 24px 26px;
+  color: var(--ink-2);
+  font-size: 0.96rem;
+}
+.program__body .h3 {
+  color: var(--ink);
+}
+.welcome {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 14px 28px;
+  gap: 16px 28px;
   align-items: center;
   margin-top: 14px;
   padding: 22px 26px;
   color: var(--ink-2);
+  border-color: rgba(226, 187, 104, 0.45);
 }
-.visitors p:not(.label) {
-  margin-top: 8px;
-}
-
-/* ——— coaches ——— */
-.coach-cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: clamp(32px, 4vw, 48px);
-}
-.coach-card {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 16px 18px;
-  align-items: center;
-  padding: 24px 24px 24px;
-}
-.coach-card__mono {
-  display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 1px solid rgba(232, 182, 62, 0.55);
-  background: radial-gradient(circle at 35% 30%, rgba(232, 182, 62, 0.22), rgba(16, 10, 48, 0.2));
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: 1.4rem;
-  letter-spacing: 0.02em;
-  color: var(--sun);
-}
-.coach-card .h3 {
-  margin-top: 6px;
-  font-size: clamp(1.3rem, 1.8vw, 1.55rem);
-}
-.coach-card__phone {
-  display: inline-block;
-  margin-top: 4px;
-  color: var(--ink-2);
-  font-weight: 500;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.coach-card__phone:hover {
-  color: var(--sun-soft);
-}
-.coach-card__btn {
-  grid-column: 1 / -1;
-  justify-self: start;
-}
-.coaches__photo {
-  margin-top: 14px;
-  aspect-ratio: 16 / 7;
-}
-
-/* ——— Szigliget Open (the ball spins behind) ——— */
-.open-sec {
-  min-height: 135vh;
-}
-.open-sec .h2 em {
-  display: block;
-}
-.open-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 14px;
-  margin-top: clamp(32px, 4vw, 48px);
-}
-.open-card {
-  display: grid;
-  gap: 14px;
-  align-content: start;
-  padding: 26px 26px 28px;
-  color: var(--ink-2);
-}
-.open-card__sub {
-  margin-top: 10px;
-}
-.open-card__text {
-  color: var(--ink-2);
-}
-.events {
-  display: grid;
-}
-.events li {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 2px 16px;
-  padding: 11px 0;
-  border-bottom: 1px solid var(--line);
-}
-.events li:last-child {
-  border-bottom: 0;
-}
-.events strong {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.12rem;
-  letter-spacing: -0.015em;
+.welcome strong {
   color: var(--ink);
 }
-.events span {
-  font-size: 0.92rem;
-  color: var(--ink-3);
-}
-.fees {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-.fees li {
-  display: grid;
-  gap: 2px;
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--glass-hi);
-}
-.fees span {
-  font-size: 0.82rem;
-  color: var(--ink-3);
-}
-.fees strong {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: -0.015em;
-  color: var(--sun);
-  white-space: nowrap;
-}
-.entry {
-  display: grid;
-  gap: 6px;
-  font-size: 0.95rem;
-}
-.entry strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-.open-more {
+
+/* ——— about ——— */
+.about__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: 14px;
-  margin-top: 14px;
-}
-.open-photo {
-  aspect-ratio: auto;
-  min-height: 300px;
-}
-
-/* ——— contact: details + form, map below ——— */
-.visit {
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 5vw, 72px);
   align-items: start;
 }
-.visit__form {
-  display: grid;
-  gap: 18px;
-  padding: clamp(22px, 3vw, 32px);
-}
-.final .visit__map {
+.about .lead + .lead {
   margin-top: 16px;
-  height: 360px;
-  min-height: 0;
 }
-.final .visit__map iframe {
-  height: 100%;
+.people {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: clamp(28px, 3.5vw, 40px);
+}
+.person-card {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 22px 22px 24px;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+.person-card .h3 {
+  color: var(--ink);
+}
+.about__photo {
+  aspect-ratio: 3 / 4;
 }
 
 /* ——— shapes need room: move the text, not the dots (desktop) ——— */
 @media (min-width: 901px) {
-  /* the racket stands on the right while the booking steps scroll past */
-  #foglalas > .container {
+  /* the racket stands on the right while the courts and prices scroll past */
+  #palyak > .container {
     max-width: none;
     padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2));
     padding-right: 30vw;
   }
-  /* the court stands on the left of the memberships */
-  #tagsag > .container {
+  /* the court stands on the left of the tennis school */
+  #tenisziskola > .container {
     max-width: none;
     padding-left: 30vw;
     padding-right: max(var(--gutter), calc((100vw - var(--max)) / 2));
   }
-  /* the club's mark forms on the right of the courts heading and stays through the coaches */
-  :is(#palyak, #edzok) > .container {
+  /* the club's mark forms on the right of the collection heading and stays through it */
+  #kiallitas > .container {
     max-width: none;
     padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2));
-    padding-right: 40vw;
+    padding-right: 38vw;
   }
 }
 
 /* ——— tablet ——— */
-@media (max-width: 1360px) {
-  .header__phone {
-    display: none;
-  }
-}
-@media (max-width: 1200px) {
+@media (max-width: 1240px) {
   .announce__hours {
     display: none;
   }
@@ -1687,59 +1606,26 @@ html.js-reveal .member-card--small.is-in .hour-dots i {
   }
 }
 @media (max-width: 1400px) and (min-width: 901px) {
-  .steps,
-  .member-cards--family {
+  .book,
+  .school__grid,
+  .camp,
+  .price-notes {
     grid-template-columns: minmax(0, 1fr);
   }
-  .member-cards--single {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .member-card:not(.member-card--small) {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
-    column-gap: 22px;
-  }
-  .member-card:not(.member-card--small) .hours-eq {
-    grid-column: 2;
-    grid-row: 1 / span 3;
-    margin-top: 0;
-    padding-top: 0;
-    padding-left: 22px;
-    border-top: 0;
-    border-left: 1px solid var(--line);
-  }
-  .step {
-    grid-template-columns: auto minmax(0, 1fr);
-    column-gap: 20px;
-  }
-  .step__num {
-    grid-row: 1 / span 2;
-  }
-  .rate,
-  .rules__list,
-  .member-notes,
-  .visitors,
-  .coach-cards,
-  .checks--grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .rate__col--member {
+  .book__hours,
+  .camp__side {
     border-left: 0;
     border-top: 1px solid var(--line);
   }
-  .courts__grid {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto;
-    height: auto;
-  }
-  .courts__grid .snap {
+  .school__photo {
+    min-height: 0;
     aspect-ratio: 16 / 10;
   }
-  .courts__grid .courts__big {
-    grid-row: auto;
+  .objects {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
-  .courts__grid > :nth-child(3) {
-    display: none;
+  .checks--grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 @media (max-width: 1080px) {
@@ -1775,25 +1661,19 @@ html.js-reveal .member-card--small.is-in .hour-dots i {
   }
   .hero__row,
   .visit,
-  .steps,
-  .rate,
-  .rules__list,
-  .member-cards--family,
-  .member-notes,
-  .visitors,
-  .coach-cards,
-  .open-grid,
-  .open-more {
+  .book,
+  .school__grid,
+  .camp,
+  .program-grid,
+  .welcome,
+  .about__grid {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .member-cards--single {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .hero__row {
     gap: 24px;
   }
   .hero__media {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 11;
   }
   .facts {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1802,37 +1682,23 @@ html.js-reveal .member-card--small.is-in .hour-dots i {
     padding: 0 12px;
   }
   .fact__num {
-    font-size: 1.45rem;
+    font-size: 1.6rem;
   }
   .fact__label {
     font-size: 0.82rem;
   }
-  .rate__col--member {
+  .book__hours,
+  .camp__side {
     border-left: 0;
     border-top: 1px solid var(--line);
   }
-  .courts__grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: auto auto;
-    height: auto;
-  }
-  .courts__grid .courts__big {
-    grid-column: 1 / -1;
-    grid-row: auto;
+  .school__photo {
+    min-height: 0;
     aspect-ratio: 16 / 10;
   }
-  .courts__grid > :nth-child(n + 2) {
+  .about__photo {
+    max-width: 440px;
     aspect-ratio: 4 / 5;
-  }
-  .coaches__photo {
-    aspect-ratio: 16 / 10;
-  }
-  .open-sec {
-    min-height: 0;
-  }
-  .open-photo {
-    min-height: 0;
-    aspect-ratio: 4 / 3;
   }
   .final .visit__map {
     height: 280px;
@@ -1851,8 +1717,8 @@ html.js-reveal .member-card--small.is-in .hour-dots i {
     grid-template-columns: 1fr 1.5fr;
     gap: 10px;
     padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
-    background: rgba(9, 5, 30, 0.92);
-    border-top: 1px solid rgba(243, 239, 226, 0.1);
+    background: rgba(4, 15, 10, 0.92);
+    border-top: 1px solid rgba(242, 237, 221, 0.1);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
@@ -1867,43 +1733,107 @@ html.js-reveal .member-card--small.is-in .hour-dots i {
   }
 }
 
+@media (max-width: 700px) {
+  /* the price table becomes one card per time band */
+  .price-table {
+    background: none;
+    border: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    display: grid;
+    gap: 10px;
+    overflow: visible;
+  }
+  .price-table__row--head {
+    display: none;
+  }
+  .price-table__row {
+    grid-template-columns: minmax(0, 1fr);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--glass);
+    backdrop-filter: blur(12px) saturate(1.1);
+    -webkit-backdrop-filter: blur(12px) saturate(1.1);
+    overflow: hidden;
+  }
+  .price-table__row > span {
+    padding: 12px 18px;
+  }
+  .price-table__period {
+    padding-top: 16px !important;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: -0.015em;
+    background: rgba(127, 224, 170, 0.08);
+  }
+  .price-table__cell {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "label price" "label hour";
+    column-gap: 14px;
+    align-items: baseline;
+    border-top: 1px solid var(--line);
+  }
+  .price-table__cell::before {
+    content: attr(data-label);
+    grid-area: label;
+    align-self: center;
+    font-size: 0.86rem;
+    color: var(--ink-2);
+  }
+  .price-table__cell strong {
+    grid-area: price;
+    text-align: right;
+  }
+  .price-table__cell small {
+    grid-area: hour;
+    text-align: right;
+  }
+  .price-notes,
+  .objects,
+  .people {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (max-width: 640px) {
   .enquiry__row {
     grid-template-columns: minmax(0, 1fr);
   }
-  .booking-ctas .btn,
   .hero__ctas .btn,
-  .member-notes__ctas .btn {
+  .camp__ctas .btn {
     flex: 1 1 auto;
   }
   .checks--grid {
     grid-template-columns: minmax(0, 1fr);
   }
-  .fees {
+  .objects {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px;
+  }
+  .object__label {
+    font-size: 0.82rem;
+  }
+  .timeline::before {
+    left: 29px;
+  }
+  .timeline__item {
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 14px;
   }
 }
 
 @media (max-width: 520px) {
-  .step,
-  .rate__col,
-  .rules,
-  .member-card,
-  .member-notes,
-  .visitors,
-  .coach-card,
-  .open-card,
+  .book__main,
+  .book__hours,
+  .school__card,
+  .camp__text,
+  .camp__side,
+  .price-note,
+  .program__body,
+  .welcome,
+  .person-card,
   .visit__info {
     padding: 20px 18px;
-  }
-  .member-cards--single {
-    gap: 10px;
-  }
-  .member-card--small {
-    padding: 16px 14px 18px;
-  }
-  .member-card--small .member-card__price {
-    font-size: 1.45rem;
   }
   .visit__actions .btn {
     min-width: 0;
@@ -1917,6 +1847,9 @@ html.js-reveal .member-card--small.is-in .hour-dots i {
   }
   .brand__name {
     font-size: 1.12rem;
+  }
+  .welcome .btn {
+    width: 100%;
   }
 }
 

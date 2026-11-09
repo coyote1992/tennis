@@ -1,15 +1,15 @@
 import { CLUB } from "@/lib/site";
-import { IconExternal, IconPhone } from "./icons";
+import { IconCard, IconPhone } from "./icons";
 
-/** Phones only: call the club, or open the online booking. */
+/** Phones only: the winter prices, or call Gáspár Balázs (courts are booked by phone). */
 export function ActionBar() {
   return (
     <div className="actionbar" role="region" aria-label="Gyors elérés">
-      <a href={CLUB.phoneHref} className="btn btn--ghost">
-        <IconPhone /> Hívás
+      <a href="#arak" className="btn btn--ghost">
+        <IconCard /> Árak
       </a>
-      <a href={CLUB.booking} target="_blank" rel="noopener noreferrer" className="btn btn--accent">
-        Pályafoglalás <IconExternal />
+      <a href={CLUB.phoneHref} className="btn btn--accent">
+        <IconPhone /> Pályafoglalás
       </a>
     </div>
   );

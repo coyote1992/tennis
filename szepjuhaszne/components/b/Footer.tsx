@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CLUB } from "@/lib/site";
+import { CLUB, HOURS } from "@/lib/site";
 import { NAV_B } from "./nav";
 
 export function Footer() {
@@ -8,14 +8,14 @@ export function Footer() {
       <div className="container footer__grid">
         <div className="footer__brand">
           <div className="footer__mark">
-            <Image src="/img/logo.png" alt="Tennis Club Szigliget" width={608} height={532} className="footer__logo" />
+            <Image src="/img/logo-vilagos.png" alt="Szép Juhászné Teniszklub" width={512} height={512} className="footer__logo" />
             <p className="footer__name">
-              {CLUB.name}
-              <small>{CLUB.region}</small>
+              Szép Juhászné
+              <small>Teniszklub</small>
             </p>
           </div>
           <p className="footer__motto">
-            <em>Salakpályák Szigligeten, minden nap 8-tól 21-ig.</em> A pályákat {CLUB.operators} üzemeltetik.
+            <em>Tenisz a Hárshegy lábánál,</em> klubház tenisztörténeti kiállítással.
           </p>
         </div>
 
@@ -27,31 +27,25 @@ export function Footer() {
             <a href={CLUB.mapsUrl} target="_blank" rel="noopener noreferrer">
               {CLUB.address}
             </a>
-            <span className="footer__muted">{CLUB.hours}</span>
           </address>
         </div>
 
         <div>
-          <h2 className="footer__title">Foglalás</h2>
+          <h2 className="footer__title">Nyitvatartás</h2>
           <ul className="footer__list">
+            {HOURS.map((h) => (
+              <li key={h.days} className="footer__muted">
+                {h.days}: <span className="nobr">{h.time}</span>
+              </li>
+            ))}
             <li>
-              <a href={CLUB.booking} target="_blank" rel="noopener noreferrer">
-                Online pályafoglalás
+              <a href={CLUB.facebook} target="_blank" rel="noopener noreferrer">
+                Facebook
               </a>
             </li>
             <li>
-              <a href={CLUB.membershipShop} target="_blank" rel="noopener noreferrer">
-                Klubtagság vásárlása
-              </a>
-            </li>
-            <li>
-              <a href={CLUB.rules} target="_blank" rel="noopener noreferrer">
-                Házirend
-              </a>
-            </li>
-            <li>
-              <a href={CLUB.terms} target="_blank" rel="noopener noreferrer">
-                ÁSZF
+              <a href={CLUB.instagram} target="_blank" rel="noopener noreferrer">
+                Instagram
               </a>
             </li>
           </ul>
@@ -70,7 +64,7 @@ export function Footer() {
       </div>
 
       <div className="container footer__bottom">
-        <span>© {CLUB.legal}</span>
+        <span>© {CLUB.name}</span>
         <span>{CLUB.address}</span>
       </div>
     </footer>

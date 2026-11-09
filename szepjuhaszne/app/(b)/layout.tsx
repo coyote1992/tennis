@@ -24,22 +24,22 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://szigliget.tenis.studio"),
-  title: "Tennis Club Szigliget · Salakpályák a Balaton-felvidéken, online foglalással",
+  metadataBase: new URL("https://szepjuhaszne.tenis.studio"),
+  title: "Szép Juhászné Teniszklub · Tenisz a Hárshegy lábánál, tenisztörténeti kiállítással",
   description:
-    "Salakpályák és klubház Szigligeten, minden nap 8:00–21:00. Online pályafoglalás: nem tagoknak 5 000 Ft egy pályaóra. Családi klubtagság, személyi edzők, Szigliget Open. Telefon: +36 20 331 1630.",
+    "Két salakos pálya a II. kerületi Szép Juhászné úton, télen sátor alatt. Téli bérletek, tenisziskola gyerekeknek, klubház egész éves tenisztörténeti kiállítással. Pályafoglalás telefonon: +36 30 397 8401.",
   alternates: { canonical: "/b" },
   openGraph: {
-    title: "Tennis Club Szigliget",
-    description: "Salakpályák Szigligeten, minden nap 8-tól 21-ig. Online foglalás, családi klubtagság.",
-    images: ["/img/palya-klubhaz.jpg"],
+    title: "Szép Juhászné Teniszklub",
+    description: "Tenisz a Hárshegy lábánál: két salakos pálya, télen sátor alatt, és egy klubház tenisztörténeti kiállítással.",
+    images: ["/img/klubhaz-kiallitas.jpg"],
     locale: "hu_HU",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#120b38",
+  themeColor: "#071a12",
   colorScheme: "dark",
 };
 
