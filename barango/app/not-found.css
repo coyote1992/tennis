@@ -1,0 +1,82 @@
+/* The shared 404 (app/global-not-found.tsx), styled like version A. Kept separate from A's
+   stylesheet: every route includes the global 404, and importing a.css here made /b preload
+   version A's fonts. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  background: #173a31;
+}
+.nf {
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+  padding: 48px 24px 64px;
+  background: radial-gradient(70% 55% at 50% 0%, rgba(214, 227, 79, 0.12), transparent 70%), #173a31;
+  color: #f8f6f0;
+  text-align: center;
+  font-family: var(--font-sans), "Manrope", "Helvetica Neue", Arial, sans-serif;
+}
+.nf__mark {
+  display: grid;
+  justify-items: center;
+  margin-bottom: 30px;
+  line-height: 1;
+}
+.nf__mark b {
+  font-family: var(--font-serif), "Lora", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.nf__mark small {
+  margin-top: 6px;
+  padding-top: 5px;
+  border-top: 1.5px solid #f0a17f;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f0a17f;
+}
+.nf__code {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: #d6e34f;
+}
+.nf h1 {
+  margin: 16px 0 0;
+  font-family: var(--font-serif), "Lora", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2.6rem, 8vw, 5rem);
+  line-height: 1.04;
+}
+.nf h1 em {
+  display: block;
+  margin-top: 14px;
+  font-weight: 500;
+  font-size: 0.42em;
+  color: #f0a17f;
+}
+.nf a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  margin-top: 34px;
+  padding: 0 28px;
+  border-radius: 12px;
+  background: #d6e34f;
+  color: #0f2a23;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.nf a:hover {
+  background: #e2ec7c;
+}
