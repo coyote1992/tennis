@@ -1,52 +1,53 @@
 import Image from "next/image";
-import { CLUB, HOURS } from "@/lib/site";
+import { HOTEL } from "@/lib/site";
 import { NAV_B } from "./nav";
+
+const nb = (t: string) => t.replace(/ /g, " ");
 
 export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <div className="footer__mark">
-            <Image src="/img/logo.png" alt="Szoboszlótenisz" width={611} height={611} className="footer__logo" />
-            <p className="footer__name">
-              Szoboszlótenisz
-              <small>Hungarospa Sportcentrum</small>
-            </p>
-          </div>
+          <Image src="/img/logo-white.png" alt={`${HOTEL.name} ${HOTEL.stars} ${HOTEL.town}`} width={376} height={229} className="footer__logo" />
           <p className="footer__motto">
-            <em>Tenisz a fürdővárosban,</em> télen-nyáron.
+            <em>Tenisz a kastélyparkban,</em> utána wellness.
           </p>
         </div>
 
         <div>
-          <h2 className="footer__title">Elérhetőség</h2>
+          <h2 className="footer__title">Recepció</h2>
           <address className="footer__list">
-            <a href={CLUB.phoneHref}>{CLUB.phone}</a>
-            <a href={CLUB.emailHref}>{CLUB.email}</a>
-            <a href={CLUB.mapsUrl} target="_blank" rel="noopener noreferrer">
-              {CLUB.address}
+            <a href={HOTEL.phoneHref}>{nb(HOTEL.phone)}</a>
+            <a href={HOTEL.mobileHref}>{nb(HOTEL.mobile)}</a>
+            <a href={HOTEL.emailHref}>{HOTEL.email}</a>
+            <a href={HOTEL.mapsUrl} target="_blank" rel="noopener noreferrer">
+              {HOTEL.address}
             </a>
-            <span className="footer__muted">{CLUB.entrance}</span>
           </address>
         </div>
 
         <div>
-          <h2 className="footer__title">Nyitvatartás</h2>
+          <h2 className="footer__title">Szállás</h2>
           <ul className="footer__list">
-            {HOURS.map((h) => (
-              <li key={h.days} className="footer__muted">
-                {h.days}: <span className="nobr">{h.time}</span>
-              </li>
-            ))}
             <li>
-              <a href={CLUB.booking} target="_blank" rel="noopener noreferrer">
-                Online pályafoglalás
+              <a href={HOTEL.booking} target="_blank" rel="noopener noreferrer">
+                Szobafoglalás
               </a>
             </li>
             <li>
-              <a href={CLUB.facebook} target="_blank" rel="noopener noreferrer">
-                Facebook-csoport
+              <a href={HOTEL.offer} target="_blank" rel="noopener noreferrer">
+                Ajánlatkérés
+              </a>
+            </li>
+            <li>
+              <a href={HOTEL.packages} target="_blank" rel="noopener noreferrer">
+                Csomagajánlatok
+              </a>
+            </li>
+            <li>
+              <a href={HOTEL.facebook} target="_blank" rel="noopener noreferrer">
+                Facebook
               </a>
             </li>
           </ul>
@@ -66,9 +67,9 @@ export function Footer() {
 
       <div className="container footer__bottom">
         <span>
-          © {CLUB.name} · Üzemeltető: {CLUB.operator}
+          © {HOTEL.name} {HOTEL.stars}
         </span>
-        <span>{CLUB.address}</span>
+        <span>{HOTEL.address}</span>
       </div>
     </footer>
   );

@@ -1,41 +1,40 @@
 /* ==========================================================================
-   Szoboszlótenisz / Hungarospa Sportcentrum — version B (dot-space)
-   Dark "space" theme from the club's roundel: a deep royal-blue night (the logo's blue), the logo's
-   green lifted for the accent (buttons with dark ink, highlights), a pale sky blue for labels, a cool
-   white for text, ball-yellow and court clay only in small marks. Sora for headings, Inter for text.
+   Batthyány Kastélyszálló, Zalacsány — tennis & wellness, version B (dot-space)
+   Dark "space" theme from the hotel's logo: a deep warm night (the logo's bronze brown, deepened),
+   champagne gold for the accent (buttons with dark ink, highlights), a pale park green for labels,
+   warm ivory for text, court clay only in small marks. Sora for headings, Inter for text.
    ========================================================================== */
 
 :root {
-  --vs-accent: #34d27f;
-  --vs-accent-ink: #03170c;
+  --vs-accent: #e4c88c;
+  --vs-accent-ink: #1c1309;
 
-  /* sky behind the dots: the logo blue, deepened to a night sky */
-  --space-sky-top: #0b3a78;
-  --space-sky-mid: #072352;
-  --space-sky-bottom: #030c22;
+  /* sky behind the dots: the logo's bronze brown, deepened to a warm night */
+  --space-sky-top: #3a2a17;
+  --space-sky-mid: #1b130b;
+  --space-sky-bottom: #0b0805;
 
-  --deep: #020a1c;
-  --deep-2: #081a3c;
-  --sun: #6fe3a6; /* accent for text on dark: the logo green, lifted */
-  --sun-hi: #92efbd;
-  --sun-soft: #b5f2d0;
-  --acc: #34d27f; /* button green, with dark ink */
-  --acc-hi: #4fe093;
-  --acc-ink: #03170c;
-  --sky: #9cc6ff; /* labels and eyebrows: a pale sky blue */
-  --green: #34d27f;
-  --ball: #e3f15c; /* ball yellow, sparingly */
-  --clay: #e0784a; /* court clay, sparingly */
-  --clay-deep: #c45f33;
-  --paper: #eef3ff;
+  --deep: #0b0805;
+  --deep-2: #1a120a;
+  --sun: #ecd29a; /* accent for text on dark: champagne gold */
+  --sun-hi: #f3dfb2;
+  --sun-soft: #f1e3c4;
+  --acc: #e4c88c; /* button gold, with dark ink */
+  --acc-hi: #efd7a3;
+  --acc-ink: #1c1309;
+  --sky: #b9d1b2; /* labels and eyebrows: a pale park green */
+  --green: #8fbf96;
+  --clay: #d9794a; /* court clay, sparingly */
+  --clay-deep: #b85e33;
+  --paper: #f6efe2;
 
-  --ink: #eef3ff;
-  --ink-2: rgba(238, 243, 255, 0.8);
-  --ink-3: rgba(238, 243, 255, 0.6);
-  --line: rgba(238, 243, 255, 0.13);
-  --line-strong: rgba(238, 243, 255, 0.34);
-  --glass: rgba(5, 18, 44, 0.74);
-  --glass-hi: rgba(238, 243, 255, 0.06);
+  --ink: #f6efe2;
+  --ink-2: rgba(246, 239, 226, 0.8);
+  --ink-3: rgba(246, 239, 226, 0.6);
+  --line: rgba(246, 239, 226, 0.13);
+  --line-strong: rgba(246, 239, 226, 0.34);
+  --glass: rgba(24, 16, 9, 0.76);
+  --glass-hi: rgba(246, 239, 226, 0.06);
 
   --font-display: var(--font-display-face), "Helvetica Neue", Arial, sans-serif;
   --font-body: var(--font-body-face), "Helvetica Neue", Arial, sans-serif;
@@ -48,7 +47,6 @@
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-/* ——— base ——— */
 *,
 *::before,
 *::after {
@@ -198,7 +196,7 @@ button {
   height: 10px;
   border-radius: 50%;
   background: currentColor;
-  box-shadow: 14px 0 0 -3px rgba(52, 210, 127, 0.6);
+  box-shadow: 14px 0 0 -3px rgba(228, 200, 140, 0.6);
   margin-right: 10px;
 }
 .lead {
@@ -256,7 +254,7 @@ button {
   border-color: var(--line-strong);
 }
 .btn--ghost:hover {
-  --btn-bg: rgba(238, 243, 255, 0.08);
+  --btn-bg: rgba(246, 239, 226, 0.08);
 }
 .btn--sm {
   min-height: 42px;
@@ -282,7 +280,7 @@ button {
   z-index: 41;
   font-size: 0.82rem;
   color: var(--ink-3);
-  border-bottom: 1px solid rgba(238, 243, 255, 0.07);
+  border-bottom: 1px solid rgba(246, 239, 226, 0.07);
 }
 .announce__inner {
   display: flex;
@@ -319,8 +317,8 @@ button {
     box-shadow 0.35s var(--ease);
 }
 .header--solid:not(.header--open) {
-  background: rgba(3, 12, 34, 0.82);
-  box-shadow: 0 1px 0 rgba(238, 243, 255, 0.08);
+  background: rgba(16, 11, 6, 0.82);
+  box-shadow: 0 1px 0 rgba(246, 239, 226, 0.08);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -534,7 +532,7 @@ html.menu-open .announce {
   aspect-ratio: 2200 / 814;
   border-radius: var(--radius);
   overflow: hidden;
-  background: #0a1f45;
+  background: #241a10;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
 }
 .hero__caption {
@@ -543,7 +541,7 @@ html.menu-open .announce {
   bottom: 16px;
   padding: 7px 14px;
   border-radius: 999px;
-  background: rgba(3, 12, 34, 0.62);
+  background: rgba(16, 11, 6, 0.62);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-size: 0.8rem;
@@ -604,15 +602,15 @@ html.menu-open .announce {
   align-self: flex-start;
   padding: 4px 11px;
   border-radius: 999px;
-  background: rgba(52, 210, 127, 0.18);
-  color: #c9f5dc;
+  background: rgba(228, 200, 140, 0.18);
+  color: #f1e3c4;
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 .tag--accent {
-  background: rgba(52, 210, 127, 0.16);
+  background: rgba(228, 200, 140, 0.16);
   color: var(--sun-soft);
 }
 .chips {
@@ -673,7 +671,7 @@ html.menu-open .announce {
   aspect-ratio: 16 / 9;
   border-radius: var(--radius);
   overflow: hidden;
-  background: #0a1f45;
+  background: #241a10;
 }
 .snap figcaption {
   position: absolute;
@@ -684,14 +682,13 @@ html.menu-open .announce {
   max-width: calc(100% - 24px);
   padding: 6px 12px;
   border-radius: 14px;
-  background: rgba(3, 12, 34, 0.72);
+  background: rgba(16, 11, 6, 0.72);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-size: 0.8rem;
   line-height: 1.35;
   color: var(--ink-2);
 }
-
 .enquiry {
   display: grid;
   gap: 16px;
@@ -706,7 +703,7 @@ html.menu-open .announce {
   padding: 4px;
   border-radius: 999px;
   border: 1px solid var(--line-strong);
-  background: rgba(3, 12, 34, 0.45);
+  background: rgba(16, 11, 6, 0.45);
 }
 .enquiry__mode {
   min-height: 42px;
@@ -805,7 +802,7 @@ html.menu-open .announce {
   padding: 12px 14px;
   border: 1px solid var(--line-strong);
   border-radius: 10px;
-  background: rgba(3, 12, 34, 0.5);
+  background: rgba(16, 11, 6, 0.5);
   color: var(--ink);
   font: inherit;
   font-size: 1rem;
@@ -819,7 +816,7 @@ html.menu-open .announce {
 .input:focus {
   outline: none;
   border-color: var(--sun);
-  box-shadow: 0 0 0 3px rgba(52, 210, 127, 0.26);
+  box-shadow: 0 0 0 3px rgba(228, 200, 140, 0.26);
 }
 .input[type="date"] {
   color-scheme: dark;
@@ -857,8 +854,8 @@ html.menu-open .announce {
 .enquiry__done {
   padding: 12px 14px;
   border-radius: 10px;
-  background: rgba(52, 210, 127, 0.12);
-  border: 1px solid rgba(52, 210, 127, 0.42);
+  background: rgba(228, 200, 140, 0.12);
+  border: 1px solid rgba(228, 200, 140, 0.42);
   color: var(--ink-2);
   font-size: 0.93rem;
 }
@@ -974,7 +971,7 @@ html.menu-open .announce {
 .footer {
   /* room at the bottom so the fixed A/B switch never covers the last line */
   padding: 64px 0 calc(110px + env(safe-area-inset-bottom));
-  border-top: 1px solid rgba(238, 243, 255, 0.1);
+  border-top: 1px solid rgba(246, 239, 226, 0.1);
   font-size: 0.94rem;
 }
 .footer__grid {
@@ -1069,215 +1066,150 @@ html.js-reveal .reveal--img.is-in {
 html.js-reveal .reveal--img.is-in img {
   transform: none;
 }
-.coach-grid > :nth-child(2n),
-.group-grid > :nth-child(2n),
-.court-grid > :nth-child(2n),
-.amenity-grid > :nth-child(2n) {
-  transition-delay: 80ms;
-}
-
-/* ——— phone action bar ——— */
-.actionbar {
-  display: none;
-}
-
-
 
 /* the fixed sky also colours anything outside the first screen (e.g. full-page captures) */
 html.space {
   background-color: var(--space-sky-bottom);
 }
 
-/* ——— brand: the club's wordmark ——— */
+/* ——— phone action bar (shown on phones only, below) ——— */
+.actionbar {
+  display: none;
+}
+
+/* ——— brand: the castle from the logo + the hotel's name ——— */
 .brand__logo {
   width: auto;
-  height: 50px;
+  height: 34px;
 }
-.announce__hours {
+.brand__name {
+  font-size: 1.14rem;
+  white-space: nowrap;
+}
+.brand__name small {
+  color: var(--sun-soft);
+}
+.nav__link {
   white-space: nowrap;
 }
 .header__cta {
   gap: 10px;
 }
-.tag--clay {
-  background: rgba(52, 210, 127, 0.16);
-  color: #b5f2d0;
+.btn--icon {
+  width: 42px;
+  padding: 0;
 }
-
-
-.nav__link,
-.brand__name {
+.announce__place,
+.announce__tel {
   white-space: nowrap;
 }
-.announce__addr {
-  color: var(--ink-2);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.announce__addr:hover {
-  color: var(--sun-soft);
-}
-
-/* ——— brand: the roundel + the club's name ——— */
-.brand__name small {
-  color: var(--sun-soft);
-}
-.footer__mark {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.announce__tel {
+  color: var(--ink-3);
 }
 .footer__logo {
-  width: 84px;
+  width: 168px;
   height: auto;
-  flex: none;
-}
-.footer__name {
-  display: grid;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.35rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-.footer__name small {
-  margin-top: 6px;
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--sky);
-}
-.announce__place {
-  white-space: nowrap;
 }
 
-/* ——— hero headline: two sentences, so a little smaller than the kit's default ——— */
+/* ——— hero ——— */
 .h1 {
-  font-size: clamp(2.5rem, 5.4vw, 4.9rem);
+  font-size: clamp(2.5rem, 5.6vw, 5.2rem);
 }
 .hero__top {
   max-width: 1120px;
 }
-.checks--grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 24px;
-  margin-top: 26px;
-  max-width: 36em;
+.hero__media {
+  aspect-ratio: 1200 / 520;
+}
+.hero__media img {
+  object-fit: cover;
+  object-position: 50% 42%;
 }
 
-/* ——— the roundel in the header and footer ——— */
-.brand__logo {
-  height: 48px;
-  width: 48px;
+/* ——— tenisz: photo, two prices, booking, house rules ——— */
+.court {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 14px;
+  margin-top: clamp(32px, 4vw, 48px);
+  align-items: stretch;
 }
-.footer__logo {
-  width: 72px;
+.court__photo {
+  position: relative;
+  min-height: 420px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #241a10;
 }
-
-/* ——— courts: facilities, online booking, hours, rules ——— */
-.facility-grid {
+.court__photo img {
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+.court__body {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+.rates {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-  margin-top: clamp(32px, 4vw, 48px);
 }
-.facility {
+.rate {
   display: grid;
   gap: 8px;
   align-content: start;
-  padding: 22px 24px 24px;
-  color: var(--ink-2);
+  padding: 20px 22px 22px;
+}
+.rate--guest {
+  border-color: rgba(228, 200, 140, 0.45);
+  background: linear-gradient(160deg, rgba(228, 200, 140, 0.14), rgba(24, 16, 9, 0.82) 62%);
+}
+.rate__who {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sky);
+}
+.rate__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+  color: var(--ink-3);
   font-size: 0.95rem;
 }
-.facility .h3 {
-  color: var(--ink);
-}
-.facility:first-child {
-  border-color: rgba(52, 210, 127, 0.45);
-  background: linear-gradient(160deg, rgba(52, 210, 127, 0.14), rgba(5, 18, 44, 0.82) 62%);
+.rate__price strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--sun);
+  white-space: nowrap;
 }
 .book {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  margin-top: 14px;
-  overflow: hidden;
+  gap: 16px;
+  padding: 24px 26px 26px;
 }
-.book__main {
-  display: grid;
-  align-content: start;
-  gap: 18px;
-  padding: 26px 26px 28px;
-  background: linear-gradient(160deg, rgba(52, 210, 127, 0.12), rgba(5, 18, 44, 0) 70%);
-}
-.steps {
-  display: grid;
-  gap: 14px;
-  counter-reset: none;
-}
-.steps li {
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr);
-  gap: 14px;
-  align-items: start;
-}
-.steps__n {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1px solid rgba(52, 210, 127, 0.6);
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--sun);
-}
-.steps strong {
-  display: block;
-  font-weight: 600;
-  color: var(--ink);
-}
-.steps span:not(.steps__n) {
-  display: block;
+.book__text {
   color: var(--ink-2);
-  font-size: 0.94rem;
 }
 .book__ctas {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
-.book__side {
-  display: grid;
-  align-content: start;
-  gap: 8px;
-  padding: 26px 26px 28px;
-  border-left: 1px solid var(--line);
-}
-.book__side .hours strong {
-  font-size: 1.05rem;
-  white-space: normal;
-  text-align: right;
-}
-.book__where {
-  margin-top: 16px;
-}
-.book__addr {
-  display: grid;
-  gap: 2px;
-}
-.book__addr a {
+.book__alt a {
+  color: var(--ink-2);
   font-weight: 600;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
-.book__addr a:hover {
+.book__alt a:hover {
   color: var(--sun-soft);
-}
-.book__addr span {
-  font-size: 0.9rem;
-  color: var(--ink-3);
 }
 .rules {
   margin-top: 14px;
@@ -1316,468 +1248,405 @@ html.space {
   gap: 10px 28px;
   padding: 4px 24px 24px;
 }
+/* the tennis players' habit, in court clay: on to the wellness days */
+.bridge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  margin-top: 14px;
+  padding: 18px 24px;
+  border-color: rgba(217, 121, 74, 0.5);
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: border-color 0.25s var(--ease);
+}
+.bridge__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--sun);
+  white-space: nowrap;
+}
+.bridge__go svg {
+  transition: transform 0.25s var(--ease);
+}
+.bridge:hover {
+  border-color: var(--clay);
+}
+.bridge:hover .bridge__go svg {
+  transform: translateX(3px);
+}
 
-/* ——— prices: two lists, three season cards ——— */
-.price-pair {
+/* ——— wellness: two day tickets, the wellness area in photos ——— */
+.offers {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
+  margin-top: clamp(32px, 4vw, 48px);
+  align-items: stretch;
+}
+.offer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 26px 26px 28px;
+}
+.offer--paros {
+  border-color: rgba(228, 200, 140, 0.45);
+  background: linear-gradient(160deg, rgba(228, 200, 140, 0.13), rgba(24, 16, 9, 0.82) 60%);
+}
+.offer .h3 {
+  font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+}
+.offer__when {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--sky);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.offer__when svg {
+  flex: none;
+  margin-top: 3px;
+}
+.offer__prices {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+.offer__prices li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2px 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+}
+.offer__prices strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: var(--sun);
+  white-space: nowrap;
+}
+.offer__inc {
+  margin-top: 4px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.offer__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+.offer__foot .muted {
+  flex: 1 1 14em;
+}
+.spa {
+  margin-top: clamp(56px, 7vw, 88px);
+}
+.spa__head {
+  display: grid;
+  gap: 8px;
+  max-width: 42em;
+  margin-bottom: 20px;
+}
+.spa__head .muted {
+  font-size: 1rem;
+}
+.spa__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.spa__grid > :nth-child(2n),
+.offers > :nth-child(2n),
+.rates > :nth-child(2n) {
+  transition-delay: 80ms;
+}
+.spa-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+}
+.spa-card__img {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #241a10;
+}
+.spa-card__img img {
+  object-fit: cover;
+}
+.spa-card__body {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 18px 22px 22px;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+/* ——— park: the hotel's map and the route on it, more to do ——— */
+.route {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: 24px;
   margin-top: clamp(32px, 4vw, 48px);
   align-items: start;
 }
-.price-list {
-  display: grid;
-  gap: 12px;
-  padding: 22px 24px 22px;
+.route__map {
+  padding: 8px;
 }
-.price-list ul {
-  display: grid;
+.route__map a {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
 }
-.price-list li {
+.route__map img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s var(--ease);
+}
+.route__map a:hover img {
+  transform: scale(1.02);
+}
+.route__map figcaption {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 6px 18px;
-  padding: 11px 0;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 8px 4px;
+  font-size: 0.84rem;
+  color: var(--ink-3);
+}
+.route__map figcaption svg {
+  width: 14px;
+  height: 14px;
+}
+.route__list li {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.route__list li:first-child {
+  padding-top: 0;
+}
+.route__list li:last-child {
+  border-bottom: 0;
+}
+.route__n {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(228, 200, 140, 0.6);
+  background: rgba(16, 11, 6, 0.6);
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--sun);
+}
+/* the route starts at the clay court */
+.route__list li:first-child .route__n {
+  background: var(--clay);
+  border-color: var(--clay);
+  color: #1c0f07;
+}
+.route__list strong {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+}
+.route__list div span {
+  display: block;
+  color: var(--ink-2);
+  font-size: 0.94rem;
+}
+.more__title {
+  margin: clamp(48px, 6vw, 72px) 0 16px;
+}
+.more {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.more__item {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  padding: 18px 20px 20px;
+  font-size: 0.93rem;
+  color: var(--ink-2);
+}
+.more__item strong {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+/* ——— the castle: history, rooms, dining ——— */
+.castle {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 14px;
+  margin-top: clamp(32px, 4vw, 48px);
+  align-items: stretch;
+}
+.history {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  padding: 24px 26px 26px;
+}
+.history__list li {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 16px;
+  padding: 12px 0;
   border-bottom: 1px solid var(--line);
   color: var(--ink-2);
   font-size: 0.95rem;
 }
-.price-list li:last-child {
+.history__list li:last-child {
+  padding-bottom: 0;
   border-bottom: 0;
-}
-.price-list strong {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.08rem;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-  white-space: nowrap;
-}
-.price-list li:first-child strong {
-  color: var(--sun);
-}
-.cards-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 6px 20px;
-  margin: clamp(32px, 4vw, 48px) 0 14px;
-}
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-.season-card {
-  display: grid;
-  gap: 6px;
-  align-content: start;
-  padding: 22px 22px 18px;
-}
-.season-card--best {
-  border-color: rgba(52, 210, 127, 0.55);
-  background: linear-gradient(160deg, rgba(52, 210, 127, 0.16), rgba(5, 18, 44, 0.82) 62%);
-}
-.season-card__units {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--sky);
-}
-.season-card__units span {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.86rem;
-  color: var(--ink-3);
-}
-.season-card__price {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-}
-.season-card--best .season-card__price {
-  color: var(--sun);
-}
-.season-card__per {
-  margin: 10px 0 0;
-}
-.season-card__per div {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 8px 0;
-  border-top: 1px solid var(--line);
-  font-size: 0.9rem;
-}
-.season-card__per dt {
-  color: var(--ink-3);
-}
-.season-card__per dd {
-  margin: 0;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.unit-rules {
-  margin-top: 18px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px 24px;
-}
-
-/* ——— coaching ——— */
-.coach-grid {
-  display: grid;
-  gap: 14px;
-  margin-top: clamp(32px, 4vw, 48px);
-}
-.coach {
-  display: grid;
-  grid-template-columns: 168px minmax(0, 1fr);
-  gap: 22px;
-  padding: 20px;
-}
-.coach__photo {
-  position: relative;
-  aspect-ratio: 1;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #0a1f45;
-}
-.coach__body {
-  display: grid;
-  align-content: start;
-  gap: 10px;
-  color: var(--ink-2);
-  font-size: 0.95rem;
-}
-.coach__body .h3 {
-  font-size: clamp(1.3rem, 1.8vw, 1.55rem);
-}
-.coach__partner {
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(227, 241, 92, 0.38);
-  background: rgba(227, 241, 92, 0.07);
-  color: var(--ink);
-}
-.coach__contact {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 18px;
-  margin-top: 4px;
-}
-.coach__mail {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--ink-2);
-  text-decoration: none;
-  overflow-wrap: anywhere;
-}
-.coach__mail:hover {
-  color: var(--sun-soft);
-}
-.coach__mail svg {
-  flex: none;
-  width: 16px;
-  height: 16px;
-}
-.kids {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 14px;
-  margin-top: 14px;
-}
-.kids__photo {
-  aspect-ratio: auto;
-  min-height: 280px;
-}
-.kids__cards {
-  display: grid;
-  gap: 14px;
-}
-.kids__card {
-  display: grid;
-  justify-items: start;
-  align-content: start;
-  gap: 12px;
-  padding: 22px 24px 24px;
-  color: var(--ink-2);
-  font-size: 0.95rem;
-}
-
-/* ——— Piramis: stats, the ladder, rules, results ——— */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: clamp(32px, 4vw, 44px);
-}
-.stats li {
-  display: grid;
-  gap: 4px;
-  padding: 0 16px;
-  border-left: 1px solid var(--line);
-}
-.stats li:first-child {
-  padding-left: 0;
-  border-left: 0;
-}
-.stats strong {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--sun);
-  white-space: nowrap;
-}
-.stats span {
-  font-size: 0.88rem;
-  color: var(--ink-3);
-}
-.ladder {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(20px, 3vw, 36px);
-  align-items: center;
-  margin-top: clamp(28px, 3.5vw, 40px);
-  padding: 24px 26px;
-}
-.ladder__figure {
-  display: grid;
-  gap: 10px;
-  justify-items: center;
-}
-.ladder__row {
-  display: flex;
-  gap: 10px;
-}
-.ladder__dot {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: 1.5px solid var(--line-strong);
-  background: rgba(238, 243, 255, 0.05);
-}
-.ladder__row:first-child .ladder__dot {
-  border-color: rgba(227, 241, 92, 0.7);
-}
-.ladder__dot.is-target {
-  border-color: var(--sun);
-  background: rgba(52, 210, 127, 0.22);
-  box-shadow: 0 0 0 4px rgba(52, 210, 127, 0.1);
-}
-.ladder__dot.is-you {
-  border-color: var(--ball);
-  background: var(--ball);
-  box-shadow: 0 0 18px rgba(227, 241, 92, 0.45);
-}
-.ladder__text {
-  display: grid;
-  gap: 10px;
-  color: var(--ink-2);
-}
-.ladder__legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 18px;
-  font-size: 0.86rem;
-  color: var(--ink-3);
-}
-.ladder__legend li {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-.ladder__key {
-  flex: none;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-.ladder__key--you {
-  background: var(--ball);
-}
-.ladder__key--target {
-  border: 1.5px solid var(--sun);
-  background: rgba(52, 210, 127, 0.22);
-}
-.piramis__rules {
-  max-width: none;
-}
-.edition {
-  display: grid;
-  gap: 8px;
-  justify-items: start;
-  margin-top: 18px;
-  padding: 20px 24px;
-  color: var(--ink-2);
-}
-.results {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 14px;
-}
-.result {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  overflow: hidden;
-}
-.result__img {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  background: #0a1f45;
-}
-.result__body {
-  display: grid;
-  gap: 10px;
-  align-content: start;
-  padding: 18px 22px 22px;
-}
-.podium {
-  display: grid;
-  gap: 4px;
-  color: var(--ink-2);
-}
-.podium span {
-  display: inline-block;
-  width: 1.6em;
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--sun);
-}
-.podium li:first-child {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-/* ——— club life (the ball spins behind) ——— */
-.event-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: clamp(32px, 4vw, 48px);
-}
-.event {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  overflow: hidden;
-}
-.event__img {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  background: #0a1f45;
-}
-.event__body {
-  display: grid;
-  gap: 8px;
-  align-content: start;
-  padding: 20px 22px 24px;
-  color: var(--ink-2);
-  font-size: 0.95rem;
-}
-.event__body .h3 {
-  color: var(--ink);
-}
-.club__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 14px;
-  margin-top: 14px;
-}
-.history,
-.famous {
-  display: grid;
-  gap: 14px;
-  align-content: start;
-  padding: 22px 24px 24px;
-}
-.history__list {
-  display: grid;
-  gap: 14px;
-}
-.history__list li {
-  display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
-  gap: 14px;
-  color: var(--ink-2);
-  font-size: 0.95rem;
 }
 .history__year {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
+  line-height: 1.45;
   letter-spacing: -0.02em;
   color: var(--sun);
 }
-.famous__list {
+.stay {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+}
+.stay__img {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #241a10;
+}
+.stay__img img {
+  object-fit: cover;
+}
+.stay__body {
   display: grid;
   gap: 12px;
+  align-content: start;
+  padding: 22px 24px 24px;
+  color: var(--ink-2);
 }
-.famous__list li {
-  display: grid;
-  gap: 2px;
-  font-size: 0.93rem;
-  color: var(--ink-3);
-}
-.famous__list strong {
-  font-weight: 600;
-  font-size: 0.98rem;
+.stay__body .h3,
+.dining__body .h3,
+.spa-card__body .h3 {
   color: var(--ink);
 }
-.shop {
+.stay__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+.stay__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--sun-soft);
+  text-decoration: none;
+}
+.stay__link:hover {
+  color: var(--sun);
+}
+.dining {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   margin-top: 14px;
   overflow: hidden;
 }
-.shop__img {
-  position: relative;
-  min-height: 260px;
-  background: #0a1f45;
-}
-.shop__body {
+.dining__imgs {
   display: grid;
-  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  min-height: 250px;
+}
+.dining__imgs figure {
+  position: relative;
+  background: #241a10;
+}
+.dining__imgs img {
+  object-fit: cover;
+}
+.dining__body {
+  display: grid;
+  gap: 10px;
   align-content: center;
-  justify-items: start;
-  padding: 26px 28px 28px;
+  padding: 26px 28px;
   color: var(--ink-2);
 }
-.shop__body .h3 {
-  font-size: clamp(1.3rem, 2vw, 1.7rem);
-  color: var(--ink);
+
+/* ——— contact extras ——— */
+.visit__form {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  padding: 30px;
 }
-.visit__operator {
+.visit__map {
+  height: 420px;
+  min-height: 0;
   margin-top: 16px;
-  font-size: 0.84rem;
+}
+.contact__line {
+  margin-top: 2px;
+}
+.visit__note {
+  margin-top: 16px;
+  font-size: 0.88rem;
   color: var(--ink-3);
+}
+.visit__note a {
+  color: var(--ink-2);
+  font-weight: 600;
+  text-decoration: none;
+}
+.visit__note a:hover {
+  color: var(--sun-soft);
 }
 
 /* ——— shapes need room: move the text, not the dots (desktop) ——— */
 @media (min-width: 901px) {
-  /* the racket stands on the right while the courts and booking scroll past */
-  #palyak > .container {
+  /* the racket stands on the right while the court, booking and house rules scroll past */
+  #tenisz > .container {
     max-width: none;
     padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2));
     padding-right: 30vw;
   }
-  /* the court stands on the left of the prices and the coaches */
-  #arak > .container,
-  #edzes > .container {
+  /* the court lines stand on the left of the park route and the activities */
+  #park > .container {
     max-width: none;
     padding-left: 30vw;
     padding-right: max(var(--gutter), calc((100vw - var(--max)) / 2));
   }
-  /* the club's ball mark forms on the right of the Piramis heading and stays through it */
-  #piramis > .container {
+  /* the castle forms on the right of its heading and stays through the section */
+  #kastely > .container {
     max-width: none;
     padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2));
     padding-right: 36vw;
@@ -1786,7 +1655,7 @@ html.space {
 
 /* ——— tablet ——— */
 @media (max-width: 1240px) {
-  .announce__hours {
+  .announce__mail {
     display: none;
   }
 }
@@ -1801,54 +1670,25 @@ html.space {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (max-width: 1400px) and (min-width: 901px) {
-  .book,
-  .price-pair,
-  .kids,
-  .results,
-  .club__grid,
-  .shop {
+@media (max-width: 1240px) and (min-width: 901px) {
+  .court,
+  .castle,
+  .route,
+  .dining {
     grid-template-columns: minmax(0, 1fr);
   }
-  .book__side {
-    border-left: 0;
-    border-top: 1px solid var(--line);
-  }
-  .card-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .season-card__per {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0 14px;
-  }
-  .season-card__per div {
-    display: grid;
-    gap: 2px;
-  }
-  .event-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .rules__list,
-  .unit-rules,
-  .checks--grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px 0;
-  }
-  .stats li:nth-child(3) {
-    padding-left: 0;
-    border-left: 0;
-  }
-  .kids__photo {
-    min-height: 0;
-    aspect-ratio: 16 / 10;
-  }
-  .shop__img {
+  .court__photo {
     min-height: 0;
     aspect-ratio: 16 / 9;
+  }
+  .court__photo img {
+    object-position: 50% 62%;
+  }
+  .more {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .rules__list {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 @media (max-width: 1120px) {
@@ -1870,34 +1710,34 @@ html.space {
     font-size: 16px;
     padding-bottom: calc(76px + env(safe-area-inset-bottom));
   }
-  .announce__inner {
-    gap: 12px;
-  }
-  .announce__tel {
+  .announce__place {
     display: none;
+  }
+  .announce__inner > span + span {
+    padding-left: 0;
+    border-left: 0;
   }
   .header__cta {
     display: none;
   }
   .brand__logo {
-    height: 40px;
-    width: 40px;
+    height: 28px;
   }
   .hero__row,
   .visit,
-  .book,
-  .price-pair,
-  .kids,
-  .results,
-  .club__grid,
-  .shop {
+  .court,
+  .offers,
+  .spa__grid,
+  .route,
+  .castle,
+  .dining {
     grid-template-columns: minmax(0, 1fr);
   }
   .hero__row {
     gap: 24px;
   }
   .hero__media {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 11;
   }
   .facts {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1906,34 +1746,20 @@ html.space {
     padding: 0 12px;
   }
   .fact__num {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   .fact__label {
     font-size: 0.82rem;
   }
-  .book__side {
-    border-left: 0;
-    border-top: 1px solid var(--line);
-  }
-  .card-grid,
-  .event-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .kids__photo {
+  .court__photo {
     min-height: 0;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 3;
   }
-  .shop__img {
-    min-height: 0;
-    aspect-ratio: 16 / 10;
+  .court__photo img {
+    object-position: 50% 58%;
   }
-  .stats {
+  .more {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px 0;
-  }
-  .stats li:nth-child(3) {
-    padding-left: 0;
-    border-left: 0;
   }
   .final .visit__map {
     height: 280px;
@@ -1952,8 +1778,8 @@ html.space {
     grid-template-columns: 1fr 1.5fr;
     gap: 10px;
     padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
-    background: rgba(3, 12, 34, 0.92);
-    border-top: 1px solid rgba(238, 243, 255, 0.1);
+    background: rgba(16, 11, 6, 0.92);
+    border-top: 1px solid rgba(246, 239, 226, 0.1);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
@@ -1969,25 +1795,12 @@ html.space {
 }
 
 @media (max-width: 700px) {
-  .facility-grid,
   .rules__list,
-  .unit-rules,
-  .checks--grid {
+  .more {
     grid-template-columns: minmax(0, 1fr);
   }
-  .price-list li {
-    flex-wrap: wrap;
-  }
-  .coach {
-    grid-template-columns: 96px minmax(0, 1fr);
-    gap: 16px;
-    padding: 18px;
-  }
-  .coach__photo {
-    align-self: start;
-  }
-  .ladder {
-    grid-template-columns: minmax(0, 1fr);
+  .dining__imgs {
+    min-height: 200px;
   }
 }
 
@@ -2002,32 +1815,38 @@ html.space {
 }
 
 @media (max-width: 520px) {
-  .book__main,
-  .book__side,
-  .facility,
-  .price-list,
-  .season-card,
-  .kids__card,
-  .edition,
-  .result__body,
-  .event__body,
+  .book,
+  .rate,
+  .offer,
   .history,
-  .famous,
-  .shop__body,
-  .visit__info {
+  .visit__info,
+  .visit__form,
+  .spa-card__body,
+  .stay__body,
+  .dining__body,
+  .more__item {
     padding: 20px 18px;
   }
-  .rules summary {
+  .rates {
+    gap: 10px;
+  }
+  .rate {
+    padding: 16px 14px 18px;
+  }
+  .rate__who {
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+  }
+  .rules summary,
+  .bridge {
     padding: 16px 18px;
   }
   .rules__list {
     padding: 4px 18px 20px;
   }
-  .coach {
+  .history__list li {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .coach__photo {
-    width: 112px;
+    gap: 2px;
   }
   .visit__actions .btn {
     min-width: 0;
@@ -2039,11 +1858,14 @@ html.space {
   .fact:first-child {
     padding-left: 0;
   }
+  .brand {
+    gap: 10px;
+  }
   .brand__name {
-    font-size: 1.12rem;
+    font-size: 1rem;
   }
   .brand__name small {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     letter-spacing: 0.12em;
   }
 }
@@ -2058,4 +1880,57 @@ html.space {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+.contact__hint {
+  font-weight: 400;
+  font-size: 0.86rem;
+  color: var(--ink-3);
+}
+h4 {
+  margin: 0;
+}
+/* the wellness area: four photos in a row on wide screens */
+@media (min-width: 1100px) {
+  .spa__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .spa-card__img {
+    aspect-ratio: 4 / 3;
+  }
+  .spa-card__body {
+    padding: 16px 18px 20px;
+    font-size: 0.92rem;
+  }
+  .spa-card__body .h3 {
+    font-size: 1.08rem;
+  }
+}
+/* small phones: the two court prices as rows, so the labels can't push the prices apart */
+@media (max-width: 520px) {
+  .rates {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rate {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px 12px;
+    padding: 14px 18px;
+  }
+  .rate__who {
+    font-size: 0.7rem;
+  }
+  .rate__price strong {
+    font-size: 1.6rem;
+  }
+}
+/* tablets in portrait: the racket photo as a wide strip, not a full screen of clay */
+@media (min-width: 641px) and (max-width: 900px) {
+  .court__photo {
+    aspect-ratio: 2 / 1;
+  }
+  .court__photo img {
+    object-position: 50% 55%;
+  }
 }

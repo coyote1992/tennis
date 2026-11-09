@@ -24,22 +24,22 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://szoboszlo.tenis.studio"),
-  title: "Szoboszlótenisz · Hungarospa Sportcentrum, Hajdúszoboszló · tenisz télen-nyáron",
+  metadataBase: new URL("https://batthyany.tenis.studio"),
+  title: "Tenisz és wellness · Batthyány Kastélyszálló, Zalacsány",
   description:
-    "Négy salakos pálya és fedett, műfüves sportsátor a Hungarospa Sportcentrumban, a strandfürdő mellett. Online pályafoglalás, téli árak és szezonkártyák, edzés, gyerekcsoportok, Piramis verseny. Telefon: +36 20 977 5773.",
+    "Megújult salakos teniszpálya a Batthyány Kastélyszálló 10 hektáros parkjában, Zalacsányban: 5 000 Ft/óra szállóvendégeknek, 6 000 Ft/óra külsős vendégeknek. Vasárnapi és páros wellness nap. Recepció: +36 83 537 000.",
   alternates: { canonical: "/b" },
   openGraph: {
-    title: "Szoboszlótenisz · Hungarospa Sportcentrum",
-    description: "Tenisz Hajdúszoboszlón, télen-nyáron: négy salakpálya és egy sportsátor a strandfürdő mellett.",
-    images: ["/img/szoboszlo-open-2021.jpg"],
+    title: "Tenisz és wellness · Batthyány Kastélyszálló",
+    description: "Salakpálya a kastélyparkban, utána termálmedence, szaunák és wellness nap. Zalacsány.",
+    images: ["/img/kastely-szokokut.jpg"],
     locale: "hu_HU",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#061633",
+  themeColor: "#140e08",
   colorScheme: "dark",
 };
 

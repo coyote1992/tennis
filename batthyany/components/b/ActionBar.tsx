@@ -1,15 +1,15 @@
-import { CLUB } from "@/lib/site";
-import { IconCalendar, IconPhone } from "./icons";
+import { HOTEL } from "@/lib/site";
+import { IconPhone } from "./icons";
 
-/** Phones only: call the club, or book a court online. */
+/** Phones only: jump to the wellness days, or call the reception (court and wellness bookings). */
 export function ActionBar() {
   return (
     <div className="actionbar" role="region" aria-label="Gyors elérés">
-      <a href={CLUB.phoneHref} className="btn btn--ghost">
-        <IconPhone /> Hívás
+      <a href="#wellness" className="btn btn--ghost">
+        Wellness nap
       </a>
-      <a href={CLUB.booking} className="btn btn--accent" target="_blank" rel="noopener noreferrer">
-        <IconCalendar /> Pályafoglalás
+      <a href={HOTEL.phoneHref} className="btn btn--accent">
+        <IconPhone /> Hívd a recepciót
       </a>
     </div>
   );

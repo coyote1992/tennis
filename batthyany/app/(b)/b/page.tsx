@@ -1,40 +1,31 @@
 import Image from "next/image";
-import { IconArrow, IconCalendar, IconCard, IconCheck, IconClock, IconExternal, IconFacebook, IconMail, IconPhone, IconPin, IconTrophy, IconUsers } from "@/components/b/icons";
+import { IconArrow, IconCalendar, IconCheck, IconClock, IconExternal, IconFacebook, IconMail, IconPhone, IconPin } from "@/components/b/icons";
 import { ContactForm } from "@/components/shared/ContactForm";
-import {
-  BOOKING_STEPS,
-  CAMP,
-  CLUB,
-  COACHES,
-  COURT_RULES,
-  EVENTS,
-  FACILITIES,
-  FAMOUS,
-  HISTORY,
-  HOURS,
-  KIDS,
-  PIRAMIS,
-  PRICES,
-  SEASON_NOW,
-  SHOP,
-  TEAMS,
-} from "@/lib/site";
+import { ACTIVITIES, CASTLE, HOTEL, HOUSE_RULES, PARK_ROUTE, TENNIS, WELLNESS, WELLNESS_DAYS } from "@/lib/site";
+
+/** inside running text: keep "1 500 Ft" and "/ óra" together */
+const keepNums = (t: string) => t.replace(/(\d) (?=\d{3}\b)/g, "$1 ").replace(/ (Ft|\/)/g, " $1");
+/** keep prices and phone numbers on one line */
+const nb = (t: string) => t.replace(/ /g, " ");
 
 const HERO_FACTS = [
-  { num: "4", label: "salakos pálya, kettő világítással" },
-  { num: "1", label: "fedett sportsátor, télen-nyáron" },
-  { num: "1980", label: "óta teniszeznek a városban" },
+  { num: TENNIS.prices[0].price, label: "óránként a salakpálya szállóvendégeknek" },
+  { num: "10 ha", label: "park a kastély körül" },
+  { num: "42 °C", label: "termálkút adja a kültéri medence vizét" },
 ];
 
-/** 1 + 2 + 3 + 4 players on the ladder; "you" sits in the third row. */
-const LADDER = [1, 2, 3, 4];
-const YOU = { row: 2, col: 1 };
-const canChallenge = (row: number, col: number) =>
-  (row === YOU.row && col !== YOU.col) || row === YOU.row - 1;
+/** a photo for each wellness feature, in WELLNESS.items order */
+const WELLNESS_PHOTOS = [
+  { src: "/img/kulteri-medence.jpg", alt: "A kültéri termálmedence napágyakkal és virágokkal" },
+  { src: "/img/belteri-medence.jpg", alt: "A beltéri termálmedence nyakzuhannyal" },
+  { src: "/img/szauna.jpg", alt: "Szauna fapadokkal" },
+  { src: "/img/masszazs.jpg", alt: "Masszázságy gyertyafénynél" },
+];
 
-const fmt = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-/** keep phone numbers and "u. 25." on one line */
-const keep = (t: string) => t.replace(CLUB.phone, CLUB.phone.replace(/ /g, "\u00a0")).replace(/u\. (\d)/g, "u.\u00a0$1");
+const SIGN_UP: Record<string, { cta: string; note: string }> = {
+  vasarnap: { cta: "Érdeklődés", note: "Kérdezz a recepción, vagy írj nekünk." },
+  paros: { cta: "Bejelentkezés", note: "Előzetes bejelentkezéssel: hívd a recepciót, vagy írj nekünk." },
+};
 
 export default function BHome() {
   return (
@@ -44,42 +35,37 @@ export default function BHome() {
         <div className="container">
           <div className="hero__top">
             <p className="eyebrow reveal">
-              {CLUB.venue} · {CLUB.town}
+              {HOTEL.name} {HOTEL.stars} · {HOTEL.town}
             </p>
             <h1 id="hero-title" className="h1 reveal">
-              Tenisz a fürdővárosban, <em>télen-nyáron.</em>
+              Tenisz a kastélyparkban, <em>utána wellness.</em>
             </h1>
             <div className="hero__row reveal">
               <p className="lead">
-                Négy salakos pálya és egy fedett, műfüves sportsátor a Hungarospa Sportcentrumban, a strandfürdő mellett. Foglalj online, vagy hívj, ha edzést kérnél.
+                Megújult salakos teniszpálya a kastély parkjában, a kültéri termálmedence és a szaunák közelében. Szállóvendégként és külsős vendégként is játszhatsz: időpontot a recepción egyeztethetsz.
               </p>
               <div className="hero__ctas">
-                <a href={CLUB.booking} className="btn btn--accent" target="_blank" rel="noopener noreferrer">
-                  <IconCalendar /> Pályafoglalás
+                <a href={HOTEL.phoneHref} className="btn btn--accent">
+                  <IconPhone /> Hívd a recepciót
                 </a>
-                <a href={CLUB.phoneHref} className="btn btn--ghost">
-                  <IconPhone /> {CLUB.phone}
+                <a href="#wellness" className="btn btn--ghost">
+                  Wellness nap <IconArrow />
                 </a>
               </div>
             </div>
           </div>
 
           <figure className="hero__media reveal reveal--img">
-            <Image
-              src="/img/szoboszlo-open-2021.jpg"
-              alt="A Szoboszló Open résztvevői csoportképen a salakpályán"
-              fill
-              priority
-              sizes="(max-width: 1260px) 100vw, 1200px"
-              style={{ objectFit: "cover", objectPosition: "50% 55%" }}
-            />
-            <figcaption className="hero__caption">A Szoboszló Open résztvevői</figcaption>
+            <Image src="/img/kastely-szokokut.jpg" alt="A Batthyány Kastély homlokzata a szökőkúttal és a parkkal" fill priority sizes="(max-width: 1296px) 100vw, 1200px" />
+            <figcaption className="hero__caption">
+              {HOTEL.name}, {HOTEL.town}
+            </figcaption>
           </figure>
 
-          <ul className="facts reveal" aria-label="Röviden">
+          <ul className="facts reveal">
             {HERO_FACTS.map((f) => (
-              <li className="fact" key={f.label}>
-                <span className="fact__num">{f.num}</span>
+              <li key={f.num} className="fact">
+                <span className="fact__num">{nb(f.num)}</span>
                 <span className="fact__label">{f.label}</span>
               </li>
             ))}
@@ -87,404 +73,273 @@ export default function BHome() {
         </div>
       </section>
 
-      {/* ——— Courts and booking (the racket stands on the right) ——— */}
-      <section id="palyak" className="section courts" aria-labelledby="palyak-title">
+      {/* ——— Tenisz ——— */}
+      <section id="tenisz" className="section" aria-labelledby="tenisz-title">
         <div className="container">
-          <p className="eyebrow reveal">Pályák</p>
-          <h2 id="palyak-title" className="h2 reveal">
-            Salak nyáron, <em>sátor télen.</em>
+          <p className="eyebrow reveal">Tenisz</p>
+          <h2 id="tenisz-title" className="h2 reveal">
+            Salakpálya <em>a kastély parkjában.</em>
           </h2>
-          <p className="lead reveal">{SEASON_NOW}</p>
+          <p className="lead reveal">{TENNIS.intro}</p>
 
-          <ul className="facility-grid">
-            {FACILITIES.map((f) => (
-              <li key={f.title} className="facility glass reveal">
-                <h3 className="h3">{f.title}</h3>
-                <p>{f.text}</p>
-              </li>
-            ))}
-          </ul>
+          <div className="court">
+            <figure className="court__photo reveal reveal--img">
+              <Image src="/img/uto-salak.jpg" alt="Teniszütő és labda a salakpálya alapvonalánál" fill sizes="(max-width: 900px) 100vw, 320px" />
+            </figure>
 
-          <div className="book glass reveal">
-            <div className="book__main">
-              <p className="label">
-                <IconCalendar /> Online foglalás
-              </p>
-              <ol className="steps">
-                {BOOKING_STEPS.map((s, i) => (
-                  <li key={s.title}>
-                    <span className="steps__n">{i + 1}</span>
-                    <div>
-                      <strong>{s.title}</strong>
-                      <span>{keep(s.text)}</span>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-              <div className="book__ctas">
-                <a href={CLUB.booking} className="btn btn--accent" target="_blank" rel="noopener noreferrer">
-                  Tovább a foglaláshoz <IconExternal />
-                </a>
-                <a href={CLUB.phoneHref} className="btn btn--ghost">
-                  <IconPhone /> Hívás
-                </a>
-              </div>
-            </div>
-            <div className="book__side">
-              <p className="label">
-                <IconClock /> Nyitvatartás
-              </p>
-              <ul className="hours">
-                {HOURS.map((h) => (
-                  <li key={h.days}>
-                    <span>{h.days}</span>
-                    <strong>{h.time}</strong>
+            <div className="court__body">
+              <ul className="rates reveal">
+                {TENNIS.prices.map((p, i) => (
+                  <li key={p.who} className={`rate glass${i === 0 ? " rate--guest" : ""}`}>
+                    <span className="rate__who">{p.who}</span>
+                    <span className="rate__price">
+                      <strong>{nb(p.price)}</strong> {p.unit}
+                    </span>
                   </li>
                 ))}
               </ul>
-              <p className="label book__where">
-                <IconPin /> Hol vagyunk
-              </p>
-              <p className="book__addr">
-                <a href={CLUB.mapsUrl} target="_blank" rel="noopener noreferrer">
-                  {keep(CLUB.address)}
-                </a>
-                <span>{CLUB.entrance}</span>
-              </p>
+
+              <div className="book glass reveal">
+                <p className="label">
+                  <IconCalendar /> Időpontfoglalás
+                </p>
+                <p className="book__text">{TENNIS.booking}</p>
+                <ul className="checks">
+                  <li>
+                    <IconCheck />
+                    <span>{TENNIS.gear}</span>
+                  </li>
+                  <li>
+                    <IconCheck />
+                    <span>A játékidő 55 perc, a maradék 5 perc a pálya lehúzásáé.</span>
+                  </li>
+                </ul>
+                <div className="book__ctas">
+                  <a href={HOTEL.phoneHref} className="btn btn--accent">
+                    <IconPhone /> {nb(HOTEL.phone)}
+                  </a>
+                  <a href="#urlap" className="btn btn--ghost">
+                    <IconMail /> Írj nekünk
+                  </a>
+                </div>
+                <p className="muted book__alt">
+                  Mobil: <a href={HOTEL.mobileHref}>{nb(HOTEL.mobile)}</a> · <a href={HOTEL.emailHref}>{HOTEL.email}</a>
+                </p>
+              </div>
             </div>
           </div>
 
           <details className="rules glass reveal">
             <summary>
-              <span className="label">Pályarend</span>
-              <span className="rules__hint">Foglalás, lemondás, játékidő, cipő</span>
+              <span className="rules__title">Házirend</span>
+              <span className="rules__hint">Teniszcipő, 55 perc játék, a pálya lehúzása · {HOUSE_RULES.length} pont</span>
             </summary>
             <ul className="checks rules__list">
-              {COURT_RULES.map((r) => (
+              {HOUSE_RULES.map((r) => (
                 <li key={r}>
-                  <IconCheck /> {r}
+                  <IconCheck />
+                  <span>{r}</span>
                 </li>
               ))}
             </ul>
           </details>
+
+          <a href="#wellness" className="bridge glass reveal">
+            <span>{TENNIS.reply}</span>
+            <span className="bridge__go">
+              Wellness napok <IconArrow />
+            </span>
+          </a>
         </div>
       </section>
 
-      {/* ——— Prices (the court lines stand on the left) ——— */}
-      <section id="arak" className="section prices" aria-labelledby="arak-title">
+      {/* ——— Wellness nap ——— */}
+      <section id="wellness" className="section" aria-labelledby="wellness-title">
         <div className="container">
-          <p className="eyebrow reveal">Árak · {PRICES.period}</p>
-          <h2 id="arak-title" className="h2 reveal">
-            Téli árak, <em>a sátorban.</em>
+          <p className="eyebrow reveal">Wellness nap</p>
+          <h2 id="wellness-title" className="h2 reveal">
+            A meccs után <em>egy nap a kastélyban.</em>
           </h2>
+          <p className="lead reveal">Vasárnap napijeggyel, vagy kettesben, előzetes bejelentkezéssel: termálmedencék, szaunák és háromfogásos ebéd a kastély éttermében.</p>
 
-          <div className="price-pair">
-            <div className="price-list glass reveal">
-              <p className="label">
-                <IconCalendar /> Pályabérlés
-              </p>
-              <ul>
-                {PRICES.court.map((p) => (
-                  <li key={p.label}>
-                    <span>{p.label}</span>
-                    <strong>{p.price}</strong>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="price-list glass reveal">
-              <p className="label">
-                <IconUsers /> Teniszedzés
-              </p>
-              <ul>
-                {PRICES.coaching.map((p) => (
-                  <li key={p.label}>
-                    <span>{p.label}</span>
-                    <strong>{p.price}</strong>
-                  </li>
-                ))}
-              </ul>
-              <p className="muted">{PRICES.coachingNote}</p>
-            </div>
-          </div>
-
-          <div className="cards-head reveal">
-            <p className="label">
-              <IconCard /> Szezonkártyák
-            </p>
-            <p className="muted">{PRICES.cardsValid}</p>
-          </div>
-          <ul className="card-grid">
-            {PRICES.cards.map((c) => (
-              <li key={c.units} className={`season-card glass reveal${c.units === 80 ? " season-card--best" : ""}`}>
-                <p className="season-card__units">
-                  {c.units} <span>egység</span>
+          <div className="offers">
+            {WELLNESS_DAYS.map((d) => (
+              <article key={d.id} className={`offer glass reveal offer--${d.id}`}>
+                <h3 className="h3">{d.title}</h3>
+                <p className="offer__when">
+                  <IconClock /> {d.when}
                 </p>
-                <p className="season-card__price">{c.price}</p>
-                <dl className="season-card__per">
-                  <div>
-                    <dt>Egy pályaóra</dt>
-                    <dd>{c.hour}</dd>
-                  </div>
-                  <div>
-                    <dt>Egyéni, fejenként</dt>
-                    <dd>{c.half}</dd>
-                  </div>
-                  <div>
-                    <dt>Páros, fejenként</dt>
-                    <dd>{fmt(c.single)} Ft</dd>
-                  </div>
-                </dl>
-              </li>
+                <ul className="offer__prices">
+                  {d.prices.map((p) => (
+                    <li key={p.who}>
+                      <span>{p.who}</span>
+                      <strong>{nb(p.price)}</strong>
+                    </li>
+                  ))}
+                </ul>
+                <p className="offer__inc">Benne van</p>
+                <ul className="checks">
+                  {d.includes.map((x) => (
+                    <li key={x}>
+                      <IconCheck />
+                      <span>{keepNums(x)}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="offer__foot">
+                  <a href={HOTEL.phoneHref} className={`btn ${d.id === "paros" ? "btn--accent" : "btn--ghost"}`}>
+                    <IconPhone /> {SIGN_UP[d.id]?.cta ?? "Érdeklődés"}
+                  </a>
+                  <p className="muted">{SIGN_UP[d.id]?.note}</p>
+                </div>
+              </article>
             ))}
-          </ul>
-          <ul className="checks unit-rules reveal">
-            {PRICES.cardRules.map((r) => (
-              <li key={r}>
-                <IconCheck /> {r}
-              </li>
-            ))}
-          </ul>
+          </div>
+
+          <div className="spa">
+            <div className="spa__head reveal">
+              <h3 className="h3">A wellness részleg</h3>
+              <p className="muted">{WELLNESS.text}</p>
+            </div>
+            <div className="spa__grid">
+              {WELLNESS.items.map((it, i) => {
+                const ph = WELLNESS_PHOTOS[i];
+                return (
+                  <article key={it.title} className="spa-card glass reveal">
+                    {ph && (
+                      <figure className="spa-card__img">
+                        <Image src={ph.src} alt={ph.alt} fill sizes="(max-width: 900px) 100vw, (max-width: 1296px) 50vw, 600px" />
+                      </figure>
+                    )}
+                    <div className="spa-card__body">
+                      <h4 className="h3">{it.title}</h4>
+                      <p>{it.text}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ——— Coaching (the court lines still stand on the left) ——— */}
-      <section id="edzes" className="section coaching" aria-labelledby="edzes-title">
+      {/* ——— A park ——— */}
+      <section id="park" className="section" aria-labelledby="park-title">
         <div className="container">
-          <p className="eyebrow reveal">Edzés</p>
-          <h2 id="edzes-title" className="h2 reveal">
-            Két edző, <em>gyerekeknek és felnőtteknek.</em>
+          <p className="eyebrow reveal">A park</p>
+          <h2 id="park-title" className="h2 reveal">
+            A pálya után <em>egy csobbanás.</em>
           </h2>
-          <p className="lead reveal">Magánedzés legfeljebb két főnek, csoportos edzés háromtól, gyerekcsoportok és nyári tábor.</p>
+          <p className="lead reveal">
+            A teniszpálya, a kültéri termálmedence, a szaunák és a masszázspavilon mind a kastély 10 hektáros parkjában vannak. A számok a szálloda parktérképéről valók.
+          </p>
 
-          <ul className="coach-grid">
-            {COACHES.map((c) => (
-              <li key={c.name} className="coach glass reveal">
-                <figure className="coach__photo">
-                  <Image src={c.img} alt={c.name} fill sizes="(max-width: 900px) 40vw, 180px" style={{ objectFit: "cover" }} />
-                </figure>
-                <div className="coach__body">
-                  <h3 className="h3">{c.name}</h3>
-                  <ul className="chips">
-                    {c.facts.map((f) => (
-                      <li key={f}>{f}</li>
-                    ))}
-                  </ul>
-                  <p>{c.text}</p>
-                  {c.partner && (
-                    <p className="coach__partner">{c.partner}</p>
-                  )}
-                  <div className="coach__contact">
-                    <a href={c.phoneHref} className="btn btn--accent btn--sm">
-                      <IconPhone /> {c.phone}
-                    </a>
-                    <a href={`mailto:${c.email}`} className="coach__mail">
-                      <IconMail /> {c.email}
-                    </a>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-
-          <div className="kids">
-            <figure className="snap kids__photo reveal reveal--img">
-              <Image src="/img/tabor-2026.jpg" alt="A 2026-os tenisztábor gyerekei oklevelekkel a salakpályán" fill sizes="(max-width: 900px) 100vw, 34vw" style={{ objectFit: "cover", objectPosition: "50% 40%" }} />
-              <figcaption>Tenisztábor, 2026 augusztus</figcaption>
+          <div className="route">
+            <figure className="route__map glass reveal">
+              <a href="/img/park-terkep.jpg" target="_blank" rel="noopener noreferrer" aria-label="A szálloda parktérképe nagyban (új lapon)">
+                <Image src="/img/park-terkep.jpg" alt="A szálloda illusztrált parktérképe számozott épületekkel és helyszínekkel" width={1671} height={1114} sizes="(max-width: 900px) 100vw, 640px" />
+              </a>
+              <figcaption>
+                A szálloda parktérképe <IconExternal />
+              </figcaption>
             </figure>
-            <div className="kids__cards">
-              <div className="kids__card glass reveal">
-                <p className="label">
-                  <IconUsers /> Gyerekcsoport
-                </p>
-                <p>{KIDS}</p>
-                <a href={CLUB.phoneHref} className="btn btn--ghost btn--sm">
-                  <IconPhone /> Időpontot kérek
-                </a>
-              </div>
-              <div className="kids__card glass reveal">
-                <p className="label">
-                  <IconTrophy /> Nyári tábor
-                </p>
-                <p>{CAMP}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ——— Piramis (the club's ball mark forms on the right of the heading) ——— */}
-      <section id="piramis" className="section piramis" aria-labelledby="piramis-title">
-        <div className="container">
-          <p className="eyebrow reveal">Piramis verseny</p>
-          <h2 id="piramis-title" className="h2 reveal">
-            Hívd ki, <em>és lépj feljebb.</em>
-          </h2>
-          <p className="lead reveal">{PIRAMIS.intro}</p>
-
-          <ul className="stats reveal" aria-label="A Piramis számokban">
-            {PIRAMIS.stats.map((s) => (
-              <li key={s.label}>
-                <strong>{s.value}</strong>
-                <span>{s.label}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="ladder glass reveal">
-            <div className="ladder__figure" aria-hidden="true">
-              {LADDER.map((count, row) => (
-                <div key={row} className="ladder__row">
-                  {Array.from({ length: count }, (_, col) => {
-                    const you = row === YOU.row && col === YOU.col;
-                    const target = !you && canChallenge(row, col);
-                    return <span key={col} className={`ladder__dot${you ? " is-you" : ""}${target ? " is-target" : ""}`} />;
-                  })}
-                </div>
+            <ol className="route__list reveal">
+              {PARK_ROUTE.map((s) => (
+                <li key={s.n}>
+                  <span className="route__n" aria-label={`${s.n}. a térképen`}>
+                    {s.n}
+                  </span>
+                  <div>
+                    <strong>{s.title}</strong>
+                    <span>{s.text}</span>
+                  </div>
+                </li>
               ))}
-            </div>
-            <div className="ladder__text">
-              <p className="label">Így működik</p>
-              <p>{PIRAMIS.how}</p>
-              <ul className="ladder__legend">
-                <li>
-                  <span className="ladder__key ladder__key--you" /> te
-                </li>
-                <li>
-                  <span className="ladder__key ladder__key--target" /> akit kihívhatsz: azonos sorban vagy egy szinttel feljebb
-                </li>
-              </ul>
-            </div>
+            </ol>
           </div>
 
-          <ul className="checks checks--grid piramis__rules reveal">
-            {PIRAMIS.rules.map((r) => (
-              <li key={r}>
-                <IconCheck /> {r}
+          <h3 className="h3 more__title reveal">A parkban és a közelben</h3>
+          <ul className="more">
+            {ACTIVITIES.map((a) => (
+              <li key={a.title} className="more__item glass reveal">
+                <strong>{a.title}</strong>
+                <span>{keepNums(a.text)}</span>
               </li>
             ))}
           </ul>
-
-          <div className="edition glass reveal">
-            <span className="tag">A legutóbbi kiírás: {PIRAMIS.last.year}</span>
-            <p>{PIRAMIS.last.schedule}</p>
-            <p className="muted">{PIRAMIS.last.costs}</p>
-          </div>
-
-          <div className="results">
-            <article className="result glass reveal">
-              <figure className="result__img">
-                <Image src="/img/piramis-donto.jpg" alt="A 2025-ös Piramis döntő résztvevői a salakpályán" fill sizes="(max-width: 900px) 100vw, 30vw" style={{ objectFit: "cover" }} />
-              </figure>
-              <div className="result__body">
-                <p className="label">
-                  <IconTrophy /> 2025 · Döntő
-                </p>
-                <ol className="podium">
-                  {PIRAMIS.final2025.map((n, i) => (
-                    <li key={n}>
-                      <span>{i + 1}.</span> {n}
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            </article>
-            <article className="result glass reveal">
-              <figure className="result__img">
-                <Image src="/img/piramis-kisdonto.jpg" alt="A 2025-ös Piramis kisdöntő résztvevői a salakpályán" fill sizes="(max-width: 900px) 100vw, 30vw" style={{ objectFit: "cover" }} />
-              </figure>
-              <div className="result__body">
-                <p className="label">
-                  <IconTrophy /> 2025 · Kisdöntő
-                </p>
-                <ol className="podium">
-                  {PIRAMIS.mini2025.map((n, i) => (
-                    <li key={n}>
-                      <span>{i + 1}.</span> {n}
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            </article>
-          </div>
         </div>
       </section>
 
-      {/* ——— Club life (the big ball spins behind) ——— */}
-      <section id="klubelet" className="section club" aria-labelledby="klubelet-title">
+      {/* ——— A kastély ——— */}
+      <section id="kastely" className="section" aria-labelledby="kastely-title">
         <div className="container">
-          <p className="eyebrow reveal">Klubélet</p>
-          <h2 id="klubelet-title" className="h2 reveal">
-            Versenyek, csapatok, <em>barátok.</em>
+          <p className="eyebrow reveal">A kastély</p>
+          <h2 id="kastely-title" className="h2 reveal">
+            Gótikus alapokon, <em>ma négycsillagos.</em>
           </h2>
-          <p className="lead reveal">{TEAMS.text}</p>
+          <p className="lead reveal">{CASTLE.intro}</p>
 
-          <ul className="event-grid">
-            {EVENTS.map((e) => (
-              <li key={e.title} className="event glass reveal">
-                <figure className="event__img">
-                  <Image src={e.img} alt={e.alt} fill sizes="(max-width: 900px) 100vw, 30vw" style={{ objectFit: "cover", objectPosition: "50% 35%" }} />
-                </figure>
-                <div className="event__body">
-                  <h3 className="h3">{e.title}</h3>
-                  <p>{e.text}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-
-          <div className="club__grid">
+          <div className="castle">
             <div className="history glass reveal">
-              <p className="label">
-                <IconClock /> A sportcentrum
-              </p>
+              <p className="label">A kastély története</p>
               <ol className="history__list">
-                {HISTORY.map((h) => (
+                {CASTLE.history.map((h) => (
                   <li key={h.year}>
                     <span className="history__year">{h.year}</span>
-                    <p>{h.text}</p>
+                    <span>{h.text}</span>
                   </li>
                 ))}
               </ol>
             </div>
-            <div className="famous glass reveal">
-              <p className="label">
-                <IconTrophy /> Hírességeink
-              </p>
-              <ul className="famous__list">
-                {FAMOUS.map((f) => (
-                  <li key={f.name}>
-                    <strong>{f.name}</strong>
-                    <span>{f.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
+            <article className="stay glass reveal">
+              <figure className="stay__img">
+                <Image src="/img/szoba.jpg" alt="Kastélyszoba franciaággyal, csillárral és magas ablakokkal" fill sizes="(max-width: 900px) 100vw, 480px" />
+              </figure>
+              <div className="stay__body">
+                <h3 className="h3">Szobák és lakosztályok</h3>
+                <p>{CASTLE.rooms}</p>
+                <div className="stay__ctas">
+                  <a href={HOTEL.booking} className="btn btn--accent btn--sm" target="_blank" rel="noopener noreferrer">
+                    <IconCalendar /> Szobafoglalás
+                  </a>
+                  <a href={HOTEL.offer} className="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">
+                    Ajánlatkérés <IconExternal />
+                  </a>
+                </div>
+                <a href={HOTEL.packages} className="stay__link" target="_blank" rel="noopener noreferrer">
+                  Csomagajánlatok a szálloda oldalán <IconArrow />
+                </a>
+              </div>
+            </article>
           </div>
 
-          <div className="shop glass reveal">
-            <figure className="shop__img">
-              <Image src="/img/shop.jpg" alt="Ütők, húrok és kiegészítők a pálya melletti bolt falán" fill sizes="(max-width: 900px) 100vw, 40vw" style={{ objectFit: "cover" }} />
-            </figure>
-            <div className="shop__body">
-              <p className="label">Shop és húrozás</p>
-              <h3 className="h3">Minden a pálya mellett.</h3>
-              <p>{SHOP.text}</p>
-              <a href={CLUB.shop} className="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">
-                Webshop <IconExternal />
-              </a>
+          <article className="dining glass reveal">
+            <div className="dining__imgs">
+              <figure>
+                <Image src="/img/etterem-1.jpg" alt="Előétel: sárgadinnye sonkával és bazsalikommal" fill sizes="(max-width: 900px) 50vw, 280px" />
+              </figure>
+              <figure>
+                <Image src="/img/etterem-2.jpg" alt="Desszert: rétes erdei gyümölcsös öntettel" fill sizes="(max-width: 900px) 50vw, 280px" />
+              </figure>
             </div>
-          </div>
+            <div className="dining__body">
+              <p className="label">Gasztronómia</p>
+              <h3 className="h3">A kastély éttermei</h3>
+              <p>{CASTLE.dining}</p>
+            </div>
+          </article>
         </div>
       </section>
 
-      {/* ——— Contact (final) ——— */}
+      {/* ——— Kapcsolat ——— */}
       <section id="kapcsolat" className="section final" aria-labelledby="kapcsolat-title">
         <div className="container">
           <div className="final__head">
             <p className="eyebrow reveal">Kapcsolat</p>
             <h2 id="kapcsolat-title" className="h2 h2--xl reveal">
-              Foglalj pályát, <em>vagy hívj minket.</em>
+              Pálya, wellness nap: <em>a recepción foglalhatsz.</em>
             </h2>
           </div>
 
@@ -494,59 +349,60 @@ export default function BHome() {
                 <li>
                   <IconPhone />
                   <div>
-                    <span className="contact__label">Pálya, edzés, eszközbérlés</span>
-                    <a href={CLUB.phoneHref}>{CLUB.phone}</a>
+                    <span className="contact__label">Recepció</span>
+                    <a href={HOTEL.phoneHref}>{nb(HOTEL.phone)}</a>
+                    <a href={HOTEL.mobileHref} className="contact__line">
+                      {nb(HOTEL.mobile)} <span className="contact__hint">mobil</span>
+                    </a>
                   </div>
                 </li>
                 <li>
                   <IconMail />
                   <div>
                     <span className="contact__label">E-mail</span>
-                    <a href={CLUB.emailHref}>{CLUB.email}</a>
+                    <a href={HOTEL.emailHref}>{HOTEL.email}</a>
                   </div>
                 </li>
                 <li>
                   <IconPin />
                   <div>
                     <span className="contact__label">Cím</span>
-                    <a href={CLUB.mapsUrl} target="_blank" rel="noopener noreferrer">
-                      {keep(CLUB.address)}
+                    <a href={HOTEL.mapsUrl} target="_blank" rel="noopener noreferrer">
+                      {HOTEL.address.replace("u. 24.", "u. 24.")}
                     </a>
                     <span className="contact__name">
-                      {CLUB.venue} · {CLUB.entrance}
+                      {HOTEL.name} {HOTEL.stars}
                     </span>
-                  </div>
-                </li>
-                <li>
-                  <IconClock />
-                  <div>
-                    <span className="contact__label">Nyitvatartás</span>
-                    {HOURS.map((h) => (
-                      <span key={h.days} className="contact__line">
-                        {h.days}: {h.time}
-                      </span>
-                    ))}
                   </div>
                 </li>
                 <li>
                   <IconFacebook />
                   <div>
-                    <span className="contact__label">Facebook-csoport</span>
-                    <a href={CLUB.facebook} target="_blank" rel="noopener noreferrer">
-                      Szoboszlótenisz
+                    <span className="contact__label">Facebook</span>
+                    <a href={HOTEL.facebook} target="_blank" rel="noopener noreferrer">
+                      Batthyány Kastélyszálló
                     </a>
                   </div>
                 </li>
               </ul>
               <div className="visit__actions">
-                <a href={CLUB.booking} className="btn btn--accent" target="_blank" rel="noopener noreferrer">
-                  <IconCalendar /> Foglalás
+                <a href={HOTEL.phoneHref} className="btn btn--accent">
+                  <IconPhone /> Hívás
                 </a>
-                <a href={CLUB.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn--ghost">
+                <a href={HOTEL.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn--ghost">
                   <IconArrow /> Útvonal
                 </a>
               </div>
-              <p className="visit__operator">Üzemeltető: {CLUB.operator}</p>
+              <p className="visit__note">
+                Szállás:{" "}
+                <a href={HOTEL.booking} target="_blank" rel="noopener noreferrer">
+                  szobafoglalás
+                </a>{" "}
+                ·{" "}
+                <a href={HOTEL.offer} target="_blank" rel="noopener noreferrer">
+                  ajánlatkérés
+                </a>
+              </p>
             </div>
 
             <div className="visit__form glass reveal">
@@ -558,7 +414,7 @@ export default function BHome() {
           </div>
 
           <div className="visit__map glass reveal">
-            <iframe title="A Hungarospa Sportcentrum a térképen" src={CLUB.mapsEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+            <iframe title="A Batthyány Kastélyszálló a térképen" src={HOTEL.mapsEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
           </div>
         </div>
       </section>
