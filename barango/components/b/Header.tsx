@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { HOTEL } from "@/lib/site";
+import { CLUB, OPEN } from "@/lib/site";
 import { IconMail, IconPhone } from "./icons";
 import { NAV_B } from "./nav";
 
-const nb = (t: string) => t.replace(/ /g, " ");
+const nb = (t: string) => t.replace(/ /g, " ");
 
 export function Header() {
   const [solid, setSolid] = useState(false);
@@ -34,28 +34,26 @@ export function Header() {
       <div className="announce">
         <div className="container announce__inner">
           <span className="announce__place">
-            {HOTEL.name} {HOTEL.stars} · {HOTEL.town}
+            {CLUB.town}, {CLUB.street}
           </span>
-          <span className="announce__mail">
-            <a href={HOTEL.emailHref} className="announce__link">
-              {HOTEL.email}
-            </a>
+          <span className="announce__open">
+            {OPEN.days} <strong>{OPEN.hours}</strong>
           </span>
           <span className="announce__tel">
-            Recepció:{" "}
-            <a href={HOTEL.phoneHref} className="announce__phone">
-              {nb(HOTEL.phone)}
+            Foglalás:{" "}
+            <a href={CLUB.phoneHref} className="announce__phone">
+              {nb(CLUB.phone)}
             </a>
           </span>
         </div>
       </div>
       <header className={`header${solid ? " header--solid" : ""}${open ? " header--open" : ""}`}>
         <div className="container header__inner">
-          <a href="/b" className="brand" onClick={close} aria-label="Batthyány Kastélyszálló – tenisz és wellness, kezdőlap">
-            <Image src="/img/batthyany-jel-pontok.png" alt="" width={900} height={346} className="brand__logo" priority />
+          <a href="/b" className="brand" onClick={close} aria-label="Barango Tenisz Club, Érd – kezdőlap">
+            <Image src="/img/barango-jel-pontok.png" alt="" width={900} height={900} className="brand__logo" priority />
             <span className="brand__name">
-              Batthyány Kastélyszálló
-              <small>Tenisz · Wellness · Zalacsány</small>
+              Barango
+              <small>Tenisz Club · {CLUB.town}</small>
             </span>
           </a>
 
@@ -68,11 +66,11 @@ export function Header() {
           </nav>
 
           <div className="header__cta">
-            <a href={HOTEL.emailHref} className="btn btn--ghost btn--sm btn--icon" aria-label={`E-mail: ${HOTEL.email}`}>
+            <a href={CLUB.emailHref} className="btn btn--ghost btn--sm btn--icon" aria-label={`E-mail: ${CLUB.email}`}>
               <IconMail />
             </a>
-            <a href={HOTEL.phoneHref} className="btn btn--accent btn--sm">
-              <IconPhone /> {nb(HOTEL.phone)}
+            <a href={CLUB.phoneHref} className="btn btn--accent btn--sm">
+              <IconPhone /> {nb(CLUB.phone)}
             </a>
           </div>
 
@@ -98,15 +96,17 @@ export function Header() {
             ))}
           </nav>
           <div className="container mobile-menu__foot">
-            <a href={HOTEL.phoneHref} className="btn btn--accent btn--block">
-              <IconPhone /> Recepció: {nb(HOTEL.phone)}
+            <a href={CLUB.phoneHref} className="btn btn--accent btn--block">
+              <IconPhone /> Foglalás: {nb(CLUB.phone)}
             </a>
-            <a href={HOTEL.emailHref} className="btn btn--ghost btn--block">
-              <IconMail /> {HOTEL.email}
+            <a href={CLUB.emailHref} className="btn btn--ghost btn--block">
+              <IconMail /> {CLUB.email}
             </a>
             <p className="mobile-menu__hours">
-              <span>Pálya és wellness nap: a recepción, telefonon vagy e-mailben.</span>
-              <span>{HOTEL.address}</span>
+              <span>
+                {OPEN.days} {OPEN.hours}
+              </span>
+              <span>{CLUB.address}</span>
             </p>
           </div>
         </div>

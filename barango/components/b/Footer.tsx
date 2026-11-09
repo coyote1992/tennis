@@ -1,56 +1,47 @@
 import Image from "next/image";
-import { HOTEL } from "@/lib/site";
+import { BUILD, CLUB, OPEN } from "@/lib/site";
 import { NAV_B } from "./nav";
 
-const nb = (t: string) => t.replace(/ /g, " ");
+const nb = (t: string) => t.replace(/ /g, " ");
 
 export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <Image src="/img/logo-white.png" alt={`${HOTEL.name} ${HOTEL.stars} ${HOTEL.town}`} width={376} height={229} className="footer__logo" />
+          <a href="/b" className="brand brand--footer" aria-label="Barango Tenisz Club – kezdőlap">
+            <Image src="/img/barango-jel-pontok.png" alt="" width={900} height={900} className="brand__logo" />
+            <span className="brand__name">
+              Barango
+              <small>Tenisz Club · {CLUB.town}</small>
+            </span>
+          </a>
           <p className="footer__motto">
-            <em>Tenisz a kastélyparkban,</em> utána wellness.
+            <em>Salakpálya Érden,</em> {OPEN.days.toLowerCase()} {OPEN.hours}.
           </p>
         </div>
 
         <div>
-          <h2 className="footer__title">Recepció</h2>
+          <h2 className="footer__title">Foglalás, edzés, tenisziskola</h2>
           <address className="footer__list">
-            <a href={HOTEL.phoneHref}>{nb(HOTEL.phone)}</a>
-            <a href={HOTEL.mobileHref}>{nb(HOTEL.mobile)}</a>
-            <a href={HOTEL.emailHref}>{HOTEL.email}</a>
-            <a href={HOTEL.mapsUrl} target="_blank" rel="noopener noreferrer">
-              {HOTEL.address}
+            <span className="footer__muted">
+              {CLUB.contact}, {CLUB.contactRole.replace(/-/g, "\u2011")}
+            </span>
+            <a href={CLUB.phoneHref}>{nb(CLUB.phone)}</a>
+            <a href={CLUB.emailHref}>{CLUB.email}</a>
+            <a href={CLUB.mapsUrl} target="_blank" rel="noopener noreferrer">
+              {CLUB.address}
             </a>
           </address>
         </div>
 
         <div>
-          <h2 className="footer__title">Szállás</h2>
-          <ul className="footer__list">
-            <li>
-              <a href={HOTEL.booking} target="_blank" rel="noopener noreferrer">
-                Szobafoglalás
-              </a>
-            </li>
-            <li>
-              <a href={HOTEL.offer} target="_blank" rel="noopener noreferrer">
-                Ajánlatkérés
-              </a>
-            </li>
-            <li>
-              <a href={HOTEL.packages} target="_blank" rel="noopener noreferrer">
-                Csomagajánlatok
-              </a>
-            </li>
-            <li>
-              <a href={HOTEL.facebook} target="_blank" rel="noopener noreferrer">
-                Facebook
-              </a>
-            </li>
-          </ul>
+          <h2 className="footer__title">Pályaépítés</h2>
+          <address className="footer__list">
+            <span className="footer__muted">{BUILD.contact.name}</span>
+            <a href={BUILD.contact.phoneHref}>{nb(BUILD.contact.phone)}</a>
+            <a href={`mailto:${BUILD.contact.email}`}>{BUILD.contact.email}</a>
+          </address>
         </div>
 
         <div>
@@ -66,10 +57,10 @@ export function Footer() {
       </div>
 
       <div className="container footer__bottom">
+        <span>© {CLUB.name}</span>
         <span>
-          © {HOTEL.name} {HOTEL.stars}
+          Üzemeltető: {CLUB.operator}, {CLUB.operatorAddress}
         </span>
-        <span>{HOTEL.address}</span>
       </div>
     </footer>
   );

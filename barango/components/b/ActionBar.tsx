@@ -1,15 +1,15 @@
-import { HOTEL } from "@/lib/site";
+import { CLUB } from "@/lib/site";
 import { IconPhone } from "./icons";
 
-/** Phones only: jump to the wellness days, or call the reception (court and wellness bookings). */
+/** Phones only: jump to the prices, or call to book (court, coaching and the school). */
 export function ActionBar() {
   return (
     <div className="actionbar" role="region" aria-label="Gyors elérés">
-      <a href="#wellness" className="btn btn--ghost">
-        Wellness nap
+      <a href="#palya" className="btn btn--ghost">
+        Árak
       </a>
-      <a href={HOTEL.phoneHref} className="btn btn--accent">
-        <IconPhone /> Hívd a recepciót
+      <a href={CLUB.phoneHref} className="btn btn--accent">
+        <IconPhone /> Foglalás telefonon
       </a>
     </div>
   );

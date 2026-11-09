@@ -24,22 +24,22 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://batthyany.tenis.studio"),
-  title: "Tenisz és wellness · Batthyány Kastélyszálló, Zalacsány",
+  metadataBase: new URL("https://barango.tenis.studio"),
+  title: "Barango Tenisz Club · salakpálya, edzés, tenisziskola Érden",
   description:
-    "Megújult salakos teniszpálya a Batthyány Kastélyszálló 10 hektáros parkjában, Zalacsányban: 5 000 Ft/óra szállóvendégeknek, 6 000 Ft/óra külsős vendégeknek. Vasárnapi és páros wellness nap. Recepció: +36 83 537 000.",
+    "Salakos teniszpálya Érden, a Porcsinrózsa utcában, minden nap 7 és 22 óra között: 3 500 Ft/óra hétköznap, 4 000 Ft/óra hétvégén, 10 órás bérlet 36 000 Ft. Edzések, tenisziskola, pályaépítés. Foglalás: +36 20 267 3097.",
   alternates: { canonical: "/b" },
   openGraph: {
-    title: "Tenisz és wellness · Batthyány Kastélyszálló",
-    description: "Salakpálya a kastélyparkban, utána termálmedence, szaunák és wellness nap. Zalacsány.",
-    images: ["/img/kastely-szokokut.jpg"],
+    title: "Barango Tenisz Club · Érd",
+    description: "Salakpálya esti világítással, edzések és tenisziskola Érden. Foglalás telefonon vagy e-mailben.",
+    images: ["/img/ejszakai-palya.jpg"],
     locale: "hu_HU",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#140e08",
+  themeColor: "#07140f",
   colorScheme: "dark",
 };
 
