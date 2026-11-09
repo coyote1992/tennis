@@ -8,7 +8,7 @@
  * versions have separate root layouts.
  */
 import { usePathname } from "next/navigation";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
 /** The same page in the other version: /x <-> /b/x. */
 function counterpart(path: string, target: "a" | "b") {
@@ -16,7 +16,47 @@ function counterpart(path: string, target: "a" | "b") {
   return target === "a" ? bare : bare === "/" ? "/b" : `/b${bare}`;
 }
 
+/**
+ * Arriving with #section (from the switch or a shared link): the browser jumps to the section at
+ * once, before the web fonts and images have settled, so the headings above can still change height
+ * and leave the section off its mark. Once fonts and the page have loaded, line it up again —
+ * unless the visitor has started scrolling by then.
+ */
+function useSettleHash() {
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    const el = id ? document.getElementById(id) : null;
+    if (!el) return;
+    let stopped = false;
+    const stop = () => {
+      stopped = true;
+    };
+    const fix = () => {
+      if (stopped) return;
+      const pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      const off = el.getBoundingClientRect().top - pad;
+      if (Math.abs(off) > 6) window.scrollTo({ top: window.scrollY + off, behavior: "instant" as ScrollBehavior });
+    };
+    const opts = { passive: true, once: true } as const;
+    window.addEventListener("wheel", stop, opts);
+    window.addEventListener("touchstart", stop, opts);
+    window.addEventListener("keydown", stop, { once: true });
+    document.fonts?.ready.then(fix);
+    if (document.readyState === "complete") fix();
+    else window.addEventListener("load", fix, { once: true });
+    const timers = [400, 1200].map((ms) => window.setTimeout(fix, ms));
+    return () => {
+      timers.forEach(clearTimeout);
+      window.removeEventListener("wheel", stop);
+      window.removeEventListener("touchstart", stop);
+      window.removeEventListener("keydown", stop);
+      window.removeEventListener("load", fix);
+    };
+  }, []);
+}
+
 export function VersionSwitch({ current }: { current: "a" | "b" }) {
+  useSettleHash();
   const path = usePathname() || (current === "a" ? "/" : "/b");
   const go = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
