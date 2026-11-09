@@ -24,22 +24,22 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://barango.tenis.studio"),
-  title: "Barango Tenisz Club · salakpálya, edzés, tenisziskola Érden",
+  metadataBase: new URL("https://matchpoint.tenis.studio"),
+  title: "Match-Point Tennis Club & Shop · Marczibányi tér",
   description:
-    "Salakos teniszpálya Érden, a Porcsinrózsa utcában, minden nap 7 és 22 óra között: 3 500 Ft/óra hétköznap, 4 000 Ft/óra hétvégén, 10 órás bérlet 36 000 Ft. Edzések, tenisziskola, pályaépítés. Foglalás: +36 20 267 3097.",
+    "Két salakpálya a Marczibányi téren, télen sátorral fedve; edzések felnőtteknek és gyerekeknek, Velcz Zsolt Racket Service-e és Magyarország hivatalos Nike Tennis Shopja egy klubházban. Pályafoglalás: +36 30 581 5030.",
   alternates: { canonical: "/b" },
   openGraph: {
-    title: "Barango Tenisz Club · Érd",
-    description: "Salakpálya esti világítással, edzések és tenisziskola Érden. Foglalás telefonon vagy e-mailben.",
-    images: ["/img/ejszakai-palya.jpg"],
+    title: "Match-Point Tennis Club & Shop",
+    description: "Salakpályák, oktatás, húrozás és Nike Tennis Shop a II. kerületi Marczibányi téren, 1996 óta.",
+    images: ["/img/klubhaz.jpg"],
     locale: "hu_HU",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#07140f",
+  themeColor: "#070a08",
   colorScheme: "dark",
 };
 

@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { CLUB, OPEN } from "@/lib/site";
-import { IconMail, IconPhone } from "./icons";
+import { CLUB, HOURS } from "@/lib/site";
+import { IconExternal, IconPhone } from "./icons";
 import { NAV_B } from "./nav";
 
-const nb = (t: string) => t.replace(/ /g, " ");
+const nb = (t: string) => t.replace(/ /g, " ");
 
 export function Header() {
   const [solid, setSolid] = useState(false);
@@ -33,14 +33,12 @@ export function Header() {
     <>
       <div className="announce">
         <div className="container announce__inner">
-          <span className="announce__place">
-            {CLUB.town}, {CLUB.street}
-          </span>
+          <span className="announce__place">{CLUB.address}</span>
           <span className="announce__open">
-            {OPEN.days} <strong>{OPEN.hours}</strong>
+            Nyitva: {HOURS.map((h) => `${h.days.toLowerCase()} ${h.time}`).join(", ")}
           </span>
           <span className="announce__tel">
-            Foglalás:{" "}
+            Recepció:{" "}
             <a href={CLUB.phoneHref} className="announce__phone">
               {nb(CLUB.phone)}
             </a>
@@ -49,12 +47,8 @@ export function Header() {
       </div>
       <header className={`header${solid ? " header--solid" : ""}${open ? " header--open" : ""}`}>
         <div className="container header__inner">
-          <a href="/b" className="brand" onClick={close} aria-label="Barango Tenisz Club, Érd – kezdőlap">
-            <Image src="/img/barango-jel-pontok.png" alt="" width={900} height={900} className="brand__logo" priority />
-            <span className="brand__name">
-              Barango
-              <small>Tenisz Club · {CLUB.town}</small>
-            </span>
+          <a href="/b" className="brand" onClick={close} aria-label="Match-Point Tennis Club & Shop – kezdőlap">
+            <Image src="/img/logo-sotet-hatter.png" alt="Match-Point Tennis Club & Shop" width={220} height={139} className="brand__logo" priority />
           </a>
 
           <nav className="nav" aria-label="Fő navigáció">
@@ -66,8 +60,8 @@ export function Header() {
           </nav>
 
           <div className="header__cta">
-            <a href={CLUB.emailHref} className="btn btn--ghost btn--sm btn--icon" aria-label={`E-mail: ${CLUB.email}`}>
-              <IconMail />
+            <a href={CLUB.webshop} target="_blank" rel="noopener noreferrer" className="btn btn--ghost btn--sm">
+              Webshop <IconExternal />
             </a>
             <a href={CLUB.phoneHref} className="btn btn--accent btn--sm">
               <IconPhone /> {nb(CLUB.phone)}
@@ -97,15 +91,17 @@ export function Header() {
           </nav>
           <div className="container mobile-menu__foot">
             <a href={CLUB.phoneHref} className="btn btn--accent btn--block">
-              <IconPhone /> Foglalás: {nb(CLUB.phone)}
+              <IconPhone /> Recepció: {nb(CLUB.phone)}
             </a>
-            <a href={CLUB.emailHref} className="btn btn--ghost btn--block">
-              <IconMail /> {CLUB.email}
+            <a href={CLUB.webshop} target="_blank" rel="noopener noreferrer" className="btn btn--ghost btn--block">
+              Webshop <IconExternal />
             </a>
             <p className="mobile-menu__hours">
-              <span>
-                {OPEN.days} {OPEN.hours}
-              </span>
+              {HOURS.map((h) => (
+                <span key={h.days}>
+                  {h.days} {h.time}
+                </span>
+              ))}
               <span>{CLUB.address}</span>
             </p>
           </div>
