@@ -1,28 +1,36 @@
 import Image from "next/image";
-import { CLUB, HOURS, SHOP } from "@/lib/site";
+import { CLUB, VENUE } from "@/lib/site";
 import { NAV_B } from "./nav";
 
-const nb = (t: string) => t.replace(/ /g, " ");
+const nb = (t: string) => t.replace(/ /g, " ");
 
 export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <a href="/b" className="brand brand--footer" aria-label="Match-Point Tennis Club & Shop – kezdőlap">
-            <Image src="/img/logo-sotet-hatter.png" alt="Match-Point Tennis Club & Shop" width={220} height={139} className="brand__logo" />
+          <a href="/b" className="brand brand--footer" aria-label="Tenisziskola Veszprém SE – kezdőlap">
+            <Image src="/img/tvse-logo.png" alt="" width={512} height={512} className="brand__logo" />
+            <span className="brand__name">
+              Tenisziskola Veszprém
+              <small>Sportegyesület · TVSE</small>
+            </span>
           </a>
           <p className="footer__motto">
-            <em>{CLUB.quote.text}</em> {CLUB.quote.by}
+            Hét salakpálya a {CLUB.venue}ban, télen három sátorral. Online foglalás, edzők, nyári tábor, téli házibajnokság.
           </p>
         </div>
 
         <div>
-          <h2 className="footer__title">Recepció</h2>
+          <h2 className="footer__title">Elérhetőség</h2>
           <address className="footer__list">
-            <a href={CLUB.phoneHref}>{nb(CLUB.phone)}</a>
+            <a href={CLUB.phoneHref}>
+              {nb(CLUB.phone)} <span className="footer__muted">Lázár Ottó, pályafoglalás</span>
+            </a>
+            <a href={CLUB.phone2Href}>
+              {nb(CLUB.phone2)} <span className="footer__muted">Mészáros Csaba</span>
+            </a>
             <a href={CLUB.emailHref}>{CLUB.email}</a>
-            <a href={`mailto:${CLUB.emailAlt}`}>{CLUB.emailAlt}</a>
             <a href={CLUB.mapsUrl} target="_blank" rel="noopener noreferrer">
               {CLUB.address}
             </a>
@@ -30,16 +38,19 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="footer__title">Nyitva (shop)</h2>
+          <h2 className="footer__title">Szezonok</h2>
           <ul className="footer__list">
-            {HOURS.map((h) => (
-              <li key={h.days}>
-                <span className="footer__muted">{h.days}</span> {nb(h.time)}
+            {VENUE.seasons.map((s) => (
+              <li key={s.name}>
+                <span className="footer__muted">{s.name}</span> {s.when}
               </li>
             ))}
             <li>
-              <a href={CLUB.webshop} target="_blank" rel="noopener noreferrer">
-                Webshop: {SHOP.claim}
+              <span className="footer__muted">Nyitva</span> {nb("7:00–21:00")}
+            </li>
+            <li>
+              <a href={CLUB.booking} target="_blank" rel="noopener noreferrer">
+                Online pályafoglalás
               </a>
             </li>
           </ul>
@@ -60,7 +71,7 @@ export function Footer() {
       <div className="container footer__bottom">
         <span>© {CLUB.name}</span>
         <span>
-          {CLUB.company}, {CLUB.address}
+          {CLUB.venue}, {CLUB.address}
         </span>
       </div>
     </footer>

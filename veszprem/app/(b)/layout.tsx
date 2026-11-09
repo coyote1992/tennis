@@ -24,22 +24,22 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://matchpoint.tenis.studio"),
-  title: "Match-Point Tennis Club & Shop · Marczibányi tér",
+  metadataBase: new URL("https://veszprem.tenis.studio"),
+  title: "Tenisziskola Veszprém SE · Jutasi úti Sportcentrum",
   description:
-    "Két salakpálya a Marczibányi téren, télen sátorral fedve; edzések felnőtteknek és gyerekeknek, Velcz Zsolt Racket Service-e és Magyarország hivatalos Nike Tennis Shopja egy klubházban. Pályafoglalás: +36 30 581 5030.",
+    "Hét salakos teniszpálya a veszprémi Jutasi úti Sportcentrumban, télen három sátras pályával. Online pályafoglalás vagy telefon: +36 20 410 4910. Edzők, nyári tenisztábor, téli házibajnokság.",
   alternates: { canonical: "/b" },
   openGraph: {
-    title: "Match-Point Tennis Club & Shop",
-    description: "Salakpályák, oktatás, húrozás és Nike Tennis Shop a II. kerületi Marczibányi téren, 1996 óta.",
-    images: ["/img/klubhaz.jpg"],
+    title: "Tenisziskola Veszprém SE",
+    description: "Salakpályák, sátras téli szezon, edzések, tábor és házibajnokság a Jutasi úti Sportcentrumban.",
+    images: ["/img/palyak-sor.jpg"],
     locale: "hu_HU",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#070a08",
+  themeColor: "#08080f",
   colorScheme: "dark",
 };
 

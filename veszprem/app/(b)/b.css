@@ -1,41 +1,42 @@
 /* ==========================================================================
-   Match-Point Tennis Club & Shop, Budapest II — version B (dot-space)
-   Dark "space" theme from the club's logo on black: a near-black night, the logo's lime green for
-   the accent (buttons with dark ink, the second half of headings), white text, court clay only in
-   small marks (the indoor/outdoor seasons, the dot in "A PONT"). Sora for headings, Inter for text.
+   Tenisziskola Veszprém SE (TVSE), Jutasi úti Sportcentrum — version B (dot-space)
+   Dark "space" theme from the club's roundel: a deep night with a violet cast (the logo's ring),
+   lavender-violet for the accent (buttons with dark ink, the second half of headings), the logo's
+   forest green, lifted, for labels and the skyline dots, white text, court clay only as a warm dot.
+   Sora for headings, Inter for text.
    ========================================================================== */
 
 :root {
-  --vs-accent: #b5dc32;
-  --vs-accent-ink: #0b1003;
+  --vs-accent: #a48bff;
+  --vs-accent-ink: #120d26;
 
-  /* sky behind the dots: black with a faint green cast, like the logo's dark version */
-  --space-sky-top: #141d14;
-  --space-sky-mid: #0a0f0b;
-  --space-sky-bottom: #050706;
+  /* sky behind the dots: a night with a violet cast, like the roundel's ring at dusk */
+  --space-sky-top: #17142c;
+  --space-sky-mid: #0b0b17;
+  --space-sky-bottom: #06060c;
 
-  --deep: #050706;
-  --deep-2: #0d120e;
-  --sun: #c4e44a; /* accent for text on dark: the logo's lime, lifted */
-  --sun-hi: #d4ee6a;
-  --sun-soft: #e6f2bd;
-  --acc: #a8d22a; /* button lime, with dark ink */
-  --acc-hi: #bbe042;
-  --acc-ink: #0b1003;
-  --sky: #b9d88a; /* labels and eyebrows: a pale lime */
-  --green: #90c018;
-  --ball: #cde84a;
+  --deep: #06060c;
+  --deep-2: #0e0d1a;
+  --sun: #b9a6ff; /* accent for text on dark: the logo's violet, lifted to lavender */
+  --sun-hi: #cbbcff;
+  --sun-soft: #ddd4ff;
+  --acc: #a48bff; /* button lavender, with dark ink */
+  --acc-hi: #b6a2ff;
+  --acc-ink: #120d26;
+  --sky: #9ed39a; /* labels and eyebrows: the logo's forest green, lifted */
+  --green: #62c870;
+  --ball: #d6e34f;
   --clay: #d9774a;
   --clay-soft: #f0b796;
-  --paper: #f4f6f0;
+  --paper: #f3f2f8;
 
-  --ink: #f4f6f0;
-  --ink-2: rgba(244, 246, 240, 0.8);
-  --ink-3: rgba(244, 246, 240, 0.6);
-  --line: rgba(244, 246, 240, 0.12);
-  --line-strong: rgba(244, 246, 240, 0.32);
-  --glass: rgba(13, 17, 14, 0.78);
-  --glass-hi: rgba(244, 246, 240, 0.06);
+  --ink: #f3f2f8;
+  --ink-2: rgba(243, 242, 248, 0.8);
+  --ink-3: rgba(243, 242, 248, 0.6);
+  --line: rgba(243, 242, 248, 0.12);
+  --line-strong: rgba(243, 242, 248, 0.32);
+  --glass: rgba(14, 13, 26, 0.78);
+  --glass-hi: rgba(243, 242, 248, 0.06);
 
   --font-display: var(--font-display-face), "Helvetica Neue", Arial, sans-serif;
   --font-body: var(--font-body-face), "Helvetica Neue", Arial, sans-serif;
@@ -197,7 +198,7 @@ button {
   height: 10px;
   border-radius: 50%;
   background: currentColor;
-  box-shadow: 14px 0 0 -3px rgba(160, 205, 40, 0.6);
+  box-shadow: 14px 0 0 -3px rgba(164, 139, 255, 0.6);
   margin-right: 10px;
 }
 .lead {
@@ -255,7 +256,7 @@ button {
   border-color: var(--line-strong);
 }
 .btn--ghost:hover {
-  --btn-bg: rgba(244, 246, 240, 0.08);
+  --btn-bg: rgba(243, 242, 248, 0.08);
 }
 .btn--sm {
   min-height: 42px;
@@ -281,7 +282,7 @@ button {
   z-index: 41;
   font-size: 0.82rem;
   color: var(--ink-3);
-  border-bottom: 1px solid rgba(244, 246, 240, 0.07);
+  border-bottom: 1px solid rgba(243, 242, 248, 0.07);
 }
 .announce__inner {
   display: flex;
@@ -318,8 +319,8 @@ button {
     box-shadow 0.35s var(--ease);
 }
 .header--solid:not(.header--open) {
-  background: rgba(8, 11, 9, 0.82);
-  box-shadow: 0 1px 0 rgba(244, 246, 240, 0.08);
+  background: rgba(10, 9, 20, 0.82);
+  box-shadow: 0 1px 0 rgba(243, 242, 248, 0.08);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -533,7 +534,7 @@ html.menu-open .announce {
   aspect-ratio: 2200 / 814;
   border-radius: var(--radius);
   overflow: hidden;
-  background: #111611;
+  background: #14121f;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
 }
 .hero__caption {
@@ -542,7 +543,7 @@ html.menu-open .announce {
   bottom: 16px;
   padding: 7px 14px;
   border-radius: 999px;
-  background: rgba(8, 11, 9, 0.62);
+  background: rgba(10, 9, 20, 0.62);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-size: 0.8rem;
@@ -603,7 +604,7 @@ html.menu-open .announce {
   align-self: flex-start;
   padding: 4px 11px;
   border-radius: 999px;
-  background: rgba(160, 205, 40, 0.18);
+  background: rgba(164, 139, 255, 0.18);
   color: var(--sun-soft);
   font-size: 0.74rem;
   font-weight: 700;
@@ -611,7 +612,7 @@ html.menu-open .announce {
   text-transform: uppercase;
 }
 .tag--accent {
-  background: rgba(160, 205, 40, 0.16);
+  background: rgba(164, 139, 255, 0.16);
   color: var(--sun-soft);
 }
 .chips {
@@ -672,7 +673,7 @@ html.menu-open .announce {
   aspect-ratio: 16 / 9;
   border-radius: var(--radius);
   overflow: hidden;
-  background: #111611;
+  background: #14121f;
 }
 .snap figcaption {
   position: absolute;
@@ -683,7 +684,7 @@ html.menu-open .announce {
   max-width: calc(100% - 24px);
   padding: 6px 12px;
   border-radius: 14px;
-  background: rgba(8, 11, 9, 0.72);
+  background: rgba(10, 9, 20, 0.72);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-size: 0.8rem;
@@ -704,7 +705,7 @@ html.menu-open .announce {
   padding: 4px;
   border-radius: 999px;
   border: 1px solid var(--line-strong);
-  background: rgba(8, 11, 9, 0.45);
+  background: rgba(10, 9, 20, 0.45);
 }
 .enquiry__mode {
   min-height: 42px;
@@ -803,7 +804,7 @@ html.menu-open .announce {
   padding: 12px 14px;
   border: 1px solid var(--line-strong);
   border-radius: 10px;
-  background: rgba(8, 11, 9, 0.5);
+  background: rgba(10, 9, 20, 0.5);
   color: var(--ink);
   font: inherit;
   font-size: 1rem;
@@ -817,7 +818,7 @@ html.menu-open .announce {
 .input:focus {
   outline: none;
   border-color: var(--sun);
-  box-shadow: 0 0 0 3px rgba(160, 205, 40, 0.26);
+  box-shadow: 0 0 0 3px rgba(164, 139, 255, 0.26);
 }
 .input[type="date"] {
   color-scheme: dark;
@@ -855,8 +856,8 @@ html.menu-open .announce {
 .enquiry__done {
   padding: 12px 14px;
   border-radius: 10px;
-  background: rgba(160, 205, 40, 0.12);
-  border: 1px solid rgba(160, 205, 40, 0.42);
+  background: rgba(164, 139, 255, 0.12);
+  border: 1px solid rgba(164, 139, 255, 0.42);
   color: var(--ink-2);
   font-size: 0.93rem;
 }
@@ -972,7 +973,7 @@ html.menu-open .announce {
 .footer {
   /* room at the bottom so the fixed A/B switch never covers the last line */
   padding: 64px 0 calc(110px + env(safe-area-inset-bottom));
-  border-top: 1px solid rgba(244, 246, 240, 0.1);
+  border-top: 1px solid rgba(243, 242, 248, 0.1);
   font-size: 0.94rem;
 }
 .footer__grid {
@@ -1078,16 +1079,30 @@ html.space {
   display: none;
 }
 
-/* ——— brand: the club's own logo (the dark-background version) ——— */
+/* ——— brand: the club's roundel and its name ——— */
+.brand__name {
+  white-space: nowrap;
+  font-size: 1.15rem;
+}
+.brand__name small {
+  letter-spacing: 0.12em;
+}
+@media (max-width: 1400px) {
+  .header__cta .btn--ghost {
+    display: none;
+  }
+}
 .brand__logo {
-  width: 124px;
-  height: auto;
+  flex: none;
+  width: 52px;
+  height: 52px;
 }
 .brand--footer {
   margin-right: 0;
 }
 .footer__brand .brand__logo {
-  width: 156px;
+  width: 64px;
+  height: 64px;
 }
 .nav__link {
   white-space: nowrap;
@@ -1101,7 +1116,7 @@ html.space {
   white-space: nowrap;
 }
 .eyebrow::before {
-  box-shadow: 14px 0 0 -3px rgba(217, 119, 74, 0.75);
+  box-shadow: 14px 0 0 -3px rgba(217, 119, 74, 0.8);
 }
 .nobr {
   white-space: nowrap;
@@ -1127,7 +1142,7 @@ html.space {
 }
 .hero__media img {
   object-fit: cover;
-  object-position: 50% 62%;
+  object-position: 50% 58%;
 }
 
 /* ——— shared: folding rules, key rules, numbered steps ——— */
@@ -1216,625 +1231,420 @@ html.space {
   color: var(--ink);
 }
 
-/* ——— pályabérlés: what's in the club, the two published seasons, the house rules ——— */
-.amenities {
-  margin-top: 26px;
-}
-.notice {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px 24px;
-  margin-top: clamp(28px, 3.5vw, 40px);
-  padding: 18px 22px;
-  border-color: rgba(160, 205, 40, 0.42);
-}
-.notice__text {
-  display: flex;
-  gap: 12px;
-  flex: 1 1 320px;
-  color: var(--ink-2);
-  font-size: 0.96rem;
-}
-.notice__text svg {
-  flex: none;
-  margin-top: 3px;
-  color: var(--sun);
-}
+
+/* ——— pályák: the two seasons, what's beside the courts, photos ——— */
 .seasons {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 14px;
+  gap: 16px;
+  margin-top: clamp(32px, 4vw, 48px);
 }
 .season {
   display: grid;
-  gap: 18px;
-  align-content: start;
-  padding: 24px 26px 22px;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  padding: 0;
 }
-.season__head {
-  display: grid;
-  gap: 4px;
+.season__photo {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #14121f;
 }
-.season__head .h3 {
+.season__photo img,
+.venue-photos img,
+.camp img,
+.league__photo img,
+.highlights__photo img,
+.coach__photo img {
+  object-fit: cover;
+}
+.season__body {
+  padding: 22px 24px 26px;
+}
+.season__body .h3 {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.season__head .h3::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--clay);
-}
-.season--fedett .season__head .h3::before {
-  background: var(--sky);
-}
-.season__dates {
-  font-weight: 600;
-  color: var(--sun-soft);
-  font-size: 0.95rem;
-}
-.season__note {
-  color: var(--ink-3);
-  font-size: 0.88rem;
-}
-.rates {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.95rem;
-}
-.rates th,
-.rates td {
-  padding: 9px 0;
-  border-top: 1px solid var(--line);
-  text-align: left;
-  font-weight: 500;
-  color: var(--ink-2);
-}
-.rates td {
-  text-align: right;
-  white-space: nowrap;
-  color: var(--ink-3);
-}
-.rates td strong {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  font-variant-numeric: tabular-nums;
-}
-.rates th[scope="row"] {
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-.rates__group th {
-  padding-top: 16px;
-  border-top: 0;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--sky);
-}
-.rates__group:first-child th {
-  padding-top: 0;
-}
-.rates__group th span {
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: none;
-  color: var(--ink-3);
-}
-.strip {
-  position: relative;
-  margin-top: 14px;
-  aspect-ratio: 16 / 6;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: #111611;
-}
-.strip img {
-  object-fit: cover;
-  object-position: 50% 45%;
-}
-
-/* ——— oktatás: adults, the kids' groups ——— */
-.lessons {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 14px;
-  margin-top: clamp(32px, 4vw, 48px);
-  align-items: start;
-}
-.lesson {
-  display: grid;
-  gap: 14px;
-  align-content: start;
-  padding: 26px 28px 28px;
-}
-.lesson .btn {
-  justify-self: start;
-}
-.lesson__text {
-  color: var(--ink-2);
-}
-.lesson__price {
-  font-size: 1rem;
-  color: var(--ink-3);
-}
-.lesson__price strong {
-  margin-right: 6px;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.9rem, 3vw, 2.4rem);
-  letter-spacing: -0.03em;
-  color: var(--sun);
-}
-.groups {
-  display: grid;
-}
-.group {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 2px 16px;
-  padding: 12px 0;
-  border-top: 1px solid var(--line);
-}
-.group:last-child {
-  border-bottom: 1px solid var(--line);
-}
-.group__name {
-  font-weight: 600;
-}
-.group__detail {
-  grid-column: 1;
-  color: var(--ink-3);
-  font-size: 0.9rem;
-}
-.group__price {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  align-self: center;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-}
-.lesson__next {
-  display: flex;
-  gap: 10px;
-  padding: 12px 14px;
-  border-radius: 10px;
-  background: rgba(217, 119, 74, 0.14);
-  border: 1px solid rgba(217, 119, 74, 0.42);
-  color: var(--ink);
-  font-size: 0.94rem;
-}
-.lesson__next svg {
-  flex: none;
-  margin-top: 3px;
-  color: var(--clay-soft);
-}
-.lesson__terms {
-  margin-top: -4px;
-}
-
-/* ——— racket service ——— */
-.stringer {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: 14px;
-  margin-top: clamp(32px, 4vw, 48px);
-  align-items: stretch;
-}
-.stringer__photo {
-  position: relative;
-  min-height: 360px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: #111611;
-}
-.stringer__photo img {
-  object-fit: cover;
-  object-position: 50% 30%;
-}
-.test {
-  display: grid;
-  gap: 14px;
-  align-content: start;
-  padding: 26px 28px 28px;
-  border-color: rgba(160, 205, 40, 0.5);
-  color: var(--ink-2);
-}
-.test .h3 {
-  font-size: clamp(1.35rem, 2vw, 1.6rem);
-}
-.test__how {
-  display: flex;
-  gap: 10px;
-  color: var(--ink);
-  font-weight: 500;
-}
-.test__how svg {
-  flex: none;
-  margin-top: 4px;
-  color: var(--sun);
-}
-.test .btn {
-  justify-self: start;
-}
-.why {
-  margin: clamp(28px, 3.5vw, 40px) 0 14px;
-  max-width: 44em;
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
-  line-height: 1.5;
-  color: var(--ink-2);
-}
-.services {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 14px;
-}
-.services > li {
-  grid-column: span 2;
-}
-.services > li:nth-child(n + 4) {
-  grid-column: span 3;
-}
-.service {
-  display: grid;
-  gap: 8px;
-  align-content: start;
-  padding: 20px 22px 22px;
-  color: var(--ink-2);
-  font-size: 0.93rem;
-}
-.svc-info {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 14px;
-  margin-top: 14px;
-}
-.price-card,
-.matching {
-  display: grid;
-  gap: 14px;
-  align-content: start;
-  padding: 24px 26px 26px;
-}
-.svc-prices li {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--line);
-  color: var(--ink-2);
-}
-.svc-prices strong {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.25rem;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  white-space: nowrap;
-}
-.svc-prices li:first-child strong {
-  color: var(--sun);
-}
-.matching__list {
-  display: grid;
-  gap: 12px;
-  counter-reset: m;
-  color: var(--ink-2);
-  font-size: 0.95rem;
-}
-.matching__list li {
-  counter-increment: m;
-  display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  gap: 10px;
-}
-.matching__list li::before {
-  content: counter(m);
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: 1px solid var(--sun);
-  color: var(--sun);
-  font-weight: 700;
-  font-size: 0.82rem;
-}
-.craft {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr);
-  gap: 20px 28px;
-  margin-top: 14px;
-  padding: 26px 28px 28px;
-}
-.craft__head {
-  display: grid;
-  gap: 8px;
-  align-content: start;
-}
-.craft__motto {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  color: var(--sun-soft);
-}
-.craft__photo {
-  position: relative;
-  grid-row: span 2;
-  align-self: start;
-  aspect-ratio: 3 / 4;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #111611;
-}
-.craft__photo img {
-  object-fit: cover;
-}
-.craft__steps {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 26px;
-  color: var(--ink-2);
-  font-size: 0.92rem;
-}
-.craft__steps li {
-  display: grid;
-  grid-template-columns: 2.2em minmax(0, 1fr);
-  gap: 8px;
-}
-.craft__n {
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--sun);
-  font-variant-numeric: tabular-nums;
-}
-.film {
-  margin-top: 14px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: var(--line-strong) transparent;
-  border-radius: var(--radius);
-  -webkit-overflow-scrolling: touch;
-}
-.film:focus-visible {
-  outline-offset: 2px;
-}
-.film__track {
-  display: flex;
-  gap: 8px;
-  width: max-content;
-  padding-bottom: 10px;
-}
-.film__frame {
-  position: relative;
-  flex: none;
-  width: 240px;
-  aspect-ratio: 16 / 10;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #111611;
-  scroll-snap-align: start;
-}
-.film__frame img {
-  object-fit: cover;
-}
-.finish {
-  margin-top: clamp(28px, 3.5vw, 40px);
-}
-.finish__title {
-  margin-bottom: 14px;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
-  letter-spacing: -0.02em;
-}
-.finish__list {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
-}
-.film__hint {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-  font-size: 0.84rem;
-  color: var(--ink-3);
-}
-.film__hint svg {
-  width: 15px;
-  height: 15px;
-  color: var(--sun);
-}
-.finish__item {
-  display: grid;
-  gap: 6px;
-  align-content: start;
-  padding: 18px 18px 20px;
-  color: var(--ink-2);
-  font-size: 0.9rem;
-}
-.finish__item strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-.finish__item--dot {
-  border-color: rgba(160, 205, 40, 0.55);
-}
-.finish__item--dot strong {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--sun);
-}
-.finish__item--dot strong::after {
+.season__body .h3::before {
   content: "";
   width: 9px;
   height: 9px;
   border-radius: 50%;
+  background: var(--clay);
+}
+.season--tel .season__body .h3::before {
   background: var(--sun);
 }
-
-/* ——— shop ——— */
-.shop {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: clamp(32px, 4vw, 48px);
-  min-height: 460px;
-}
-.shop__main,
-.shop__side {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: #111611;
-}
-.shop__main {
-  grid-row: span 2;
-}
-.shop__main img,
-.shop__side img {
-  object-fit: cover;
-}
-.cats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 14px;
-}
-.cat {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  height: 100%;
-  min-height: 64px;
-  padding: 14px 18px;
-  text-decoration: none;
+.season__when {
+  margin-top: 6px;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition:
-    border-color 0.2s,
-    background 0.2s;
+  color: var(--sun-soft);
 }
-.cat svg {
-  flex: none;
-  width: 16px;
-  height: 16px;
+.season__text {
+  margin-top: 4px;
+  color: var(--ink-2);
+}
+.extras {
+  margin-top: 20px;
+}
+.extras li {
+  white-space: normal;
+}
+.venue-photos {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+.venue-photos .snap {
+  aspect-ratio: auto;
+  height: clamp(180px, 19vw, 250px);
+}
+
+/* ——— foglalás: online steps, phones, rules, the unheated slots ——— */
+.book {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.book__online,
+.book__phone {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  padding: 28px;
+}
+.book__online .btn {
+  justify-self: start;
+}
+.steps {
+  display: grid;
+  gap: 14px;
+}
+.steps li {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+.steps__n {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(164, 139, 255, 0.6);
+  font-family: var(--font-display);
+  font-weight: 600;
   color: var(--sun);
 }
-.cat:hover {
-  border-color: rgba(160, 205, 40, 0.6);
-  background: rgba(20, 28, 18, 0.85);
+.steps li > span:last-child {
+  display: grid;
+  gap: 2px;
+  font-size: 0.94rem;
+  color: var(--ink-2);
 }
-.shop__cta {
+.steps strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.phones {
+  display: grid;
+  gap: 2px;
+}
+.phones li {
+  display: grid;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.phones a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.phones a:hover {
+  color: var(--sun-soft);
+}
+.phones span {
+  font-size: 0.9rem;
+  color: var(--ink-3);
+}
+.phones--inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 28px;
+}
+.phones--inline li {
+  padding: 10px 0 0;
+}
+.phones--inline a {
+  font-size: 1.2rem;
+}
+.keyrules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 16px 0;
+}
+.book__more {
+  display: grid;
+}
+.discount {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 8px 32px;
+  align-items: start;
+  padding: 26px 28px;
+}
+.discount .label,
+.discount__title {
+  grid-column: 1;
+}
+.discount__slots {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+.book__phonetext {
+  color: var(--ink-2);
+}
+.discount__slots li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-2);
+}
+.discount__slots strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.outdoor {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 0.94rem;
+  color: var(--ink-2);
+}
+.outdoor svg {
+  flex: none;
+  margin-top: 4px;
+  color: var(--green);
+}
+
+/* ——— edzők ——— */
+.coaches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.coach {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 22px;
+}
+.coach--lead {
+  grid-column: 1 / -1;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+.coach__photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #14121f;
+}
+.coach__photo--sm {
+  width: 84px;
+}
+.coach__mono {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 1px solid rgba(164, 139, 255, 0.55);
+  background: rgba(164, 139, 255, 0.14);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--sun);
+}
+.coach__bio {
+  margin-top: 10px;
+  color: var(--ink-2);
+}
+.coach__links {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 12px 20px;
-  margin-top: 24px;
+  margin-top: 18px;
 }
-
-/* ——— a klub ——— */
-.motto {
-  margin: clamp(32px, 4vw, 48px) 0 0;
-  padding-left: 22px;
-  border-left: 2px solid var(--sun);
+.coach__web {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--sun-soft);
+  text-decoration: none;
 }
-.motto p {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: clamp(1.5rem, 3vw, 2.4rem);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+.coach__web:hover {
+  color: var(--sun);
+}
+.coach__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.coach__phone svg {
+  color: var(--sun);
+}
+.coach__phone:hover {
   color: var(--sun-soft);
 }
-.motto cite {
-  display: block;
-  margin-top: 10px;
-  font-style: normal;
-  font-size: 0.9rem;
-  color: var(--ink-3);
-}
-.story {
+
+/* ——— tenisztábor ——— */
+.camp {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 14px;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 16px;
   margin-top: clamp(32px, 4vw, 48px);
-  align-items: stretch;
 }
-.founders {
+.camp__main {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #14121f;
+}
+.camp__side {
+  display: grid;
+  gap: 16px;
+}
+.camp__card {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 24px;
+  color: var(--ink-2);
+}
+.camp__day {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+  gap: 20px 28px;
+  align-items: center;
+  margin-top: 16px;
+  padding: 26px;
+}
+.camp__text {
+  margin-top: 8px;
+  color: var(--ink-2);
+}
+.camp__incl {
+  margin-top: 10px;
+}
+.camp__strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* ——— versenyek ——— */
+.league {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  margin-top: clamp(32px, 4vw, 48px);
+  padding: 0;
+  overflow: hidden;
+}
+.league__text {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding: 30px;
+  color: var(--ink-2);
+}
+.league__next {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-weight: 600;
+  color: var(--sun-soft);
+}
+.league__next svg {
+  flex: none;
+  margin-top: 4px;
+}
+.league__photo {
+  position: relative;
+  min-height: 280px;
+  background: #14121f;
+}
+.highlights {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+.highlights__photo {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #14121f;
+}
+.highlights__list {
+  display: grid;
+  gap: 16px;
+}
+.highlight {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: 24px;
+  color: var(--ink-2);
+}
+.highlight .tag {
+  justify-self: start;
+  background: rgba(217, 119, 74, 0.2);
+  color: var(--clay-soft);
+}
+.amateur {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+.amateur__list {
   display: grid;
   gap: 14px;
   align-content: start;
+  padding: 26px;
 }
-.founder {
-  display: grid;
-  gap: 8px;
-  padding: 22px 24px 24px;
-  color: var(--ink-2);
-  font-size: 0.95rem;
-}
-.founders__both {
-  padding: 2px 4px 6px;
-  color: var(--ink-2);
-  font-size: 0.95rem;
-}
-.story__photo {
-  position: relative;
-  min-height: 320px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: #111611;
-}
-.story__photo img {
-  object-fit: cover;
-}
-.timeline {
-  display: grid;
-  margin-top: 14px;
-  padding: 10px 26px;
-}
-.timeline li {
-  display: grid;
-  grid-template-columns: 5.5rem minmax(0, 1fr);
-  gap: 16px;
-  padding: 14px 0;
-  border-top: 1px solid var(--line);
-}
-.timeline li:first-child {
-  border-top: 0;
-}
-.timeline__year {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.2rem;
-  letter-spacing: -0.02em;
-  color: var(--sun);
-}
-.timeline__text {
-  color: var(--ink-2);
-  font-size: 0.95rem;
+.amateur__photo {
+  aspect-ratio: auto;
+  min-height: 240px;
 }
 
 /* ——— contact extras ——— */
@@ -1860,22 +1670,23 @@ html.space {
   margin-top: 16px;
 }
 
+
 /* ——— shapes need room: move the text, not the dots (desktop) ——— */
 @media (min-width: 901px) {
-  /* the racket stands on the right while the seasons, the passes and the house rules scroll past */
+  /* the racket stands on the right while the seasons and the photos scroll past */
   #palyak > .container {
     max-width: none;
     padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2));
     padding-right: 30vw;
   }
-  /* the court lines stand on the left of the lessons */
-  #oktatas > .container {
+  /* the court lines stand on the left of the booking */
+  #foglalas > .container {
     max-width: none;
     padding-left: 30vw;
     padding-right: max(var(--gutter), calc((100vw - var(--max)) / 2));
   }
-  /* the serving player forms on the right of the Racket Service heading and stays through the section */
-  #racket-service > .container {
+  /* the logo (skyline, rackets, ball) forms on the right of the coaches' heading and stays through the section */
+  #edzok > .container {
     max-width: none;
     padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2));
     padding-right: 32vw;
@@ -1902,49 +1713,19 @@ html.space {
   }
 }
 @media (max-width: 1240px) and (min-width: 901px) {
-  .seasons,
-  .lessons,
-  .stringer,
-  .svc-info,
-  .craft,
-  .story {
+  .book,
+  .book__more,
+  .camp__day {
     grid-template-columns: minmax(0, 1fr);
   }
-  .craft__photo {
-    grid-row: auto;
-    aspect-ratio: 16 / 9;
-    min-height: 0;
+  .camp__day .btn {
+    justify-self: start;
   }
-  .keyrules,
-  .cats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .services {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .services > li,
-  .services > li:nth-child(n + 4) {
-    grid-column: auto;
-  }
-  .services > li:last-child {
-    grid-column: 1 / -1;
-  }
-  .rulelist,
-  .craft__steps {
+  .keyrules {
     grid-template-columns: minmax(0, 1fr);
   }
-  .finish__list {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-  .finish__list > li {
-    grid-column: span 2;
-  }
-  .finish__list > li:nth-child(n + 4) {
-    grid-column: span 3;
-  }
-  .stringer__photo {
-    min-height: 0;
-    aspect-ratio: 16 / 9;
+  .coach--lead {
+    grid-template-columns: 140px minmax(0, 1fr);
   }
 }
 
@@ -1969,17 +1750,18 @@ html.space {
     display: none;
   }
   .brand__logo {
-    width: 80px;
+    width: 44px;
+    height: 44px;
   }
   .hero__row,
   .visit,
   .seasons,
-  .lessons,
-  .stringer,
-  .svc-info,
-  .craft,
-  .story,
-  .shop {
+  .book,
+  .book__more,
+  .camp,
+  .league,
+  .highlights,
+  .amateur {
     grid-template-columns: minmax(0, 1fr);
   }
   .hero__row {
@@ -1995,48 +1777,54 @@ html.space {
     padding: 0 12px;
   }
   .fact__num {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   .fact__label {
     font-size: 0.82rem;
   }
-  .strip {
-    aspect-ratio: 16 / 9;
+  .venue-photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .stringer__photo,
-  .story__photo {
+  .venue-photos .snap {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .venue-photos .snap:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 10;
+  }
+  .camp__main {
     min-height: 0;
     aspect-ratio: 4 / 3;
   }
-  .craft__photo {
+  .discount {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .discount__slots {
+    grid-column: 1;
     grid-row: auto;
-    min-height: 0;
+  }
+  .camp__day {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .camp__day .btn {
+    justify-self: stretch;
+  }
+  .camp__strip .snap {
     aspect-ratio: 16 / 10;
   }
-  .shop {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: auto auto;
+  .league__photo {
     min-height: 0;
+    aspect-ratio: 16 / 9;
+    order: -1;
   }
-  .shop__main {
-    grid-column: 1 / -1;
-    grid-row: auto;
-    aspect-ratio: 1 / 1;
+  .highlights__photo {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
-  .shop__side {
-    aspect-ratio: 16 / 10;
-  }
-  .keyrules,
-  .cats,
-  .services {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .services > li,
-  .services > li:nth-child(n + 4) {
-    grid-column: auto;
-  }
-  .services > li:last-child {
-    grid-column: 1 / -1;
+  .amateur__photo {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
   .final .visit__map {
     height: 280px;
@@ -2052,11 +1840,11 @@ html.space {
     bottom: 0;
     z-index: 30;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.6fr;
     gap: 10px;
     padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
-    background: rgba(8, 11, 9, 0.92);
-    border-top: 1px solid rgba(244, 246, 240, 0.1);
+    background: rgba(10, 9, 20, 0.92);
+    border-top: 1px solid rgba(243, 242, 248, 0.1);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
@@ -2071,33 +1859,17 @@ html.space {
   }
 }
 
-@media (max-width: 900px) and (min-width: 701px) {
-  .finish__list {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-  .finish__list > li {
-    grid-column: span 2;
-  }
-  .finish__list > li:nth-child(n + 4) {
-    grid-column: span 3;
-  }
-}
 @media (max-width: 700px) {
   .keyrules,
   .rulelist,
-  .craft__steps,
-  .cats {
+  .coaches {
     grid-template-columns: minmax(0, 1fr);
   }
-  .finish__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .coach--lead {
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 18px;
   }
-  .finish__list > li:last-child {
-    grid-column: 1 / -1;
-  }
-}
-@media (max-width: 480px) {
-  .services {
+  .camp__strip {
     grid-template-columns: minmax(0, 1fr);
   }
 }
@@ -2109,39 +1881,32 @@ html.space {
   .hero__ctas .btn {
     flex: 1 1 auto;
   }
-  .lesson .btn,
-  .test .btn {
+  .book__online .btn {
     justify-self: stretch;
   }
 }
 
 @media (max-width: 520px) {
-  .notice,
-  .season,
+  .book__online,
+  .book__phone,
   .keyrule,
-  .lesson,
-  .test,
-  .service,
-  .price-card,
-  .matching,
-  .craft,
-  .founder,
+  .discount,
+  .coach,
+  .camp__card,
+  .camp__day,
+  .league__text,
+  .highlight,
+  .amateur__list,
+  .season__body,
   .visit__info,
   .visit__form {
     padding: 20px 18px;
   }
-  .rules summary {
-    padding: 16px 18px;
-  }
-  .rulelist {
-    padding: 4px 18px 20px;
-  }
-  .timeline {
-    padding: 4px 18px;
-  }
-  .timeline li {
+  .coach--lead {
     grid-template-columns: minmax(0, 1fr);
-    gap: 2px;
+  }
+  .coach--lead .coach__photo {
+    width: 128px;
   }
   .visit__actions .btn {
     min-width: 0;
@@ -2153,7 +1918,7 @@ html.space {
   .fact:first-child {
     padding-left: 0;
   }
-  .film__frame {
-    width: 200px;
+  .phones a {
+    font-size: 1.3rem;
   }
 }

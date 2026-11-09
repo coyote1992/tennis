@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { CLUB, HOURS } from "@/lib/site";
+import { CLUB } from "@/lib/site";
 import { IconExternal, IconPhone } from "./icons";
 import { NAV_B } from "./nav";
 
-const nb = (t: string) => t.replace(/ /g, " ");
+const nb = (t: string) => t.replace(/ /g, " ");
 
 export function Header() {
   const [solid, setSolid] = useState(false);
@@ -33,12 +33,12 @@ export function Header() {
     <>
       <div className="announce">
         <div className="container announce__inner">
-          <span className="announce__place">{CLUB.address}</span>
-          <span className="announce__open">
-            Nyitva: {HOURS.map((h) => `${h.days.toLowerCase()} ${h.time}`).join(", ")}
+          <span className="announce__place">
+            {CLUB.venue}, {CLUB.address}
           </span>
+          <span className="announce__open">Nyitva 7:00–21:00</span>
           <span className="announce__tel">
-            Recepció:{" "}
+            Pályafoglalás:{" "}
             <a href={CLUB.phoneHref} className="announce__phone">
               {nb(CLUB.phone)}
             </a>
@@ -47,8 +47,12 @@ export function Header() {
       </div>
       <header className={`header${solid ? " header--solid" : ""}${open ? " header--open" : ""}`}>
         <div className="container header__inner">
-          <a href="/b" className="brand" onClick={close} aria-label="Match-Point Tennis Club & Shop – kezdőlap">
-            <Image src="/img/logo-sotet-hatter.png" alt="Match-Point Tennis Club & Shop" width={220} height={139} className="brand__logo" priority />
+          <a href="/b" className="brand" onClick={close} aria-label="Tenisziskola Veszprém SE – kezdőlap">
+            <Image src="/img/tvse-logo.png" alt="" width={512} height={512} className="brand__logo" priority />
+            <span className="brand__name">
+              Tenisziskola Veszprém
+              <small>Jutasi úti Sportcentrum</small>
+            </span>
           </a>
 
           <nav className="nav" aria-label="Fő navigáció">
@@ -60,11 +64,11 @@ export function Header() {
           </nav>
 
           <div className="header__cta">
-            <a href={CLUB.webshop} target="_blank" rel="noopener noreferrer" className="btn btn--ghost btn--sm">
-              Webshop <IconExternal />
-            </a>
-            <a href={CLUB.phoneHref} className="btn btn--accent btn--sm">
+            <a href={CLUB.phoneHref} className="btn btn--ghost btn--sm">
               <IconPhone /> {nb(CLUB.phone)}
+            </a>
+            <a href={CLUB.booking} target="_blank" rel="noopener noreferrer" className="btn btn--accent btn--sm">
+              Online foglalás <IconExternal />
             </a>
           </div>
 
@@ -90,18 +94,14 @@ export function Header() {
             ))}
           </nav>
           <div className="container mobile-menu__foot">
-            <a href={CLUB.phoneHref} className="btn btn--accent btn--block">
-              <IconPhone /> Recepció: {nb(CLUB.phone)}
+            <a href={CLUB.booking} target="_blank" rel="noopener noreferrer" className="btn btn--accent btn--block">
+              Online foglalás <IconExternal />
             </a>
-            <a href={CLUB.webshop} target="_blank" rel="noopener noreferrer" className="btn btn--ghost btn--block">
-              Webshop <IconExternal />
+            <a href={CLUB.phoneHref} className="btn btn--ghost btn--block">
+              <IconPhone /> Pályafoglalás: {nb(CLUB.phone)}
             </a>
             <p className="mobile-menu__hours">
-              {HOURS.map((h) => (
-                <span key={h.days}>
-                  {h.days} {h.time}
-                </span>
-              ))}
+              <span>Nyitva 7:00–21:00</span>
               <span>{CLUB.address}</span>
             </p>
           </div>
