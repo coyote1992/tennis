@@ -1,23 +1,24 @@
 import Image from "next/image";
-import { CLUB } from "@/lib/site";
+import { CLUB, VENUE } from "@/lib/site";
+import { IconFacebook } from "./icons";
 import { NAV_B } from "./nav";
 
-const nb = (t: string) => t.replace(/ /g, " ");
+const nb = (t: string) => t.replace(/ /g, " ");
 
 export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <a href="/b" className="brand brand--footer" aria-label="Invest Sportcentrum és Vendégház – kezdőlap">
-            <Image src="/img/invest-logo.png" alt="" width={512} height={512} className="brand__logo" />
+          <a href="/b" className="brand brand--footer" aria-label="Építők Teniszklub – kezdőlap">
+            <Image src="/img/epitok-cimer.png" alt="" width={787} height={906} className="brand__logo" />
             <span className="brand__name">
-              Invest Sportcentrum
-              <small>és Vendégház · Eger</small>
+              Építők Teniszklub
+              <small>Budapest · Népliget</small>
             </span>
           </a>
           <p className="footer__motto">
-            {CLUB.tagline}: 7 salakos és 2 fedett teniszpálya, 4 fallabdapálya, szauna, büfé és egy 6 szobás vendégház egy helyen.
+            12 salakos teniszpálya a Népligetben, egy sporttelepen, amely <em>1896 óta</em> a park része.
           </p>
         </div>
 
@@ -25,7 +26,10 @@ export function Footer() {
           <h2 className="footer__title">Elérhetőség</h2>
           <address className="footer__list">
             <a href={CLUB.phoneHref}>
-              {nb(CLUB.phone)} <span className="footer__muted">pályafoglalás telefonon</span>
+              {nb(CLUB.phone)} <span className="footer__muted">{CLUB.contact}</span>
+            </a>
+            <a href={CLUB.site.phoneHref}>
+              {nb(CLUB.site.phone)} <span className="footer__muted">{CLUB.site.name}, {CLUB.site.role}</span>
             </a>
             <a href={CLUB.emailHref}>{CLUB.email}</a>
             <a href={CLUB.mapsUrl} target="_blank" rel="noopener noreferrer">
@@ -35,14 +39,13 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="footer__title">Nyitva</h2>
+          <h2 className="footer__title">Szezon</h2>
           <ul className="footer__list">
+            <li>{VENUE.season}</li>
+            <li>{VENUE.hours}</li>
             <li>
-              <span className="footer__muted">Büfé és recepció</span> minden nap {nb("8:00–20:00")}
-            </li>
-            <li>
-              <a href={CLUB.roomBooking} target="_blank" rel="noopener noreferrer">
-                Szobafoglalási űrlap
+              <a href={CLUB.facebook} target="_blank" rel="noopener noreferrer" className="footer__fb">
+                <IconFacebook /> Facebook-csoport
               </a>
             </li>
           </ul>
@@ -62,7 +65,7 @@ export function Footer() {
 
       <div className="container footer__bottom">
         <span>
-          © {CLUB.name} · {CLUB.company}
+          © {CLUB.name} · alapítva {CLUB.founded}
         </span>
         <span>{CLUB.address}</span>
       </div>

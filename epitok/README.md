@@ -9,7 +9,10 @@ between them and keeps your place: both pages use the same section ids.
   Libre Baskerville + Work Sans. Signatures: the full-width clubhouse hero, the weekday-morning pass
   section with a sum of the club's own prices (`components/a/MorningCalc.tsx`), and the archive strip
   of the club's history since 1896. Code: `app/(a)`, `components/a`.
-- **B — Modern** (`/b`): the dot-space style of the other club sites (kit in `kits/dot-space`). Code:
+- **B — Modern** (`/b`): the dot-space style of the other club sites (kit in `kits/dot-space`): the
+  crest's night blue as the sky, an icy light-blue accent, Sora + Inter. The dots form a racket
+  (#palyak), court lines (#arak, held through #delelott), the crest's mark beside the history heading
+  (`public/img/epitok-jel-pontok.png`), a ball (#esemenyek) and the black hole (#kapcsolat). Code:
   `app/(b)`, `components/b`, choreography in `components/b/space/epitok-config.ts`.
 
 The versions have separate root layouts (route groups); `app/global-not-found.tsx` is the shared 404
@@ -31,6 +34,8 @@ new guests, popular with people on flexible hours and retirees) — used, attrib
 - The events list shows the latest dated items on the site (2023 club events, the 2025 China trip);
   news is pointed to the club's Facebook group.
 - Photos are the club's own: the clubhouse, the courts and the archive pictures from the history pages.
+- `public/img/epitok-cimer.png` is the crest with its white letters filled in (the club's own file has
+  them cut out, which shows as holes on dark backgrounds); the favicons are made from it.
 
 ## Local
 

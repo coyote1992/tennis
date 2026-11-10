@@ -1,17 +1,88 @@
 import Image from "next/image";
-import { IconArrow, IconCalendar, IconCheck, IconClock, IconExternal, IconMail, IconPhone, IconPin, IconUsers } from "@/components/b/icons";
+import {
+  IconArrow,
+  IconCalendar,
+  IconCheck,
+  IconClock,
+  IconFacebook,
+  IconMail,
+  IconPhone,
+  IconPin,
+  IconTrophy,
+  IconUsers,
+} from "@/components/b/icons";
 import { ContactForm } from "@/components/shared/ContactForm";
-import { BOOKING, CLUB, GUESTHOUSE, HALL, INTRO, PACKAGES, RULES, SQUASH, fmt } from "@/lib/site";
+import {
+  CLUB,
+  EVENTS,
+  HISTORY,
+  MORNING,
+  PRICES,
+  VENUE,
+  VISIT,
+  fmt,
+} from "@/lib/site";
 
-/** keep times and phone numbers on one line */
-const nb = (t: string) => t.replace(/ /g, " ");
-/** keep "45 000 Ft" together without freezing the whole sentence */
-const numnb = (t: string) => t.replace(/(\d) (\d{3})/g, "$1 $2").replace(/ Ft\b/g, " Ft");
+/** keep phone numbers and times on one line */
+const nb = (t: string) => t.replace(/ /g, " ");
 const ft = (n: number) => `${fmt(n)} Ft`;
-/** no line break right after a hyphen or a dash ("13-tól", "8:00–20:00", "e-mailben") */
-const join = (t: string) => t.replace(/([-–])/g, "$1\u2060");
+/** "Hétköznap 9–14" → "Hétköznap 9–14 óra" with the hours kept together */
+const slot = (t: string) => t.replace(/ (\d)/, " $1");
+/** no line break right after a hyphen or a dash */
+const join = (t: string) => t.replace(/([-–])/g, "$1⁠");
 
-const KEY_RULES = RULES.slice(0, 3);
+const ARCHIVE = [
+  {
+    src: "/img/tortenet-kepeslap.jpg",
+    alt: "Régi képeslap: hölgyek hosszú ruhában teniszeznek a sporttelep pavilonja előtt",
+    cap: "Budapest-Tisztviselőtelep, Sporttelep – képeslap 1900 tájáról",
+  },
+  {
+    src: "/img/tortenet-rajz.jpg",
+    alt: "Korabeli rajz a Népligeti Sporttelepről, teniszezőkkel a pavilon előtt",
+    cap: "Népligeti Sporttelep, korabeli rajz",
+  },
+  {
+    src: "/img/tortenet-noi-csapat.jpg",
+    alt: "Női teniszcsapat fehérben, két vezetővel a pályán",
+    cap: "A Gyárépítők I. osztályú női csapata",
+  },
+  {
+    src: "/img/tortenet-1960.jpg",
+    alt: "Öt férfi a háló mellett a népligeti pályán",
+    cap: "Engel Antal, Forró Mihály, Szigeti Ottó, Katona Zoltán, Gulyás István – 1960-as évek eleje",
+  },
+  {
+    src: "/img/tortenet-merkozes.jpg",
+    alt: "Bajnoki mérkőzés a pályákon, bírói székkel és nézőkkel",
+    cap: "Bajnoki mérkőzés, 60-as évek",
+  },
+  {
+    src: "/img/tortenet-nezok.jpg",
+    alt: "Nézők padokon ülve figyelnek egy mérkőzést",
+    cap: "Nézők a pálya mellett",
+  },
+  {
+    src: "/img/tortenet-palyaepites.jpg",
+    alt: "Munkások ássák egy új pálya alapját a fák között",
+    cap: "A 9–10-es pálya alapozása, 60-as évek",
+  },
+  {
+    src: "/img/tortenet-csapatkep.jpg",
+    alt: "Fehérbe öltözött csapat sorban a klubház előtti pályán",
+    cap: "Csapatkép a klubház előtt",
+  },
+  {
+    src: "/img/tortenet-szines.jpg",
+    alt: "Az Építők SC csapata a klubház előtt, színes felvétel",
+    cap: "Az első színes csapatkép: Építők SC, a 70-es évek közepe",
+  },
+  {
+    src: "/img/archiv-uj-klubhaz.jpg",
+    alt: "Fekete-fehér felvétel egy újabb, pavilonszerű klubházról",
+    cap: "Az újabb klubház, archív felvétel",
+  },
+];
 
 export default function BHome() {
   return (
@@ -20,146 +91,174 @@ export default function BHome() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="container">
           <div className="hero__top">
-            <p className="eyebrow reveal">{CLUB.name} · Eger</p>
+            <p className="eyebrow reveal">{CLUB.name} · Népliget</p>
             <h1 id="hero-title" className="h1 reveal">
-              Az ütős sportok bázisa, <em>Egerben.</em>
+              12 salakpálya a Népligetben, <em>1896 óta.</em>
             </h1>
             <div className="hero__row reveal">
-              <p className="lead">{INTRO.text}</p>
+              <p className="lead">{VENUE.intro}</p>
               <div className="hero__ctas">
                 <a href={CLUB.phoneHref} className="btn btn--accent">
                   <IconPhone /> {nb(CLUB.phone)}
                 </a>
-                <a href="#vendeghaz" className="btn btn--ghost">
-                  Szállás <IconArrow />
+                <a href="#arak" className="btn btn--ghost">
+                  Árak <IconArrow />
                 </a>
               </div>
             </div>
             <p className="hero__note reveal">
-              <IconPhone /> <span>Pályát telefonon foglalhatsz.</span>
+              <IconClock />{" "}
+              <span>
+                {VENUE.season}, {join(VENUE.hours.toLowerCase())}
+              </span>
             </p>
           </div>
 
           <figure className="hero__media reveal reveal--img">
-            <Image src="/img/csarnok-szeles.jpg" alt="A fedett teniszcsarnok két kék pályája az ívelt tető alatt, játékosokkal" fill priority sizes="(max-width: 1296px) 100vw, 1200px" />
-            <figcaption className="hero__caption">A fedett teniszcsarnok</figcaption>
+            <Image
+              src="/img/klubhaz-szeles.jpg"
+              alt="A népligeti klubház favázas homlokzata a fák között"
+              fill
+              priority
+              sizes="(max-width: 1296px) 100vw, 1200px"
+            />
+            <figcaption className="hero__caption">
+              A klubház a Népligetben
+            </figcaption>
           </figure>
 
           <ul className="facts reveal">
-            {INTRO.facts.map((f) => (
+            {VENUE.facts.map((f) => (
               <li key={f.label} className="fact">
                 <span className="fact__num">{f.value}</span>
-                <span className="fact__label">{f.label}</span>
+                <span className="fact__label">{join(f.label)}</span>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* ——— Tenisz ——— */}
-      <section id="tenisz" className="section" aria-labelledby="tenisz-title">
+      {/* ——— Pályák ——— */}
+      <section id="palyak" className="section" aria-labelledby="palyak-title">
         <div className="container">
-          <p className="eyebrow reveal">Tenisz</p>
-          <h2 id="tenisz-title" className="h2 reveal">
-            Hét salakpálya kint, <em>kettő a csarnokban.</em>
+          <p className="eyebrow reveal">Pályák</p>
+          <h2 id="palyak-title" className="h2 reveal">
+            Tizenkét salakpálya, <em>egy park közepén.</em>
           </h2>
           <p className="lead reveal">
-            {BOOKING.how} {BOOKING.note}
+            {VENUE.season}, {join(VENUE.hours.toLowerCase())}. Pályát telefonon vagy{" "}
+            {join("e-mailben")} foglalhatsz {CLUB.contact}nál.
           </p>
 
-          <div className="courts">
-            <article className="court glass reveal">
-              <figure className="court__photo">
-                <Image src="/img/salakpalyak.jpg" alt="A szabadtéri salakos teniszpályák a terasz felől nézve" fill sizes="(max-width: 900px) 100vw, 420px" />
-              </figure>
-              <div className="court__body">
-                <h3 className="h3 court__title court__title--clay">Kültéri salakpályák</h3>
-                <p>{HALL.outdoor}</p>
-              </div>
-            </article>
-            <article className="court glass reveal">
-              <figure className="court__photo">
-                <Image src="/img/csarnok.jpg" alt="A fedett teniszcsarnok kék, gumiborítású pályái" fill sizes="(max-width: 900px) 100vw, 420px" />
-              </figure>
-              <div className="court__body">
-                <h3 className="h3 court__title court__title--hall">{HALL.title}</h3>
-                <p>{HALL.surface}; óradíjak lent.</p>
-              </div>
-            </article>
+          <div className="grounds">
+            <figure className="grounds__main reveal reveal--img">
+              <Image
+                src="/img/palyak.jpg"
+                alt="Salakos pályák, a háttérben a klubházzal és a fákkal"
+                fill
+                sizes="(max-width: 900px) 100vw, 560px"
+              />
+              <figcaption className="hero__caption">
+                Salakpályák a klubház előtt
+              </figcaption>
+            </figure>
+            <figure className="snap reveal reveal--img">
+              <Image
+                src="/img/palyak-fak.jpg"
+                alt="Salakos pályák a Népliget fái között"
+                fill
+                sizes="(max-width: 900px) 50vw, 300px"
+              />
+            </figure>
+            <figure className="snap reveal reveal--img">
+              <Image
+                src="/img/klubhaz-osz.jpg"
+                alt="A klubház és a pályák ősszel, sárguló fák között"
+                fill
+                sizes="(max-width: 900px) 50vw, 300px"
+              />
+              <figcaption>A klubház ősszel</figcaption>
+            </figure>
           </div>
 
-          <article className="hall glass reveal">
-            <div className="hall__head">
+          <div className="ground-info">
+            <article className="infocard glass reveal">
               <p className="label">
-                <IconClock /> {HALL.title} · óradíjak
+                <IconCalendar /> Szezon
               </p>
-              <p className="muted">{join(HALL.listDate)}</p>
-            </div>
-            <div className="ptable" role="table" aria-label="A fedett teniszcsarnok óradíjai">
-              <div className="ptable__row ptable__row--head" role="row">
-                <span role="columnheader">Téli időszak</span>
-                <span role="columnheader">Óradíj</span>
-                <span role="columnheader">Bérlettel</span>
-              </div>
-              {HALL.winter.map((r) => (
-                <div key={r.days + r.time} className="ptable__row" role="row">
-                  <span role="cell">
-                    {r.days} <span className="nobr">{r.time}</span>
-                  </span>
-                  <strong role="cell">{ft(r.price)}</strong>
-                  <span role="cell" className="ptable__pass">
-                    {ft(r.pass)}
-                  </span>
-                </div>
-              ))}
-              <div className="ptable__row ptable__row--summer" role="row">
-                <span role="cell">
-                  <span className="ptable__tag">Nyári időszak</span> {HALL.summer.days} <span className="nobr">{HALL.summer.time}</span>
-                </span>
-                <strong role="cell">{ft(HALL.summer.price)}</strong>
-                <span role="cell" className="ptable__pass">
-                  {numnb(HALL.summer.pass)}
-                </span>
-              </div>
-            </div>
-            <p className="muted hall__unit">Az óradíjak Ft/órában; a bérletes ár a téli időszakban óránként értendő.</p>
-            <ul className="hall__extras">
-              {HALL.extras.map((x) => (
-                <li key={x.label}>
-                  <span>{x.label}</span>
-                  <strong>{numnb(x.price)}</strong>
-                </li>
-              ))}
-            </ul>
-          </article>
+              <p className="infocard__big">{VENUE.season}</p>
+              <p className="muted">Mind a 12 pálya salakos.</p>
+            </article>
+            <article className="infocard glass reveal">
+              <p className="label">
+                <IconClock /> Nyitva
+              </p>
+              <p className="infocard__big">{nb(VENUE.hours)}</p>
+              <p className="muted">A szezonban minden nap.</p>
+            </article>
+            <article className="infocard glass reveal">
+              <p className="label">
+                <IconPhone /> Foglalás
+              </p>
+              <p className="infocard__big">
+                <a href={CLUB.phoneHref}>{nb(CLUB.phone)}</a>
+              </p>
+              <p className="muted">
+                {CLUB.contact} · <a href={CLUB.emailHref}>{CLUB.email}</a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-          <details className="rules glass reveal">
-            <summary>
-              <span className="rules__title">
-                <IconCalendar /> 24 alkalmas téli bérletek
-              </span>
-              <span className="rules__hint">a legutóbb közzétett árlista szerint</span>
-            </summary>
-            <div className="passes">
-              <div className="ptable ptable--passes" role="table" aria-label="24 alkalmas téli bérletek">
-                <div className="ptable__row ptable__row--head" role="row">
-                  <span role="columnheader">Idősáv</span>
-                  <span role="columnheader">1 órás</span>
-                  <span role="columnheader">1,5 órás</span>
-                  <span role="columnheader">2 órás</span>
-                </div>
-                {HALL.passes.rows.map((r) => (
-                  <div key={r.slot} className="ptable__row" role="row">
-                    <span role="cell">{r.slot.replace(/ (\d)/, " $1")}</span>
-                    <strong role="cell">{ft(r.h1)}</strong>
-                    <strong role="cell">{ft(r.h15)}</strong>
-                    <strong role="cell">{ft(r.h2)}</strong>
-                  </div>
-                ))}
+      {/* ——— Árak ——— */}
+      <section id="arak" className="section" aria-labelledby="arak-title">
+        <div className="container">
+          <p className="eyebrow reveal">Árak</p>
+          <h2 id="arak-title" className="h2 reveal">
+            Alkalmanként <em>vagy egész idényre.</em>
+          </h2>
+          <p className="lead reveal">
+            A klub {PRICES.title.toLowerCase().replace("árlista", "árlistája")}:
+            óradíj egy alkalomra, vagy fix heti óra az egész szezonra.
+          </p>
+
+          <div className="pricing">
+            <article className="price-card glass reveal">
+              <div className="price-card__head">
+                <p className="label">
+                  <IconClock /> Egy alkalomra
+                </p>
+                <span className="tag">{PRICES.title}</span>
               </div>
-              <p className="muted">{HALL.passes.note}</p>
-            </div>
-          </details>
+              <ul className="hours">
+                {PRICES.single.map((p) => (
+                  <li key={p.slot}>
+                    <span>{slot(p.slot)}</span>
+                    <strong>{ft(p.price)}</strong>
+                  </li>
+                ))}
+              </ul>
+              <p className="muted">{PRICES.singleNote}</p>
+            </article>
+            <article className="price-card glass reveal">
+              <div className="price-card__head">
+                <p className="label">
+                  <IconCalendar /> Egész idényre
+                </p>
+                <span className="tag">{PRICES.title}</span>
+              </div>
+              <ul className="hours">
+                {PRICES.season.map((p) => (
+                  <li key={p.slot}>
+                    <span>{slot(p.slot)}</span>
+                    <strong>{ft(p.price)}</strong>
+                  </li>
+                ))}
+              </ul>
+              <p className="muted">{PRICES.seasonNote}</p>
+            </article>
+          </div>
 
           <aside className="callcard glass reveal">
             <div>
@@ -167,282 +266,261 @@ export default function BHome() {
                 <IconPhone /> Pályafoglalás
               </p>
               <p className="callcard__text">
-                {BOOKING.how} A díjakról és a szabad időpontokról is ott kapsz választ.
+                Telefonon vagy {join("e-mailben")}, {CLUB.contact}nál. A tenisztelepen{" "}
+                {CLUB.site.name} ({nb(CLUB.site.phone)}).
               </p>
             </div>
-            <a href={CLUB.phoneHref} className="btn btn--accent">
-              <IconPhone /> {nb(CLUB.phone)}
-            </a>
+            <div className="callcard__ctas">
+              <a href={CLUB.phoneHref} className="btn btn--accent">
+                <IconPhone /> {nb(CLUB.phone)}
+              </a>
+              <a href={CLUB.emailHref} className="btn btn--ghost">
+                <IconMail /> E-mail
+              </a>
+            </div>
           </aside>
         </div>
       </section>
 
-      {/* ——— Fallabda és szauna ——— */}
-      <section id="fallabda" className="section" aria-labelledby="fallabda-title">
+      {/* ——— Délelőtti bérlet ——— */}
+      <section
+        id="delelott"
+        className="section section--tight"
+        aria-labelledby="delelott-title"
+      >
         <div className="container">
-          <p className="eyebrow reveal">Fallabda és szauna</p>
-          <h2 id="fallabda-title" className="h2 reveal">
-            Négy fallabdapálya, <em>utána szauna.</em>
+          <p className="eyebrow reveal">Délelőtti bérlet</p>
+          <h2 id="delelott-title" className="h2 reveal">
+            Hétköznap délelőtt, <em>korlátlanul.</em>
           </h2>
-          <p className="lead reveal">{SQUASH.intro}</p>
 
-          <div className="squash">
-            <figure className="squash__photo reveal reveal--img">
-              <Image src="/img/fallabda.jpg" alt="Két játékos a fallabdapályán" fill sizes="(max-width: 900px) 100vw, 520px" />
-              <figcaption className="hero__caption">Fallabda</figcaption>
-            </figure>
-            <article className="squash__prices glass reveal">
+          <div className="morning">
+            <article className="morning__card glass reveal">
+              <span className="tag tag--accent">
+                Idénybérlet · {PRICES.title}
+              </span>
+              <p className="morning__price">
+                <strong>{ft(MORNING.price)}</strong>
+                <span>egész idényre</span>
+              </p>
+              <p className="morning__when">
+                <IconClock /> {nb(MORNING.when)}
+              </p>
+              <p className="morning__how">{MORNING.how}</p>
+              <a href={CLUB.phoneHref} className="btn btn--accent">
+                <IconPhone /> Érdeklődés: {nb(CLUB.phone)}
+              </a>
+            </article>
+
+            <figure className="morning__voice glass reveal">
               <p className="label">
-                <IconClock /> Fallabdapálya · óradíj
+                <IconUsers /> Kinek jó?
               </p>
-              <ul className="hours">
-                {SQUASH.prices.map((p) => (
-                  <li key={p.days + p.time}>
-                    <span>
-                      {p.days} <span className="nobr">{p.time}</span>
-                    </span>
-                    <strong>{ft(p.price)}</strong>
-                  </li>
-                ))}
-              </ul>
-              <p className="label squash__sub">
-                <IconCalendar /> Fallabdabérlet
-              </p>
-              <ul className="checks">
-                {SQUASH.passes.map((x) => (
-                  <li key={x}>
-                    <IconCheck />
-                    <span>{numnb(x)}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="muted">{SQUASH.passTime}</p>
-            </article>
-          </div>
-
-          <div className="extras-row">
-            <article className="sauna glass reveal">
-              <figure className="sauna__photo">
-                <Image src="/img/szauna.jpg" alt="A szauna fapadjai" fill sizes="(max-width: 900px) 100vw, 360px" />
-              </figure>
-              <div className="sauna__body">
-                <h3 className="h3">Szauna</h3>
-                <p className="sauna__price">{numnb(SQUASH.sauna.price)}</p>
-                <p className="muted">{numnb(SQUASH.sauna.min)}</p>
-              </div>
-            </article>
-            <article className="rental glass reveal">
-              <p className="label">
-                <IconCheck /> Eszközbérlés
-              </p>
-              <ul className="hours">
-                {SQUASH.rental.map((r) => (
-                  <li key={r.label}>
-                    <span>{r.label}</span>
-                    <strong>{numnb(r.price)}</strong>
-                  </li>
-                ))}
-              </ul>
-              <p className="muted">Teniszhez és fallabdához egyaránt.</p>
-            </article>
-            <figure className="snap reveal reveal--img">
-              <Image src="/img/fallabda-terem.jpg" alt="A fallabdapályák előtti társalgó asztalokkal" fill sizes="(max-width: 900px) 100vw, 360px" />
-              <figcaption>A fallabdapályák előtt</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      {/* ——— Vendégház ——— */}
-      <section id="vendeghaz" className="section" aria-labelledby="vendeghaz-title">
-        <div className="container">
-          <p className="eyebrow reveal">Vendégház</p>
-          <h2 id="vendeghaz-title" className="h2 reveal">
-            Hat szoba, <em>a pályák mellett.</em>
-          </h2>
-          <p className="lead reveal">{GUESTHOUSE.intro}</p>
-
-          <div className="rooms">
-            <figure className="rooms__main reveal reveal--img">
-              <Image src="/img/szoba-1.jpg" alt="Kétágyas szoba a vendégházban, tetőtéri ablakkal" fill sizes="(max-width: 900px) 100vw, 620px" />
-              <figcaption className="hero__caption">Kétágyas szoba</figcaption>
-            </figure>
-            <figure className="snap reveal reveal--img">
-              <Image src="/img/szoba-2.jpg" alt="Szoba összetolt ágyakkal, íróasztallal és televízióval" fill sizes="(max-width: 900px) 50vw, 300px" />
-            </figure>
-            <figure className="snap reveal reveal--img">
-              <Image src="/img/tarsalgo.jpg" alt="A közös társalgó étkezőasztallal és konyhasarokkal" fill sizes="(max-width: 900px) 50vw, 300px" />
-              <figcaption>Közös társalgó</figcaption>
+              <blockquote>
+                <p>{MORNING.who}</p>
+                <p>{MORNING.fit}</p>
+              </blockquote>
+              <figcaption>
+                {CLUB.contact} szerint, az Építők Teniszklubtól
+              </figcaption>
             </figure>
           </div>
 
-          <div className="stay">
-            <article className="stay__info glass reveal">
-              <p className="label">
-                <IconUsers /> A szobák
-              </p>
-              <p>{GUESTHOUSE.room}</p>
-              <p>{GUESTHOUSE.lounge}</p>
-              <p className="muted">{GUESTHOUSE.kids}</p>
-              <ul className="chips stay__perks" aria-label="Szolgáltatások">
-                {GUESTHOUSE.perks.map((p) => (
-                  <li key={p}>{p}</li>
-                ))}
-              </ul>
-            </article>
-            <article className="stay__prices glass reveal">
-              <p className="label">
-                <IconCalendar /> {GUESTHOUSE.prices.from}
-              </p>
-              <div className="ptable ptable--rooms" role="table" aria-label="Szobaárak">
-                <div className="ptable__row ptable__row--head" role="row">
-                  <span role="columnheader">Vendég</span>
-                  <span role="columnheader">1 éj</span>
-                  <span role="columnheader">2 éj</span>
-                </div>
-                {GUESTHOUSE.prices.rows.map((r) => (
-                  <div key={r.who} className="ptable__row" role="row">
-                    <span role="cell">{r.who}</span>
-                    <strong role="cell">{ft(r.night)}</strong>
-                    <strong role="cell">{ft(r.two)}</strong>
-                  </div>
-                ))}
-              </div>
-              <p className="muted">{GUESTHOUSE.prices.tax}</p>
-              <div className="stay__ctas">
-                <a href={CLUB.roomBooking} target="_blank" rel="noopener noreferrer" className="btn btn--accent">
-                  Szobafoglalás <IconExternal />
-                </a>
-                <a href="#urlap" className="btn btn--ghost">
-                  <IconMail /> Írj nekünk
-                </a>
-              </div>
-            </article>
-          </div>
-
-          <div className="nearby glass reveal">
-            <p className="label">
-              <IconPin /> A közelben
+          <div className="ladder glass reveal">
+            <p className="label ladder__title" id="ladder-title">
+              <IconCalendar /> A délelőtti sáv díjai egymás mellett
             </p>
-            <ul className="nearby__list">
-              {GUESTHOUSE.nearby.map((n) => (
-                <li key={n.place}>
-                  <strong>{n.km}</strong>
-                  <span>{n.place}</span>
-                </li>
-              ))}
-            </ul>
-            <figure className="nearby__photo">
-              <Image src="/img/vendeghaz-bejarat.jpg" alt="A vendégház bejárata" fill sizes="(max-width: 900px) 40vw, 180px" />
-            </figure>
+            <div role="table" aria-labelledby="ladder-title">
+              <div className="ladder__row" role="row">
+                <span role="cell">Egy alkalom, hétköznap 9–14</span>
+                <strong role="cell">{ft(PRICES.single[1].price)}</strong>
+                <span role="cell" className="muted">
+                  óránként
+                </span>
+              </div>
+              <div className="ladder__row" role="row">
+                <span role="cell">Fix heti óra, hétköznap 9–14</span>
+                <strong role="cell">{ft(PRICES.season[1].price)}</strong>
+                <span role="cell" className="muted">
+                  egész idényre
+                </span>
+              </div>
+              <div className="ladder__row ladder__row--hi" role="row">
+                <span role="cell">Korlátlan délelőtti bérlet, 7–14</span>
+                <strong role="cell">{ft(MORNING.price)}</strong>
+                <span role="cell" className="muted">
+                  egész idényre, ha van szabad pálya
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ——— Csomagok ——— */}
-      <section id="csomagok" className="section" aria-labelledby="csomagok-title">
+      {/* ——— Klubtörténet ——— */}
+      <section
+        id="tortenet"
+        className="section"
+        aria-labelledby="tortenet-title"
+      >
         <div className="container">
-          <p className="eyebrow reveal">Csomagok</p>
-          <h2 id="csomagok-title" className="h2 reveal">
-            Pár éj Egerben, <em>csomagáron.</em>
+          <p className="eyebrow reveal">Klubtörténet</p>
+          <h2 id="tortenet-title" className="h2 reveal">
+            A park egyidős <em>a sporttelepével.</em>
           </h2>
-          <p className="lead reveal">{PACKAGES.valid}</p>
+          <p className="lead reveal">{HISTORY.intro}</p>
 
-          <div className="packs">
-            {PACKAGES.list.map((p) => (
-              <article key={p.title} className="pack glass reveal">
-                <h3 className="h3">{p.title}</h3>
-                <p className="pack__price">
-                  <strong>{numnb(p.price)}</strong>
-                  <span>{p.unit}</span>
+          <ol className="timeline reveal">
+            {HISTORY.milestones.map((m) => (
+              <li key={m.year} className="timeline__item">
+                <span className="timeline__year">{m.year}</span>
+                <p>{m.text}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div
+            className="archive reveal"
+            role="region"
+            aria-label="Archív fotók a népligeti sporttelepről"
+            tabIndex={0}
+          >
+            {ARCHIVE.map((a) => (
+              <figure key={a.src} className="archive__item">
+                <div className="archive__img">
+                  <Image
+                    src={a.src}
+                    alt={a.alt}
+                    fill
+                    sizes="(max-width: 900px) 70vw, 340px"
+                  />
+                </div>
+                <figcaption>{a.cap}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <p className="muted archive__hint">Húzd oldalra az archív képeket.</p>
+
+          <article className="itf glass reveal">
+            <div className="itf__head">
+              <p className="label">
+                <IconTrophy /> {HISTORY.itf.title}
+              </p>
+              <p className="itf__big">
+                <strong>21</strong>
+                <span>torna a Népligetben, 1994–2014</span>
+              </p>
+            </div>
+            <p className="itf__text">{HISTORY.itf.text}</p>
+            <p className="muted">{HISTORY.itf.growth}</p>
+            <div className="itf__lists">
+              <div>
+                <p className="itf__sub">
+                  Később a világ élmezőnyében – férfiak
                 </p>
-                {p.alt && <p className="pack__alt">{numnb(p.alt)}</p>}
                 <ul className="checks">
-                  {p.items.map((x) => (
-                    <li key={x}>
+                  {HISTORY.itf.men.map((p) => (
+                    <li key={p}>
                       <IconCheck />
-                      <span>{x}</span>
+                      <span>{p}</span>
                     </li>
                   ))}
                 </ul>
-                <a
-                  href={`${CLUB.emailHref}?subject=${encodeURIComponent(`Csomagajánlat: ${p.title}`)}`}
-                  className="btn btn--ghost btn--sm pack__cta"
-                >
-                  <IconMail /> Érdeklődés e-mailben
-                </a>
-              </article>
-            ))}
-          </div>
-          <p className="muted packs__tax reveal">{PACKAGES.tax}</p>
+              </div>
+              <div>
+                <p className="itf__sub">Később a világ élmezőnyében – nők</p>
+                <ul className="checks">
+                  {HISTORY.itf.women.map((p) => (
+                    <li key={p}>
+                      <IconCheck />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <p className="itf__hu">{HISTORY.itf.hungarians}</p>
+          </article>
+
+          <figure className="painting reveal reveal--img">
+            <Image
+              src="/img/tortenet-festmeny.jpg"
+              alt="Festmény a népligeti klubházról és a pályákról"
+              fill
+              sizes="(max-width: 1296px) 100vw, 1200px"
+            />
+            <figcaption className="hero__caption">
+              A klubház egy festményen
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      {/* ——— Házirend ——— */}
-      <section id="hazirend" className="section" aria-labelledby="hazirend-title">
+      {/* ——— Események ——— */}
+      <section
+        id="esemenyek"
+        className="section"
+        aria-labelledby="esemenyek-title"
+      >
         <div className="container">
-          <p className="eyebrow reveal">Házirend</p>
-          <h2 id="hazirend-title" className="h2 reveal">
-            A pályán, <em>röviden.</em>
+          <p className="eyebrow reveal">Események</p>
+          <h2 id="esemenyek-title" className="h2 reveal">
+            Klubversenyek, <em>klubélet.</em>
           </h2>
+          <p className="lead reveal">{EVENTS.intro}</p>
 
-          <ul className="keyrules keyrules--three">
-            {KEY_RULES.map((r) => (
-              <li key={r.title} className="keyrule glass reveal">
-                <strong>{r.title}</strong>
-                <span>{numnb(r.text)}</span>
+          <ul className="events">
+            {EVENTS.list.map((e) => (
+              <li key={e.title} className="event glass reveal">
+                <span className="tag">{e.date}</span>
+                <h3 className="h3">{e.title}</h3>
+                <p>{e.text}</p>
               </li>
             ))}
           </ul>
 
-          <details className="rules glass reveal">
-            <summary>
-              <span className="rules__title">
-                <IconCheck /> A teljes házirend
-              </span>
-              <span className="rules__hint">{RULES.length} pont</span>
-            </summary>
-            <ol className="rulelist rulelist--numbered">
-              {RULES.map((r) => (
-                <li key={r.title}>
-                  <strong>{r.title}</strong>
-                  <span>{numnb(r.text)}</span>
-                </li>
-              ))}
-            </ol>
-          </details>
-
-          <div className="desk">
-            <figure className="snap desk__photo reveal reveal--img">
-              <Image src="/img/bufe.jpg" alt="A büfé pultja, mögötte ütők a falon" fill sizes="(max-width: 900px) 100vw, 560px" />
-              <figcaption>Büfé és recepció</figcaption>
+          <div className="events__foot">
+            <figure className="snap events__photo reveal reveal--img">
+              <Image
+                src="/img/klubhaz-kozosseg.jpg"
+                alt="Sok ember a klubház előtt, napernyők alatt"
+                fill
+                sizes="(max-width: 900px) 100vw, 780px"
+              />
+              <figcaption>Klubélet a klubház előtt</figcaption>
             </figure>
-            <article className="desk__text glass reveal">
-              <p className="label">
-                <IconClock /> Büfé és recepció
-              </p>
-              <p className="desk__lead">{join(INTRO.reception)}</p>
-              <ul className="chips" aria-label="A sportcentrumban">
-                {INTRO.services.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
-            </article>
-            <figure className="snap desk__photo2 reveal reveal--img">
-              <Image src="/img/oltozo.jpg" alt="Öltöző szekrényekkel és fogasokkal" fill sizes="(max-width: 900px) 100vw, 360px" />
-              <figcaption>Öltöző</figcaption>
+            <figure className="snap events__prize reveal reveal--img">
+              <Image
+                src="/img/dijak.jpg"
+                alt="Építők Kupa feliratú serlegek és csokoládék egy asztalon"
+                fill
+                sizes="(max-width: 900px) 100vw, 400px"
+              />
+              <figcaption>Díjak egy versenyre</figcaption>
             </figure>
+            <a
+              href={CLUB.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--ghost events__fb"
+            >
+              <IconFacebook /> Hírek a Facebook-csoportban
+            </a>
           </div>
         </div>
       </section>
 
       {/* ——— Kapcsolat ——— */}
-      <section id="kapcsolat" className="section final" aria-labelledby="kapcsolat-title">
+      <section
+        id="kapcsolat"
+        className="section final"
+        aria-labelledby="kapcsolat-title"
+      >
         <div className="container">
           <div className="final__head">
             <p className="eyebrow reveal">Kapcsolat</p>
             <h2 id="kapcsolat-title" className="h2 h2--xl reveal">
-              Pályát telefonon, <em>szobát {join("e-mailben")} is.</em>
+              Gyere ki <em>a Népligetbe.</em>
             </h2>
           </div>
 
@@ -452,8 +530,17 @@ export default function BHome() {
                 <li>
                   <IconPhone />
                   <div>
-                    <span className="contact__label">Pályafoglalás telefonon</span>
+                    <span className="contact__label">Pályafoglalás</span>
                     <a href={CLUB.phoneHref}>{nb(CLUB.phone)}</a>
+                    <span className="contact__name">{CLUB.contact}</span>
+                  </div>
+                </li>
+                <li>
+                  <IconPhone />
+                  <div>
+                    <span className="contact__label">Tenisztelep</span>
+                    <a href={CLUB.site.phoneHref}>{nb(CLUB.site.phone)}</a>
+                    <span className="contact__name">{CLUB.site.name}</span>
                   </div>
                 </li>
                 <li>
@@ -467,17 +554,23 @@ export default function BHome() {
                   <IconPin />
                   <div>
                     <span className="contact__label">Cím</span>
-                    <a href={CLUB.mapsUrl} target="_blank" rel="noopener noreferrer">
-                      {CLUB.address.replace(/ (\d+\.)$/, " $1")}
+                    <a
+                      href={CLUB.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {CLUB.address}
                     </a>
-                    <span className="contact__name">a volt kemping területén, zöldövezetben</span>
+                    <span className="contact__line">{VISIT.transit}</span>
                   </div>
                 </li>
                 <li>
                   <IconClock />
                   <div>
-                    <span className="contact__label">Büfé és recepció</span>
-                    <span className="contact__line">{join(INTRO.reception)}</span>
+                    <span className="contact__label">Szezon</span>
+                    <span className="contact__line">
+                      {VENUE.season}, {join(VENUE.hours.toLowerCase())}
+                    </span>
                   </div>
                 </li>
               </ul>
@@ -485,7 +578,12 @@ export default function BHome() {
                 <a href={CLUB.phoneHref} className="btn btn--accent">
                   <IconPhone /> Hívás
                 </a>
-                <a href={CLUB.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn--ghost">
+                <a
+                  href={CLUB.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--ghost"
+                >
                   <IconArrow /> Útvonal
                 </a>
               </div>
@@ -495,13 +593,27 @@ export default function BHome() {
               <p className="label">
                 <IconMail /> Írj nekünk
               </p>
-              <p className="muted">Szállás, csomagajánlat vagy kérdés; pályát telefonon foglalhatsz.</p>
+              <p className="muted">
+                Pálya, bérlet vagy verseny: a levél {CLUB.contact}hoz megy.
+              </p>
               <ContactForm />
             </div>
           </div>
 
+          <div className="car glass reveal">
+            <p className="label">
+              <IconPin /> Autóval
+            </p>
+            <p>{VISIT.car}</p>
+          </div>
+
           <div className="visit__map glass reveal">
-            <iframe title="Az Invest Sportcentrum és Vendégház a térképen" src={CLUB.mapsEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+            <iframe
+              title="Az Építők Teniszklub a Népligetben, a térképen"
+              src={CLUB.mapsEmbed}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>

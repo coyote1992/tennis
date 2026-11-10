@@ -8,7 +8,7 @@ import { CLUB, SECTIONS, VENUE } from "@/lib/site";
 function Brand({ light }: { light?: boolean }) {
   return (
     <span className={`brand__inner${light ? " brand__inner--light" : ""}`}>
-      <Image src="/img/epitok-cimer.png" alt="" width={773} height={905} className="brand__logo" priority={!light} sizes="48px" />
+      <Image src="/img/epitok-cimer.png" alt="" width={787} height={906} className="brand__logo" priority={!light} sizes="48px" />
       <span className="brand__name">
         <b>Építők Teniszklub</b>
         <small>Budapest, Népliget · 1991</small>

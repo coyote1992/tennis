@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { CLUB } from "@/lib/site";
+import { CLUB, VENUE } from "@/lib/site";
 import { IconPhone } from "./icons";
 import { NAV_B } from "./nav";
 
-const nb = (t: string) => t.replace(/ /g, " ");
+const nb = (t: string) => t.replace(/ /g, " ");
 
 export function Header() {
   const [solid, setSolid] = useState(false);
@@ -34,9 +34,11 @@ export function Header() {
       <div className="announce">
         <div className="container announce__inner">
           <span className="announce__place">{CLUB.address}</span>
-          <span className="announce__open">Büfé és recepció: minden nap 8:00–20:00</span>
+          <span className="announce__open">
+            {VENUE.season}, {VENUE.hours.toLowerCase().replace(/ (\d)/, " $1")}
+          </span>
           <span className="announce__tel">
-            Pályafoglalás telefonon:{" "}
+            Pályafoglalás:{" "}
             <a href={CLUB.phoneHref} className="announce__phone">
               {nb(CLUB.phone)}
             </a>
@@ -45,11 +47,11 @@ export function Header() {
       </div>
       <header className={`header${solid ? " header--solid" : ""}${open ? " header--open" : ""}`}>
         <div className="container header__inner">
-          <a href="/b" className="brand" onClick={close} aria-label="Invest Sportcentrum és Vendégház – kezdőlap">
-            <Image src="/img/invest-logo.png" alt="" width={512} height={512} className="brand__logo" priority />
+          <a href="/b" className="brand" onClick={close} aria-label="Építők Teniszklub – kezdőlap">
+            <Image src="/img/epitok-cimer.png" alt="" width={787} height={906} className="brand__logo" priority />
             <span className="brand__name">
-              Invest Sportcentrum
-              <small>és Vendégház · Eger</small>
+              Építők Teniszklub
+              <small>Budapest · Népliget</small>
             </span>
           </a>
 
@@ -62,8 +64,8 @@ export function Header() {
           </nav>
 
           <div className="header__cta">
-            <a href="#vendeghaz" className="btn btn--ghost btn--sm">
-              Szállás
+            <a href="#arak" className="btn btn--ghost btn--sm">
+              Árak
             </a>
             <a href={CLUB.phoneHref} className="btn btn--accent btn--sm">
               <IconPhone /> {nb(CLUB.phone)}
@@ -95,11 +97,13 @@ export function Header() {
             <a href={CLUB.phoneHref} className="btn btn--accent btn--block">
               <IconPhone /> Pályafoglalás: {nb(CLUB.phone)}
             </a>
-            <a href="#vendeghaz" className="btn btn--ghost btn--block" onClick={close}>
-              Szállás a vendégházban
+            <a href={CLUB.emailHref} className="btn btn--ghost btn--block">
+              {CLUB.email}
             </a>
             <p className="mobile-menu__hours">
-              <span>Büfé és recepció: minden nap 8:00–20:00</span>
+              <span>
+                {VENUE.season}, {VENUE.hours.toLowerCase().replace(/–/g, "–\u2060")}
+              </span>
               <span>{CLUB.address}</span>
             </p>
           </div>

@@ -18,7 +18,7 @@ export default function GlobalNotFound() {
       <body>
         <main className="nf">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/img/epitok-cimer.png" alt="Építők Teniszklub" width={86} height={101} />
+          <img src="/img/epitok-cimer.png" alt="Építők Teniszklub" width={86} height={99} />
           <p className="nf__code">404</p>
           <h1>
             Ez a labda kiment.

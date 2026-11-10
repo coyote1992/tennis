@@ -49,7 +49,7 @@ export default function Page() {
           <div className="hero__pano-img">
             <Image src="/img/klubhaz-szeles.jpg" alt="Az Építők Teniszklub klubháza a Népligetben" fill priority sizes="100vw" />
           </div>
-          <Image src="/img/epitok-cimer.png" alt="" width={773} height={905} className="hero__crest" sizes="110px" />
+          <Image src="/img/epitok-cimer.png" alt="" width={787} height={906} className="hero__crest" sizes="110px" />
         </figure>
       </section>
 

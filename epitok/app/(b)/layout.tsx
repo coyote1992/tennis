@@ -24,22 +24,22 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://invest.tenis.studio"),
-  title: "Invest Sportcentrum és Vendégház · tenisz, fallabda, szállás Egerben",
+  metadataBase: new URL("https://epitok.tenis.studio"),
+  title: "Építők Teniszklub · 12 salakpálya a Népligetben",
   description:
-    "Az ütős sportok bázisa Egerben: 7 salakos teniszpálya, fedett teniszcsarnok 2 pályával, 4 fallabdapálya, szauna, büfé és 6 szobás vendégház. Pályafoglalás telefonon: +36 30 912 2116.",
+    "12 salakos teniszpálya a budapesti Népligetben, áprilistól októberig, minden nap 7–20 óráig. Óradíjak, egész idényes bérletek és korlátlan hétköznap délelőtti idénybérlet; klubtörténet 1896-tól, az ITF-ifjúsági Építők Kupa 1994–2014.",
   alternates: { canonical: "/b" },
   openGraph: {
-    title: "Invest Sportcentrum és Vendégház, Eger",
-    description: "Tenisz, fallabda, szauna és szállás egy helyen, Egerben.",
-    images: ["/img/csarnok-szeles.jpg"],
+    title: "Építők Teniszklub, Népliget",
+    description: "12 salakpálya a Népligetben, egy sporttelepen, amely 1896 óta a park része.",
+    images: ["/img/klubhaz-szeles.jpg"],
     locale: "hu_HU",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0c",
+  themeColor: "#070d1a",
   colorScheme: "dark",
 };
 
