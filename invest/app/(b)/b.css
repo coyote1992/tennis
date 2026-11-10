@@ -1,42 +1,42 @@
 /* ==========================================================================
-   Tenisziskola Veszprém SE (TVSE), Jutasi úti Sportcentrum — version B (dot-space)
-   Dark "space" theme from the club's roundel: a deep night with a violet cast (the logo's ring),
-   lavender-violet for the accent (buttons with dark ink, the second half of headings), the logo's
-   forest green, lifted, for labels and the skyline dots, white text, court clay only as a warm dot.
-   Sora for headings, Inter for text.
+   Invest Sportcentrum és Vendégház (Eger) — version B (dot-space)
+   Dark "space" theme from the club's roundel: a near-black night, the logo's sports yellow for the
+   accent (buttons with dark ink, the second half of headings, the dots of the ring and the ball), white
+   text, the indoor courts' blue for labels, court clay only as a warm dot. Sora for headings, Inter for
+   text.
    ========================================================================== */
 
 :root {
-  --vs-accent: #a48bff;
-  --vs-accent-ink: #120d26;
+  --vs-accent: #f2dd2c;
+  --vs-accent-ink: #15130a;
 
-  /* sky behind the dots: a night with a violet cast, like the roundel's ring at dusk */
-  --space-sky-top: #17142c;
-  --space-sky-mid: #0b0b17;
-  --space-sky-bottom: #06060c;
+  /* sky behind the dots: a near-black night with a faint warm cast */
+  --space-sky-top: #16151a;
+  --space-sky-mid: #0b0b0e;
+  --space-sky-bottom: #060607;
 
-  --deep: #06060c;
-  --deep-2: #0e0d1a;
-  --sun: #b9a6ff; /* accent for text on dark: the logo's violet, lifted to lavender */
-  --sun-hi: #cbbcff;
-  --sun-soft: #ddd4ff;
-  --acc: #a48bff; /* button lavender, with dark ink */
-  --acc-hi: #b6a2ff;
-  --acc-ink: #120d26;
-  --sky: #9ed39a; /* labels and eyebrows: the logo's forest green, lifted */
-  --green: #62c870;
-  --ball: #d6e34f;
+  --deep: #060607;
+  --deep-2: #101013;
+  --sun: #f4e15a; /* accent for text on dark: the logo's yellow */
+  --sun-hi: #f8ea86;
+  --sun-soft: #f9efab;
+  --acc: #f2dd2c; /* button yellow, with dark ink */
+  --acc-hi: #f7e65d;
+  --acc-ink: #15130a;
+  --sky: #8ec1f2; /* labels and eyebrows: the indoor courts' blue, lifted */
+  --green: #8ec1f2;
+  --ball: #f2dd2c;
   --clay: #d9774a;
   --clay-soft: #f0b796;
-  --paper: #f3f2f8;
+  --paper: #f4f3ee;
 
-  --ink: #f3f2f8;
-  --ink-2: rgba(243, 242, 248, 0.8);
-  --ink-3: rgba(243, 242, 248, 0.6);
-  --line: rgba(243, 242, 248, 0.12);
-  --line-strong: rgba(243, 242, 248, 0.32);
-  --glass: rgba(14, 13, 26, 0.78);
-  --glass-hi: rgba(243, 242, 248, 0.06);
+  --ink: #f4f3ee;
+  --ink-2: rgba(244, 243, 238, 0.8);
+  --ink-3: rgba(244, 243, 238, 0.6);
+  --line: rgba(244, 243, 238, 0.12);
+  --line-strong: rgba(244, 243, 238, 0.32);
+  --glass: rgba(16, 16, 19, 0.8);
+  --glass-hi: rgba(244, 243, 238, 0.06);
 
   --font-display: var(--font-display-face), "Helvetica Neue", Arial, sans-serif;
   --font-body: var(--font-body-face), "Helvetica Neue", Arial, sans-serif;
@@ -198,7 +198,7 @@ button {
   height: 10px;
   border-radius: 50%;
   background: currentColor;
-  box-shadow: 14px 0 0 -3px rgba(164, 139, 255, 0.6);
+  box-shadow: 14px 0 0 -3px rgba(242, 221, 44, 0.6);
   margin-right: 10px;
 }
 .lead {
@@ -319,7 +319,7 @@ button {
     box-shadow 0.35s var(--ease);
 }
 .header--solid:not(.header--open) {
-  background: rgba(10, 9, 20, 0.82);
+  background: rgba(10, 10, 12, 0.82);
   box-shadow: 0 1px 0 rgba(243, 242, 248, 0.08);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -534,7 +534,7 @@ html.menu-open .announce {
   aspect-ratio: 2200 / 814;
   border-radius: var(--radius);
   overflow: hidden;
-  background: #14121f;
+  background: #141417;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
 }
 .hero__caption {
@@ -543,7 +543,7 @@ html.menu-open .announce {
   bottom: 16px;
   padding: 7px 14px;
   border-radius: 999px;
-  background: rgba(10, 9, 20, 0.62);
+  background: rgba(10, 10, 12, 0.62);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-size: 0.8rem;
@@ -604,7 +604,7 @@ html.menu-open .announce {
   align-self: flex-start;
   padding: 4px 11px;
   border-radius: 999px;
-  background: rgba(164, 139, 255, 0.18);
+  background: rgba(242, 221, 44, 0.18);
   color: var(--sun-soft);
   font-size: 0.74rem;
   font-weight: 700;
@@ -612,7 +612,7 @@ html.menu-open .announce {
   text-transform: uppercase;
 }
 .tag--accent {
-  background: rgba(164, 139, 255, 0.16);
+  background: rgba(242, 221, 44, 0.16);
   color: var(--sun-soft);
 }
 .chips {
@@ -673,7 +673,7 @@ html.menu-open .announce {
   aspect-ratio: 16 / 9;
   border-radius: var(--radius);
   overflow: hidden;
-  background: #14121f;
+  background: #141417;
 }
 .snap figcaption {
   position: absolute;
@@ -684,7 +684,7 @@ html.menu-open .announce {
   max-width: calc(100% - 24px);
   padding: 6px 12px;
   border-radius: 14px;
-  background: rgba(10, 9, 20, 0.72);
+  background: rgba(10, 10, 12, 0.72);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-size: 0.8rem;
@@ -705,7 +705,7 @@ html.menu-open .announce {
   padding: 4px;
   border-radius: 999px;
   border: 1px solid var(--line-strong);
-  background: rgba(10, 9, 20, 0.45);
+  background: rgba(10, 10, 12, 0.45);
 }
 .enquiry__mode {
   min-height: 42px;
@@ -804,7 +804,7 @@ html.menu-open .announce {
   padding: 12px 14px;
   border: 1px solid var(--line-strong);
   border-radius: 10px;
-  background: rgba(10, 9, 20, 0.5);
+  background: rgba(10, 10, 12, 0.5);
   color: var(--ink);
   font: inherit;
   font-size: 1rem;
@@ -818,7 +818,7 @@ html.menu-open .announce {
 .input:focus {
   outline: none;
   border-color: var(--sun);
-  box-shadow: 0 0 0 3px rgba(164, 139, 255, 0.26);
+  box-shadow: 0 0 0 3px rgba(242, 221, 44, 0.26);
 }
 .input[type="date"] {
   color-scheme: dark;
@@ -856,8 +856,8 @@ html.menu-open .announce {
 .enquiry__done {
   padding: 12px 14px;
   border-radius: 10px;
-  background: rgba(164, 139, 255, 0.12);
-  border: 1px solid rgba(164, 139, 255, 0.42);
+  background: rgba(242, 221, 44, 0.12);
+  border: 1px solid rgba(242, 221, 44, 0.42);
   color: var(--ink-2);
   font-size: 0.93rem;
 }
@@ -1232,419 +1232,421 @@ html.space {
 }
 
 
-/* ——— pályák: the two seasons, what's beside the courts, photos ——— */
-.seasons {
+/* ——— hero: the phone-only booking note ——— */
+.hero__note {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(242, 221, 44, 0.35);
+  background: rgba(242, 221, 44, 0.08);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--sun-soft);
+}
+.hero__note svg {
+  color: var(--sun);
+}
+.facts {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* ——— tenisz: the two kinds of court, the hall prices, the passes, the call ——— */
+.courts {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-top: clamp(32px, 4vw, 48px);
 }
-.season {
+.court {
   display: grid;
   grid-template-rows: auto 1fr;
+  align-content: start;
   overflow: hidden;
   padding: 0;
 }
-.season__photo {
+.court__photo {
   position: relative;
   aspect-ratio: 16 / 9;
-  background: #14121f;
+  background: #141417;
 }
-.season__photo img,
-.venue-photos img,
-.camp img,
-.league__photo img,
-.highlights__photo img,
-.coach__photo img {
+.court__photo img,
+.squash__photo img,
+.sauna__photo img,
+.rooms img,
+.nearby__photo img,
+.desk img {
   object-fit: cover;
 }
-.season__body {
-  padding: 22px 24px 26px;
+.court__body {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 22px 24px 24px;
+  color: var(--ink-2);
 }
-.season__body .h3 {
+.court__title {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.season__body .h3::before {
+.court__title::before {
   content: "";
+  flex: none;
   width: 9px;
   height: 9px;
   border-radius: 50%;
   background: var(--clay);
 }
-.season--tel .season__body .h3::before {
-  background: var(--sun);
+.court__title--hall::before {
+  background: var(--sky);
 }
-.season__when {
-  margin-top: 6px;
-  font-weight: 600;
-  color: var(--sun-soft);
+.hall {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 28px;
 }
-.season__text {
-  margin-top: 4px;
+.hall__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 20px;
+}
+.ptable {
+  display: grid;
+  font-size: 0.95rem;
+}
+.ptable__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.8fr) minmax(0, 0.9fr);
+  gap: 4px 16px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
   color: var(--ink-2);
 }
-.extras {
-  margin-top: 20px;
+.ptable__row > :not(:first-child) {
+  text-align: right;
 }
-.extras li {
-  white-space: normal;
+.ptable__row--head {
+  padding: 0 0 10px;
+  border-top: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
 }
-.venue-photos {
+.ptable__row strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.12rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.ptable__pass {
+  color: var(--sun-soft);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.ptable__row--summer {
+  border-top-color: var(--line-strong);
+}
+.ptable__tag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: rgba(217, 119, 74, 0.2);
+  color: var(--clay-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
+.ptable--passes .ptable__row {
+  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 0.8fr));
+}
+.ptable--rooms .ptable__row {
+  grid-template-columns: minmax(0, 1fr) repeat(2, minmax(0, 1fr));
+}
+.hall__unit {
+  margin-top: -4px;
+}
+.hall__extras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hall__extras li {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+.hall__extras strong {
+  color: var(--ink);
+  white-space: nowrap;
+}
+.rules {
+  margin-top: 16px;
+}
+.passes {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
-  gap: 12px;
-  margin-top: 20px;
+  gap: 14px;
+  padding: 4px 24px 24px;
 }
-.venue-photos .snap {
-  aspect-ratio: auto;
-  height: clamp(180px, 19vw, 250px);
+.callcard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 28px;
+  margin-top: 16px;
+  padding: 24px 28px;
+  border-color: rgba(242, 221, 44, 0.35);
+}
+.callcard__text {
+  margin-top: 8px;
+  max-width: 34em;
+  color: var(--ink-2);
 }
 
-/* ——— foglalás: online steps, phones, rules, the unheated slots ——— */
-.book {
+/* ——— fallabda és szauna ——— */
+.squash {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   gap: 16px;
   margin-top: clamp(32px, 4vw, 48px);
 }
-.book__online,
-.book__phone {
+.squash__photo {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #141417;
+}
+.squash__prices {
   display: grid;
-  gap: 18px;
+  gap: 14px;
   align-content: start;
-  padding: 28px;
+  padding: 26px 28px;
 }
-.book__online .btn {
-  justify-self: start;
+.squash__sub {
+  margin-top: 6px;
 }
-.steps {
+.extras-row {
   display: grid;
-  gap: 14px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 16px;
 }
-.steps li {
+.sauna {
   display: grid;
-  grid-template-columns: 34px minmax(0, 1fr);
-  gap: 14px;
-  align-items: start;
+  grid-template-rows: minmax(120px, 1fr) auto;
+  overflow: hidden;
+  padding: 0;
 }
-.steps__n {
+.sauna__photo {
+  position: relative;
+  background: #141417;
+}
+.sauna__body {
   display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1px solid rgba(164, 139, 255, 0.6);
+  gap: 4px;
+  align-content: start;
+  padding: 18px 22px 20px;
+}
+.sauna__price {
   font-family: var(--font-display);
   font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
   color: var(--sun);
 }
-.steps li > span:last-child {
+.rental {
   display: grid;
-  gap: 2px;
-  font-size: 0.94rem;
+  gap: 12px;
+  align-content: start;
+  padding: 24px;
+}
+.rental .hours strong {
+  font-size: 1.05rem;
+}
+.extras-row .snap {
+  aspect-ratio: auto;
+  min-height: 200px;
+}
+
+/* ——— vendégház ——— */
+.rooms {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: clamp(32px, 4vw, 48px);
+  height: clamp(380px, 38vw, 480px);
+}
+.rooms__main {
+  position: relative;
+  grid-row: 1 / span 2;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #141417;
+}
+.rooms .snap {
+  aspect-ratio: auto;
+}
+.stay {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+.stay__info,
+.stay__prices {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  padding: 26px 28px;
   color: var(--ink-2);
 }
-.steps strong {
-  color: var(--ink);
-  font-weight: 600;
+.stay__perks {
+  margin-top: 4px;
 }
-.phones {
+.stay__perks li {
+  white-space: normal;
+}
+.stay__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+.nearby {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) 120px;
+  gap: 18px 28px;
+  align-items: center;
+  margin-top: 16px;
+  padding: 22px 26px;
+}
+.nearby__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px 20px;
+}
+.nearby__list li {
+  display: grid;
+  gap: 2px;
+  align-content: start;
+}
+.nearby__list strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: var(--sun);
+  white-space: nowrap;
+}
+.nearby__list span {
+  font-size: 0.88rem;
+  color: var(--ink-2);
+}
+.nearby__photo {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #141417;
+}
+
+/* ——— csomagok ——— */
+.packs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.pack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 26px;
+}
+.pack__price {
   display: grid;
   gap: 2px;
 }
-.phones li {
-  display: grid;
-  padding: 12px 0;
-  border-top: 1px solid var(--line);
-}
-.phones a {
+.pack__price strong {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.45rem;
-  letter-spacing: -0.02em;
-  text-decoration: none;
+  font-size: clamp(1.9rem, 2.6vw, 2.3rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--sun);
   white-space: nowrap;
 }
-.phones a:hover {
-  color: var(--sun-soft);
-}
-.phones span {
+.pack__price span {
   font-size: 0.9rem;
   color: var(--ink-3);
 }
-.phones--inline {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 28px;
-}
-.phones--inline li {
-  padding: 10px 0 0;
-}
-.phones--inline a {
-  font-size: 1.2rem;
-}
-.keyrules {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: 16px 0;
-}
-.book__more {
-  display: grid;
-}
-.discount {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 8px 32px;
-  align-items: start;
-  padding: 26px 28px;
-}
-.discount .label,
-.discount__title {
-  grid-column: 1;
-}
-.discount__slots {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-}
-.book__phonetext {
-  color: var(--ink-2);
-}
-.discount__slots li {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 4px 16px;
-  padding: 10px 0;
-  border-top: 1px solid var(--line);
-  color: var(--ink-2);
-}
-.discount__slots strong {
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--ink);
-  white-space: nowrap;
-}
-.outdoor {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  margin: 0;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-  font-size: 0.94rem;
-  color: var(--ink-2);
-}
-.outdoor svg {
-  flex: none;
-  margin-top: 4px;
-  color: var(--green);
-}
-
-/* ——— edzők ——— */
-.coaches {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: clamp(32px, 4vw, 48px);
-}
-.coach {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 18px;
-  align-items: center;
-  padding: 22px;
-}
-.coach--lead {
-  grid-column: 1 / -1;
-  grid-template-columns: 170px minmax(0, 1fr);
-  gap: 26px;
-  align-items: start;
-}
-.coach__photo {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border-radius: 10px;
-  background: #14121f;
-}
-.coach__photo--sm {
-  width: 84px;
-}
-.coach__mono {
-  display: grid;
-  place-items: center;
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  border: 1px solid rgba(164, 139, 255, 0.55);
-  background: rgba(164, 139, 255, 0.14);
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--sun);
-}
-.coach__bio {
-  margin-top: 10px;
-  color: var(--ink-2);
-}
-.coach__links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 20px;
-  margin-top: 18px;
-}
-.coach__web {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-  color: var(--sun-soft);
-  text-decoration: none;
-}
-.coach__web:hover {
-  color: var(--sun);
-}
-.coach__phone {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.coach__phone svg {
-  color: var(--sun);
-}
-.coach__phone:hover {
-  color: var(--sun-soft);
-}
-
-/* ——— tenisztábor ——— */
-.camp {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: 16px;
-  margin-top: clamp(32px, 4vw, 48px);
-}
-.camp__main {
-  position: relative;
-  min-height: 360px;
-  overflow: hidden;
-  border-radius: var(--radius);
-  background: #14121f;
-}
-.camp__side {
-  display: grid;
-  gap: 16px;
-}
-.camp__card {
-  display: grid;
-  gap: 10px;
-  align-content: start;
-  padding: 24px;
-  color: var(--ink-2);
-}
-.camp__day {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
-  gap: 20px 28px;
-  align-items: center;
-  margin-top: 16px;
-  padding: 26px;
-}
-.camp__text {
-  margin-top: 8px;
-  color: var(--ink-2);
-}
-.camp__incl {
-  margin-top: 10px;
-}
-.camp__strip {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 16px;
-}
-
-/* ——— versenyek ——— */
-.league {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-  margin-top: clamp(32px, 4vw, 48px);
-  padding: 0;
-  overflow: hidden;
-}
-.league__text {
-  display: grid;
-  gap: 12px;
-  align-content: start;
-  padding: 30px;
-  color: var(--ink-2);
-}
-.league__next {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
+.pack__alt {
+  margin-top: -4px;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--sun-soft);
 }
-.league__next svg {
-  flex: none;
-  margin-top: 4px;
-}
-.league__photo {
-  position: relative;
-  min-height: 280px;
-  background: #14121f;
-}
-.highlights {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 16px;
-  margin-top: 16px;
-}
-.highlights__photo {
-  position: relative;
-  min-height: 360px;
-  overflow: hidden;
-  border-radius: var(--radius);
-  background: #14121f;
-}
-.highlights__list {
-  display: grid;
-  gap: 16px;
-}
-.highlight {
-  display: grid;
-  gap: 8px;
+.pack .checks {
+  flex: 1 0 auto;
   align-content: start;
-  padding: 24px;
-  color: var(--ink-2);
 }
-.highlight .tag {
-  justify-self: start;
-  background: rgba(217, 119, 74, 0.2);
-  color: var(--clay-soft);
+.pack__cta {
+  align-self: flex-start;
+  margin-top: 6px;
 }
-.amateur {
+.packs__tax {
+  margin-top: 16px;
+}
+
+/* ——— házirend + büfé ——— */
+.keyrules--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.desk {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 0.8fr);
   gap: 16px;
   margin-top: 16px;
 }
-.amateur__list {
+.desk .snap {
+  aspect-ratio: auto;
+  min-height: 260px;
+}
+.desk__text {
   display: grid;
   gap: 14px;
   align-content: start;
   padding: 26px;
 }
-.amateur__photo {
-  aspect-ratio: auto;
-  min-height: 240px;
+.desk__lead {
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.desk__text .chips li {
+  white-space: normal;
 }
 
 /* ——— contact extras ——— */
@@ -1673,20 +1675,20 @@ html.space {
 
 /* ——— shapes need room: move the text, not the dots (desktop) ——— */
 @media (min-width: 901px) {
-  /* the racket stands on the right while the seasons and the photos scroll past */
-  #palyak > .container {
+  /* the racket stands on the right while the courts and the hall prices scroll past */
+  #tenisz > .container {
     max-width: none;
     padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2));
     padding-right: 30vw;
   }
-  /* the court lines stand on the left of the booking */
-  #foglalas > .container {
+  /* the court lines stand on the left of the squash, the sauna and the rental */
+  #fallabda > .container {
     max-width: none;
     padding-left: 30vw;
     padding-right: max(var(--gutter), calc((100vw - var(--max)) / 2));
   }
-  /* the logo (skyline, rackets, ball) forms on the right of the coaches' heading and stays through the section */
-  #edzok > .container {
+  /* the logo's two players and the ball form on the right of the guesthouse heading */
+  #vendeghaz > .container {
     max-width: none;
     padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2));
     padding-right: 32vw;
@@ -1713,19 +1715,45 @@ html.space {
   }
 }
 @media (max-width: 1240px) and (min-width: 901px) {
-  .book,
-  .book__more,
-  .camp__day {
+  .squash,
+  .stay {
     grid-template-columns: minmax(0, 1fr);
   }
-  .camp__day .btn {
-    justify-self: start;
+  .squash__photo {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
   }
-  .keyrules {
+  .extras-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .extras-row .snap {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 7;
+  }
+  .rooms {
+    height: clamp(300px, 34vw, 400px);
+  }
+  .nearby {
     grid-template-columns: minmax(0, 1fr);
   }
-  .coach--lead {
-    grid-template-columns: 140px minmax(0, 1fr);
+  .nearby__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .nearby__photo {
+    display: none;
+  }
+  .packs,
+  .keyrules--three {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .desk {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .desk__photo2 {
+    display: none;
+  }
+  .ptable--passes .ptable__row {
+    grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 0.9fr));
   }
 }
 
@@ -1755,13 +1783,13 @@ html.space {
   }
   .hero__row,
   .visit,
-  .seasons,
-  .book,
-  .book__more,
-  .camp,
-  .league,
-  .highlights,
-  .amateur {
+  .courts,
+  .squash,
+  .stay,
+  .extras-row,
+  .packs,
+  .desk,
+  .keyrules--three {
     grid-template-columns: minmax(0, 1fr);
   }
   .hero__row {
@@ -1771,60 +1799,68 @@ html.space {
     aspect-ratio: 4 / 3;
   }
   .facts {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 0;
+  }
+  .fact:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
   }
   .fact {
     padding: 0 12px;
   }
   .fact__num {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
   .fact__label {
-    font-size: 0.82rem;
+    font-size: 0.86rem;
   }
-  .venue-photos {
+  .squash__photo {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+  .extras-row .snap {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+  .sauna {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+    grid-template-rows: none;
+  }
+  .sauna__photo {
+    min-height: 200px;
+  }
+  .sauna__body {
+    align-content: center;
+  }
+  .rooms {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    height: auto;
+  }
+  .rooms__main {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .rooms .snap {
+    aspect-ratio: 4 / 3;
+  }
+  .nearby {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .nearby__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .venue-photos .snap {
-    height: auto;
-    aspect-ratio: 4 / 3;
+  .nearby__photo {
+    display: none;
   }
-  .venue-photos .snap:first-child {
-    grid-column: 1 / -1;
+  .desk .snap {
+    min-height: 0;
     aspect-ratio: 16 / 10;
   }
-  .camp__main {
-    min-height: 0;
-    aspect-ratio: 4 / 3;
-  }
-  .discount {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .discount__slots {
-    grid-column: 1;
-    grid-row: auto;
-  }
-  .camp__day {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .camp__day .btn {
-    justify-self: stretch;
-  }
-  .camp__strip .snap {
-    aspect-ratio: 16 / 10;
-  }
-  .league__photo {
-    min-height: 0;
-    aspect-ratio: 16 / 9;
-    order: -1;
-  }
-  .highlights__photo {
-    min-height: 0;
-    aspect-ratio: 4 / 3;
-  }
-  .amateur__photo {
-    min-height: 0;
-    aspect-ratio: 4 / 3;
+  .desk__photo2 {
+    display: none;
   }
   .final .visit__map {
     height: 280px;
@@ -1843,8 +1879,8 @@ html.space {
     grid-template-columns: 1fr 1.6fr;
     gap: 10px;
     padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
-    background: rgba(10, 9, 20, 0.92);
-    border-top: 1px solid rgba(243, 242, 248, 0.1);
+    background: rgba(10, 10, 12, 0.92);
+    border-top: 1px solid rgba(244, 243, 238, 0.1);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
@@ -1860,17 +1896,29 @@ html.space {
 }
 
 @media (max-width: 700px) {
-  .keyrules,
-  .rulelist,
-  .coaches {
+  .rulelist {
     grid-template-columns: minmax(0, 1fr);
   }
-  .coach--lead {
-    grid-template-columns: 110px minmax(0, 1fr);
-    gap: 18px;
-  }
-  .camp__strip {
+  .sauna {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+  }
+  .sauna__photo {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+  /* the passes table: the time slot on its own line, the three prices under it */
+  .ptable--passes .ptable__row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .ptable--passes .ptable__row > :first-child {
+    grid-column: 1 / -1;
+  }
+  .ptable--passes .ptable__row--head > :first-child {
+    display: none;
+  }
+  .ptable--passes .ptable__row > :not(:first-child) {
+    text-align: left;
   }
 }
 
@@ -1881,32 +1929,51 @@ html.space {
   .hero__ctas .btn {
     flex: 1 1 auto;
   }
-  .book__online .btn {
-    justify-self: stretch;
+  /* the hall table: the slot on its own line, hourly and pass prices under it */
+  .ptable:not(.ptable--rooms):not(.ptable--passes) .ptable__row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .ptable:not(.ptable--rooms):not(.ptable--passes) .ptable__row > :first-child {
+    grid-column: 1 / -1;
+  }
+  .ptable:not(.ptable--rooms):not(.ptable--passes) .ptable__row--head > :first-child {
+    display: none;
+  }
+  .ptable:not(.ptable--rooms):not(.ptable--passes) .ptable__row > :not(:first-child) {
+    text-align: left;
+  }
+  .callcard .btn,
+  .stay__ctas .btn {
+    flex: 1 1 auto;
   }
 }
 
 @media (max-width: 520px) {
-  .book__online,
-  .book__phone,
+  /* a long time slot wraps on its own line; the price stays on the right */
+  .hours li {
+    flex-wrap: nowrap;
+  }
+  .hours li > span {
+    min-width: 0;
+  }
+  .hall,
+  .callcard,
+  .squash__prices,
+  .rental,
+  .sauna__body,
+  .court__body,
+  .stay__info,
+  .stay__prices,
+  .nearby,
+  .pack,
   .keyrule,
-  .discount,
-  .coach,
-  .camp__card,
-  .camp__day,
-  .league__text,
-  .highlight,
-  .amateur__list,
-  .season__body,
+  .desk__text,
   .visit__info,
   .visit__form {
     padding: 20px 18px;
   }
-  .coach--lead {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .coach--lead .coach__photo {
-    width: 128px;
+  .passes {
+    padding: 4px 18px 20px;
   }
   .visit__actions .btn {
     min-width: 0;
@@ -1915,10 +1982,8 @@ html.space {
   .fact {
     padding: 0 8px;
   }
-  .fact:first-child {
+  .fact:first-child,
+  .fact:nth-child(3) {
     padding-left: 0;
-  }
-  .phones a {
-    font-size: 1.3rem;
   }
 }

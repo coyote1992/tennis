@@ -24,22 +24,22 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://veszprem.tenis.studio"),
-  title: "Tenisziskola Veszprém SE · Jutasi úti Sportcentrum",
+  metadataBase: new URL("https://invest.tenis.studio"),
+  title: "Invest Sportcentrum és Vendégház · tenisz, fallabda, szállás Egerben",
   description:
-    "Hét salakos teniszpálya a veszprémi Jutasi úti Sportcentrumban, télen három sátras pályával. Online pályafoglalás vagy telefon: +36 20 410 4910. Edzők, nyári tenisztábor, téli házibajnokság.",
+    "Az ütős sportok bázisa Egerben: 7 salakos teniszpálya, fedett teniszcsarnok 2 pályával, 4 fallabdapálya, szauna, büfé és 6 szobás vendégház. Pályafoglalás telefonon: +36 30 912 2116.",
   alternates: { canonical: "/b" },
   openGraph: {
-    title: "Tenisziskola Veszprém SE",
-    description: "Salakpályák, sátras téli szezon, edzések, tábor és házibajnokság a Jutasi úti Sportcentrumban.",
-    images: ["/img/palyak-sor.jpg"],
+    title: "Invest Sportcentrum és Vendégház, Eger",
+    description: "Tenisz, fallabda, szauna és szállás egy helyen, Egerben.",
+    images: ["/img/csarnok-szeles.jpg"],
     locale: "hu_HU",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#08080f",
+  themeColor: "#0a0a0c",
   colorScheme: "dark",
 };
 
